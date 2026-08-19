@@ -1,0 +1,18 @@
+#pragma once
+
+#include "esphome/components/switch/switch.h"
+#include "../iq2020.h"
+
+namespace esphome {
+namespace iq2020 {
+
+class CleanModeSwitch : public switch_::Switch, public Parented<IQ2020Component> {
+ public:
+  CleanModeSwitch() = default;
+
+ protected:
+  void write_state(bool state) override;
+};
+
+}  // namespace iq2020
+}  // namespace esphome

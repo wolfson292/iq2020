@@ -1,0 +1,112 @@
+import esphome.codegen as cg
+from esphome.components import binary_sensor, sensor
+import esphome.config_validation as cv
+from esphome.const import (
+    DEVICE_CLASS_DISTANCE,
+    UNIT_CENTIMETER,
+    UNIT_PERCENT,
+    UNIT_VOLT,
+    CONF_LIGHT,
+    DEVICE_CLASS_ILLUMINANCE,
+    ENTITY_CATEGORY_DIAGNOSTIC,
+    DEVICE_CLASS_VOLTAGE,
+    DEVICE_CLASS_CURRENT,
+    UNIT_AMPERE,
+    ICON_WATER,
+    ICON_FLASH,
+    ICON_MOTION_SENSOR,
+    ICON_LIGHTBULB,
+    DEVICE_CLASS_VOLATILE_ORGANIC_COMPOUNDS_PARTS,
+    UNIT_PARTS_PER_MILLION,
+    DEVICE_CLASS_TEMPERATURE,
+    DEVICE_CLASS_POWER,
+    UNIT_CELSIUS,
+    UNIT_WATT,
+    DEVICE_CLASS_DURATION,
+    UNIT_SECOND,
+    ICON_TIMER,
+    DEVICE_CLASS_SWITCH,
+    ICON_THERMOMETER,
+    ICON_POWER,
+    ICON_HEATING_COIL,
+    DEVICE_CLASS_SPEED,
+    ICON_BLUR,
+    ICON_MAGNET,
+    ENTITY_CATEGORY_NONE
+)
+from . import CONF_IQ2020_ID, IQ2020Component
+
+DEPENDENCIES = ["iq2020"]
+
+
+CONF_SUMMER_TIMER = "summer_timer"
+CONF_SPA_LOCK = "spa_lock"
+CONF_TEMP_LOCK = "temp_lock"
+CONF_CLEAN_LOCK = "clean_lock"
+CONF_PUMP = "pump"
+CONF_SWG_GENERATING = "swg_generating"
+CONF_SWG_BOOST = "swg_boost"
+CONF_SWG_CARTRIDGE_DUE = "swg_cartridge_due"
+
+TYPES = (
+    CONF_SUMMER_TIMER,
+    CONF_SPA_LOCK,
+    CONF_TEMP_LOCK,
+    CONF_CLEAN_LOCK,
+    CONF_PUMP,
+    CONF_SWG_GENERATING,
+    CONF_SWG_BOOST,
+    CONF_SWG_CARTRIDGE_DUE,
+)
+
+CONFIG_SCHEMA = cv.Schema(
+    {
+        cv.GenerateID(CONF_IQ2020_ID): cv.use_id(IQ2020Component),
+        
+        cv.Optional(CONF_SUMMER_TIMER): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        cv.Optional(CONF_SPA_LOCK): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        cv.Optional(CONF_TEMP_LOCK): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        cv.Optional(CONF_CLEAN_LOCK): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        cv.Optional(CONF_PUMP): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        # SWG flags byte, payload[5] of the module's 1E/01 frame.
+        # bit 0 = actively generating chlorine.
+        cv.Optional(CONF_SWG_GENERATING): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        # bit 2 = the 24-hour boost cycle is running.
+        cv.Optional(CONF_SWG_BOOST): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        # Cartridge age has reached the controller's 120-day replace prompt.
+        cv.Optional(CONF_SWG_CARTRIDGE_DUE): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        
+
+
+
+
+    }
+)
+
+async def setup_conf(config, key, hub):
+    if sensor_config := config.get(key):
+        sens = await binary_sensor.new_binary_sensor(sensor_config)
+        cg.add(getattr(hub, f"set_{key}_binary_sensor")(sens))
+
+
+async def to_code(config):
+    iq2020_component = await cg.get_variable(config[CONF_IQ2020_ID])
+    for key in TYPES:
+        await setup_conf(config, key, iq2020_component)
+    

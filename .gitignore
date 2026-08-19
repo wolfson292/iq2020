@@ -30,3 +30,17 @@
 *.exe
 *.out
 *.app
+
+# Python
+__pycache__/
+*.py[cod]
+
+# ESPHome
+.esphome/
+secrets.yaml
+
+# Local analysis artifacts — never commit
+*.hex
+*.bin
+internal/
+analysis/
