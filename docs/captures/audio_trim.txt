@@ -1,0 +1,1247 @@
+[10:00:22][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:00:22][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:00:22][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:00:22][I][iq2020.audio:1159]: Request Audio Play
+[10:00:33][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:00:34][I][iq2020.audio:1154]: Request Audio Status
+[10:00:34][I][iq2020.audio:357]: Emulating Audio Device
+[10:00:34][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:00:35][I][iq2020.audio:363]: Send Get Audio Status
+[10:00:35][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:00:37][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:00:37][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:00:37][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:00:38][I][iq2020.audio:1159]: Request Audio Play
+[10:00:47][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:00:48][I][iq2020.audio:1154]: Request Audio Status
+[10:00:48][I][iq2020.audio:357]: Emulating Audio Device
+[10:00:48][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:00:50][I][iq2020.audio:363]: Send Get Audio Status
+[10:00:50][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:00:52][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:00:52][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:00:52][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:00:52][I][iq2020.audio:1159]: Request Audio Play
+[10:01:02][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:01:02][I][iq2020.audio:1154]: Request Audio Status
+[10:01:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:01:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:01:05][I][iq2020.audio:363]: Send Get Audio Status
+[10:01:05][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:01:07][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:01:07][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:01:07][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:01:07][I][iq2020.audio:1159]: Request Audio Play
+[10:01:17][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:01:17][I][iq2020.audio:1154]: Request Audio Status
+[10:01:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:01:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:01:20][I][iq2020.audio:363]: Send Get Audio Status
+[10:01:20][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:01:22][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:01:22][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:01:23][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:01:23][I][iq2020.audio:1159]: Request Audio Play
+[10:01:32][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:01:32][I][iq2020.audio:1154]: Request Audio Status
+[10:01:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:01:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:01:35][I][iq2020.audio:363]: Send Get Audio Status
+[10:01:35][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:01:37][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:01:37][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:01:38][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:01:38][I][iq2020.audio:1159]: Request Audio Play
+[10:01:47][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:01:47][I][iq2020.audio:1154]: Request Audio Status
+[10:01:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:01:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:01:50][I][iq2020.audio:363]: Send Get Audio Status
+[10:01:50][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:01:52][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:01:52][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:01:52][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:01:52][I][iq2020.audio:1159]: Request Audio Play
+[10:02:02][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:02:02][I][iq2020.audio:1154]: Request Audio Status
+[10:02:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:02:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:02:05][I][iq2020.audio:363]: Send Get Audio Status
+[10:02:05][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:02:07][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:02:07][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:02:07][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:02:07][I][iq2020.audio:1159]: Request Audio Play
+[10:02:17][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:02:17][I][iq2020.audio:1154]: Request Audio Status
+[10:02:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:02:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:02:20][I][iq2020.audio:363]: Send Get Audio Status
+[10:02:20][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:02:22][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:02:22][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:02:22][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:02:22][I][iq2020.audio:1159]: Request Audio Play
+[10:02:33][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:02:33][I][iq2020.audio:1154]: Request Audio Status
+[10:02:33][I][iq2020.audio:357]: Emulating Audio Device
+[10:02:33][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:02:35][I][iq2020.audio:363]: Send Get Audio Status
+[10:02:35][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:02:37][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:02:37][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:02:37][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:02:37][I][iq2020.audio:1159]: Request Audio Play
+[10:02:47][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:02:47][I][iq2020.audio:1154]: Request Audio Status
+[10:02:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:02:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:02:50][I][iq2020.audio:363]: Send Get Audio Status
+[10:02:50][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:02:52][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:02:52][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:02:53][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:02:53][I][iq2020.audio:1159]: Request Audio Play
+[10:03:02][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:03:02][I][iq2020.audio:1154]: Request Audio Status
+[10:03:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:03:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:03:05][I][iq2020.audio:363]: Send Get Audio Status
+[10:03:05][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:03:07][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:03:07][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:03:07][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:03:07][I][iq2020.audio:1159]: Request Audio Play
+[10:03:17][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:03:17][I][iq2020.audio:1154]: Request Audio Status
+[10:03:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:03:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:03:20][I][iq2020.audio:363]: Send Get Audio Status
+[10:03:20][I][iq2020.audio:369]: Send Change Audio Source:0x04
+[10:03:22][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:03:22][I][iq2020.audio:1176]: Request Audio Change Source:0x04
+[10:03:22][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:03:22][I][iq2020.audio:1159]: Request Audio Play
+[10:03:32][I][iq2020.component:502]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:03:32][I][iq2020.audio:1154]: Request Audio Status
+[10:03:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:03:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+src/esphome/components/iq2020/iq2020.cpp: In member function 'void esphome::iq2020::IQ2020Component::sendResponseEmulateAudio()':
+[10:05:53][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:05:53][I][iq2020.audio:1181]: Request Audio Status
+[10:05:53][I][iq2020.audio:357]: Emulating Audio Device
+[10:05:53][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:05:55][I][iq2020.audio:390]: Send Get Audio Status
+[10:05:55][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:05:57][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:05:57][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:05:57][I][iq2020.audio:357]: Emulating Audio Device
+[10:05:57][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:05:57][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:05:57][I][iq2020.audio:1186]: Request Audio Play
+[10:05:57][I][iq2020.audio:357]: Emulating Audio Device
+[10:05:57][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:06:07][I][iq2020.audio:1181]: Request Audio Status
+[10:06:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:10][I][iq2020.audio:390]: Send Get Audio Status
+[10:06:10][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:06:12][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:06:12][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:06:12][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:12][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:12][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:06:12][I][iq2020.audio:1186]: Request Audio Play
+[10:06:12][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:12][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:06:22][I][iq2020.audio:1181]: Request Audio Status
+[10:06:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:25][I][iq2020.audio:390]: Send Get Audio Status
+[10:06:25][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:06:27][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:06:27][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:06:27][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:27][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:27][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:06:27][I][iq2020.audio:1186]: Request Audio Play
+[10:06:27][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:27][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:06:37][I][iq2020.audio:1181]: Request Audio Status
+[10:06:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:40][I][iq2020.audio:390]: Send Get Audio Status
+[10:06:40][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:06:42][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:06:42][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:06:42][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:42][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:42][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:06:42][I][iq2020.audio:1186]: Request Audio Play
+[10:06:42][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:42][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:06:52][I][iq2020.audio:1181]: Request Audio Status
+[10:06:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:55][I][iq2020.audio:390]: Send Get Audio Status
+[10:06:55][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:06:57][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:06:57][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:06:57][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:57][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:06:57][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:06:57][I][iq2020.audio:1186]: Request Audio Play
+[10:06:57][I][iq2020.audio:357]: Emulating Audio Device
+[10:06:57][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:07:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:07:07][I][iq2020.audio:1181]: Request Audio Status
+[10:07:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:07:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:07:10][I][iq2020.audio:390]: Send Get Audio Status
+[10:07:10][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:07:12][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:07:12][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:07:12][I][iq2020.audio:357]: Emulating Audio Device
+[10:07:12][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:07:12][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:07:12][I][iq2020.audio:1186]: Request Audio Play
+[10:07:12][I][iq2020.audio:357]: Emulating Audio Device
+[10:07:12][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:07:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:07:22][I][iq2020.audio:1181]: Request Audio Status
+[10:07:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:07:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:07:25][I][iq2020.audio:390]: Send Get Audio Status
+[10:07:25][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:07:27][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:07:27][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:07:27][I][iq2020.audio:357]: Emulating Audio Device
+[10:07:27][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:07:27][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:07:27][I][iq2020.audio:1186]: Request Audio Play
+[10:07:27][I][iq2020.audio:357]: Emulating Audio Device
+[10:07:27][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:08:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:08:17][I][iq2020.audio:1181]: Request Audio Status
+[10:08:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:08:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:08:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:08:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:08:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:08:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:08:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:08:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:08:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:08:22][I][iq2020.audio:1186]: Request Audio Play
+[10:08:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:08:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:08:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:08:32][I][iq2020.audio:1181]: Request Audio Status
+[10:08:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:08:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:08:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:08:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:08:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:08:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:08:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:08:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:08:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:08:37][I][iq2020.audio:1186]: Request Audio Play
+[10:08:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:08:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:08:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:08:47][I][iq2020.audio:1181]: Request Audio Status
+[10:08:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:08:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:08:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:08:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:08:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:08:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:08:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:08:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:08:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:08:52][I][iq2020.audio:1186]: Request Audio Play
+[10:08:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:08:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:09:02][I][iq2020.audio:1181]: Request Audio Status
+[10:09:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:09:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:09:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:09:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:09:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:09:07][I][iq2020.audio:1186]: Request Audio Play
+[10:09:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:09:17][I][iq2020.audio:1181]: Request Audio Status
+[10:09:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:09:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:09:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:09:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:09:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:09:22][I][iq2020.audio:1186]: Request Audio Play
+[10:09:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:09:32][I][iq2020.audio:1181]: Request Audio Status
+[10:09:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:35][I][iq2020.audio:390]: Send Get Audio Status
+[10:09:35][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:09:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:09:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:09:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:09:37][I][iq2020.audio:1186]: Request Audio Play
+[10:09:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:09:47][I][iq2020.audio:1181]: Request Audio Status
+[10:09:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:09:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:09:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:09:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:09:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:09:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:09:52][I][iq2020.audio:1186]: Request Audio Play
+[10:09:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:09:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:10:02][I][iq2020.audio:1181]: Request Audio Status
+[10:10:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:10:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:10:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:10:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:10:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:10:07][I][iq2020.audio:1186]: Request Audio Play
+[10:10:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:10:17][I][iq2020.audio:1181]: Request Audio Status
+[10:10:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:10:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:10:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:10:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:10:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:10:22][I][iq2020.audio:1186]: Request Audio Play
+[10:10:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:10:32][I][iq2020.audio:1181]: Request Audio Status
+[10:10:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:10:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:10:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:10:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:10:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:10:37][I][iq2020.audio:1186]: Request Audio Play
+[10:10:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:10:47][I][iq2020.audio:1181]: Request Audio Status
+[10:10:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:50][I][iq2020.audio:390]: Send Get Audio Status
+[10:10:50][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:10:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:10:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:10:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:10:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:10:52][I][iq2020.audio:1186]: Request Audio Play
+[10:10:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:10:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:11:02][I][iq2020.audio:1181]: Request Audio Status
+[10:11:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:11:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:11:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:11:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:11:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:11:07][I][iq2020.audio:1186]: Request Audio Play
+[10:11:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:11:17][I][iq2020.audio:1181]: Request Audio Status
+[10:11:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:11:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:11:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:11:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:11:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:11:22][I][iq2020.audio:1186]: Request Audio Play
+[10:11:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:11:32][I][iq2020.audio:1181]: Request Audio Status
+[10:11:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:11:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:11:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:11:37][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:11:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:11:37][I][iq2020.audio:1186]: Request Audio Play
+[10:11:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:11:47][I][iq2020.audio:1181]: Request Audio Status
+[10:11:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:11:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:11:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:11:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:11:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:11:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:11:52][I][iq2020.audio:1186]: Request Audio Play
+[10:11:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:11:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:12:02][I][iq2020.audio:1181]: Request Audio Status
+[10:12:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:12:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:12:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:12:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:12:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:12:07][I][iq2020.audio:1186]: Request Audio Play
+[10:12:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:12:17][I][iq2020.audio:1181]: Request Audio Status
+[10:12:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:12:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:12:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:12:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:12:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:12:22][I][iq2020.audio:1186]: Request Audio Play
+[10:12:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:12:32][I][iq2020.audio:1181]: Request Audio Status
+[10:12:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:12:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:12:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:12:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:12:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:12:37][I][iq2020.audio:1186]: Request Audio Play
+[10:12:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:12:47][I][iq2020.audio:1181]: Request Audio Status
+[10:12:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:12:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:12:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:12:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:12:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:12:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:12:52][I][iq2020.audio:1186]: Request Audio Play
+[10:12:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:12:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:13:02][I][iq2020.audio:1181]: Request Audio Status
+[10:13:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:13:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:13:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:13:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:13:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:13:07][I][iq2020.audio:1186]: Request Audio Play
+[10:13:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:13:17][I][iq2020.audio:1181]: Request Audio Status
+[10:13:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:13:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:13:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:13:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:13:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:13:22][I][iq2020.audio:1186]: Request Audio Play
+[10:13:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:13:32][I][iq2020.audio:1181]: Request Audio Status
+[10:13:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:13:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:13:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:13:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:13:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:13:37][I][iq2020.audio:1186]: Request Audio Play
+[10:13:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:13:47][I][iq2020.audio:1181]: Request Audio Status
+[10:13:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:13:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:13:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:13:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:13:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:13:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:13:52][I][iq2020.audio:1186]: Request Audio Play
+[10:13:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:13:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:14:02][I][iq2020.audio:1181]: Request Audio Status
+[10:14:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:14:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:14:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:14:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:14:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:14:07][I][iq2020.audio:1186]: Request Audio Play
+[10:14:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:14:17][I][iq2020.audio:1181]: Request Audio Status
+[10:14:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:14:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:14:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:14:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:14:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:14:22][I][iq2020.audio:1186]: Request Audio Play
+[10:14:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:14:32][I][iq2020.audio:1181]: Request Audio Status
+[10:14:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:14:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:14:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:14:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:14:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:14:37][I][iq2020.audio:1186]: Request Audio Play
+[10:14:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:14:47][I][iq2020.audio:1181]: Request Audio Status
+[10:14:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:14:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:14:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:14:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:14:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:14:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:14:52][I][iq2020.audio:1186]: Request Audio Play
+[10:14:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:14:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:15:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:15:02][I][iq2020.audio:1181]: Request Audio Status
+[10:15:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:15:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:15:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:15:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:15:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:15:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:15:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:15:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:15:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:15:07][I][iq2020.audio:1186]: Request Audio Play
+[10:15:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:15:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:15:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:15:17][I][iq2020.audio:1181]: Request Audio Status
+[10:15:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:15:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:15:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:15:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:15:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:15:32][I][iq2020.audio:1181]: Request Audio Status
+[10:15:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:15:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:15:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:15:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:15:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:15:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:15:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:15:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:15:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:15:37][I][iq2020.audio:1186]: Request Audio Play
+[10:15:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:15:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:15:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:15:47][I][iq2020.audio:1181]: Request Audio Status
+[10:15:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:15:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:15:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:15:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:15:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:15:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:15:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:15:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:15:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:15:52][I][iq2020.audio:1186]: Request Audio Play
+[10:15:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:15:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:16:02][I][iq2020.audio:1181]: Request Audio Status
+[10:16:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:16:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:16:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:16:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:16:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:16:07][I][iq2020.audio:1186]: Request Audio Play
+[10:16:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:16:17][I][iq2020.audio:1181]: Request Audio Status
+[10:16:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:16:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:16:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:16:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:16:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:16:22][I][iq2020.audio:1186]: Request Audio Play
+[10:16:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:16:32][I][iq2020.audio:1181]: Request Audio Status
+[10:16:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:35][I][iq2020.audio:390]: Send Get Audio Status
+[10:16:35][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:16:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:16:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:16:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:16:37][I][iq2020.audio:1186]: Request Audio Play
+[10:16:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:16:47][I][iq2020.audio:1181]: Request Audio Status
+[10:16:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:16:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:16:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:16:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:16:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:16:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:16:52][I][iq2020.audio:1186]: Request Audio Play
+[10:16:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:16:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:17:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:17:02][I][iq2020.audio:1181]: Request Audio Status
+[10:17:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:17:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:17:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:17:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:17:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:17:17][I][iq2020.audio:1181]: Request Audio Status
+[10:17:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:17:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:17:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:17:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:17:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:17:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:17:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:17:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:17:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:17:22][I][iq2020.audio:1186]: Request Audio Play
+[10:17:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:17:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:17:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:17:32][I][iq2020.audio:1181]: Request Audio Status
+[10:17:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:17:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:17:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:17:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:17:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:17:37][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:17:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:17:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:17:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:17:37][I][iq2020.audio:1186]: Request Audio Play
+[10:17:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:17:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:17:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:17:47][I][iq2020.audio:1181]: Request Audio Status
+[10:17:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:17:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:17:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:17:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:17:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:17:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:17:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:17:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:17:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:17:52][I][iq2020.audio:1186]: Request Audio Play
+[10:17:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:17:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:18:02][I][iq2020.audio:1181]: Request Audio Status
+[10:18:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:18:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:18:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:18:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:18:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:18:07][I][iq2020.audio:1186]: Request Audio Play
+[10:18:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:18:17][I][iq2020.audio:1181]: Request Audio Status
+[10:18:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:18:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:18:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:18:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:18:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:18:22][I][iq2020.audio:1186]: Request Audio Play
+[10:18:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:18:32][I][iq2020.audio:1181]: Request Audio Status
+[10:18:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:18:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:18:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:18:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:18:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:18:37][I][iq2020.audio:1186]: Request Audio Play
+[10:18:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:18:47][I][iq2020.audio:1181]: Request Audio Status
+[10:18:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:18:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:18:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:18:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:18:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:18:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:18:52][I][iq2020.audio:1186]: Request Audio Play
+[10:18:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:18:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:19:02][I][iq2020.audio:1181]: Request Audio Status
+[10:19:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:19:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:19:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:19:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:19:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:19:07][I][iq2020.audio:1186]: Request Audio Play
+[10:19:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:19:17][I][iq2020.audio:1181]: Request Audio Status
+[10:19:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:19:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:19:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:19:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:19:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:19:22][I][iq2020.audio:1186]: Request Audio Play
+[10:19:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:19:32][I][iq2020.audio:1181]: Request Audio Status
+[10:19:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:19:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:19:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:19:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:19:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:19:37][I][iq2020.audio:1186]: Request Audio Play
+[10:19:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:19:47][I][iq2020.audio:1181]: Request Audio Status
+[10:19:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:50][I][iq2020.audio:390]: Send Get Audio Status
+[10:19:50][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:19:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:19:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:19:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:19:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:19:52][I][iq2020.audio:1186]: Request Audio Play
+[10:19:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:19:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:20:02][I][iq2020.audio:1181]: Request Audio Status
+[10:20:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:20:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:20:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:20:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:20:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:20:07][I][iq2020.audio:1186]: Request Audio Play
+[10:20:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:20:17][I][iq2020.audio:1181]: Request Audio Status
+[10:20:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:20:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:20:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:20:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:20:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:20:22][I][iq2020.audio:1186]: Request Audio Play
+[10:20:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:20:32][I][iq2020.audio:1181]: Request Audio Status
+[10:20:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:20:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:20:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:20:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:20:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:20:37][I][iq2020.audio:1186]: Request Audio Play
+[10:20:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:20:47][I][iq2020.audio:1181]: Request Audio Status
+[10:20:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:20:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:20:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:20:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:20:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:20:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:20:52][I][iq2020.audio:1186]: Request Audio Play
+[10:20:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:20:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:21:02][I][iq2020.audio:1181]: Request Audio Status
+[10:21:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:05][I][iq2020.audio:390]: Send Get Audio Status
+[10:21:05][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:21:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:21:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:21:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:21:07][I][iq2020.audio:1186]: Request Audio Play
+[10:21:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:21:17][I][iq2020.audio:1181]: Request Audio Status
+[10:21:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:21:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:21:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:21:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:21:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:21:22][I][iq2020.audio:1186]: Request Audio Play
+[10:21:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:21:32][I][iq2020.audio:1181]: Request Audio Status
+[10:21:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:21:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:21:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:21:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:21:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:21:37][I][iq2020.audio:1186]: Request Audio Play
+[10:21:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:21:47][I][iq2020.audio:1181]: Request Audio Status
+[10:21:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:21:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:21:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:21:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:21:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:21:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:21:52][I][iq2020.audio:1186]: Request Audio Play
+[10:21:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:21:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:22:02][I][iq2020.audio:1181]: Request Audio Status
+[10:22:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:22:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:22:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:22:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:22:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:22:07][I][iq2020.audio:1186]: Request Audio Play
+[10:22:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:22:17][I][iq2020.audio:1181]: Request Audio Status
+[10:22:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:22:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:22:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:22:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:22:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:22:22][I][iq2020.audio:1186]: Request Audio Play
+[10:22:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:22:32][I][iq2020.audio:1181]: Request Audio Status
+[10:22:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:22:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:22:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:22:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:22:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:22:37][I][iq2020.audio:1186]: Request Audio Play
+[10:22:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:22:47][I][iq2020.audio:1181]: Request Audio Status
+[10:22:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:22:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:22:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:22:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:22:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:22:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:22:52][I][iq2020.audio:1186]: Request Audio Play
+[10:22:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:22:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:23:02][I][iq2020.audio:1181]: Request Audio Status
+[10:23:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:23:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:23:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:23:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:23:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:23:07][I][iq2020.audio:1186]: Request Audio Play
+[10:23:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:23:17][I][iq2020.audio:1181]: Request Audio Status
+[10:23:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:23:19][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:23:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:23:21][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:23:21][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:22][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:23:22][I][iq2020.audio:1186]: Request Audio Play
+[10:23:22][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:22][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:24][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:19:00:00:00:0B Checksum:Valid 45=45
+[10:23:24][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:19:00:00:00:0B Length:8
+[10:23:24][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:23:24][I][iq2020.audio:1186]: Request Audio Play
+[10:23:24][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:24][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:24][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:06:00 Checksum:Valid 69=69
+[10:23:24][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:06:00 Length:3
+[10:23:30][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:07:00 Checksum:Valid 68=68
+[10:23:30][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:07:00 Length:3
+[10:23:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:23:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:23:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:23:36][I][iq2020.audio:1186]: Request Audio Play
+[10:23:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:23:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:23:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:23:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:07:00 Checksum:Valid 68=68
+[10:23:37][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:07:00 Length:3
+[10:23:39][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:02 Checksum:Valid 6C=6C
+[10:23:39][I][iq2020.audio:1192]: Request Audio Pause
+[10:23:39][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:39][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:23:39][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:06:00 Checksum:Valid 69=69
+[10:23:39][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:06:00 Length:3
+[10:23:41][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:03 Checksum:Valid 6B=6B
+[10:23:41][I][iq2020.audio:1198]: Request Audio Next
+[10:23:41][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:41][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:23:41][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:07:00 Checksum:Valid 68=68
+[10:23:41][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:07:00 Length:3
+[10:23:42][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:04 Checksum:Valid 6A=6A
+[10:23:42][I][iq2020.audio:1203]: Request Audio Prev
+[10:23:42][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:42][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:23:43][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:06:00 Checksum:Valid 69=69
+[10:23:43][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:06:00 Length:3
+[10:23:44][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1A:00:00:00:0B Checksum:Valid 44=44
+[10:23:44][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1A:00:00:00:0B Length:8
+[10:23:45][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1B:00:00:00:0B Checksum:Valid 43=43
+[10:23:45][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1B:00:00:00:0B Length:8
+[10:23:45][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1C:00:00:00:0B Checksum:Valid 42=42
+[10:23:45][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1C:00:00:00:0B Length:8
+[10:23:46][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1D:00:00:00:0B Checksum:Valid 41=41
+[10:23:46][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1D:00:00:00:0B Length:8
+[10:23:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:00:00:00:0B Checksum:Valid 40=40
+[10:23:47][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:00:00:00:0B Length:8
+[10:23:48][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:07:00 Checksum:Valid 68=68
+[10:23:48][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:07:00 Length:3
+[10:23:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:23:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:23:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:23:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:23:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:00:04:01:00:00 Checksum:05
+[10:23:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:23:52][I][iq2020.audio:1186]: Request Audio Play
+[10:23:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:23:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:23:55][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:06:00 Checksum:Valid 69=69
+[10:23:55][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:06:00 Length:3
+[10:24:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:24:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:24:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:24:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:24:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:24:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:24:07][I][iq2020.audio:1186]: Request Audio Play
+[10:24:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:24:08][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:00:01:00:0B Checksum:Valid 3F=3F
+[10:24:08][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:00:01:00:0B Length:8
+[10:24:09][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:00:02:00:0B Checksum:Valid 3E=3E
+[10:24:09][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:00:02:00:0B Length:8
+[10:24:10][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:01:02:00:0B Checksum:Valid 3D=3D
+[10:24:10][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:01:02:00:0B Length:8
+[10:24:10][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:02:00:0B Checksum:Valid 3C=3C
+[10:24:10][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:02:00:0B Length:8
+[10:24:12][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:02:01:0B Checksum:Valid 3B=3B
+[10:24:12][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:02:01:0B Length:8
+[10:24:13][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:02:00:0B Checksum:Valid 3C=3C
+[10:24:13][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:02:00:0B Length:8
+[10:24:15][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:02:00:0B Checksum:Valid 3C=3C
+[10:24:15][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:02:00:0B Length:8
+[10:24:16][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:02:00:0B Checksum:Valid 3C=3C
+[10:24:16][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:02:00:0B Length:8
+[10:24:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:02:00:0A Checksum:Valid 3D=3D
+[10:24:17][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:02:00:0A Length:8
+[10:24:18][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:02:00:0B Checksum:Valid 3C=3C
+[10:24:18][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:02:00:0B Length:8
+[10:24:20][I][iq2020.audio:390]: Send Get Audio Status
+[10:24:20][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:24:21][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:07:00 Checksum:Valid 68=68
+[10:24:21][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:07:00 Length:3
+[10:24:27][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:01:00:0B Checksum:Valid 3D=3D
+[10:24:27][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:01:00:0B Length:8
+[10:24:28][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:00:00:0B Checksum:Valid 3E=3E
+[10:24:28][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:00:00:0B Length:8
+[10:24:29][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:FF:00:0B Checksum:Valid 3F=3F
+[10:24:29][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:FF:00:0B Length:8
+[10:24:29][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:24:29][I][iq2020.audio:1181]: Request Audio Status
+[10:24:29][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:29][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:24:30][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:FE:00:0B Checksum:Valid 40=40
+[10:24:30][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:FE:00:0B Length:8
+[10:24:30][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:24:30][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:24:30][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:30][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:24:30][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:02:FE:00:0B Checksum:Valid 40=40
+[10:24:30][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:02:FE:00:0B Length:8
+[10:24:30][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:24:30][I][iq2020.audio:1186]: Request Audio Play
+[10:24:30][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:30][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:24:31][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:01:FE:00:0B Checksum:Valid 41=41
+[10:24:31][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:01:FE:00:0B Length:8
+[10:24:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:00:FE:00:0B Checksum:Valid 42=42
+[10:24:32][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:00:FE:00:0B Length:8
+[10:24:32][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:24:32][I][iq2020.audio:1186]: Request Audio Play
+[10:24:32][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:32][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:24:33][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:FF:FE:00:0B Checksum:Valid 43=43
+[10:24:33][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:FF:FE:00:0B Length:8
+[10:24:34][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:FE:FE:00:0B Checksum:Valid 44=44
+[10:24:34][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:FE:FE:00:0B Length:8
+[10:24:34][I][iq2020.audio:390]: Send Get Audio Status
+[10:24:34][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:24:35][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:FE:FE:FF:0B Checksum:Valid 45=45
+[10:24:35][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:FE:FE:FF:0B Length:8
+[10:24:35][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:8 Operation:0x40 REQ  Data:19:00:01:1E:FE:FE:FE:0B Checksum:Valid 46=46
+[10:24:35][I][iq2020.component:1227]: Unknown Audio Packet Src:0x01 Dest:0x33 Operation:0x40 Data:19:00:01:1E:FE:FE:FE:0B Length:8
+[10:24:36][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:24:36][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:24:36][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:24:37][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:24:37][I][iq2020.audio:1186]: Request Audio Play
+[10:24:37][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:37][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:24:47][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:24:47][I][iq2020.audio:1181]: Request Audio Status
+[10:24:47][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:47][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:24:49][I][iq2020.audio:390]: Send Get Audio Status
+[10:24:49][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:24:51][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:24:51][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:24:51][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:24:52][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:24:52][I][iq2020.audio:1186]: Request Audio Play
+[10:24:52][I][iq2020.audio:357]: Emulating Audio Device
+[10:24:52][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:25:02][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:25:02][I][iq2020.audio:1181]: Request Audio Status
+[10:25:02][I][iq2020.audio:357]: Emulating Audio Device
+[10:25:02][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:25:04][I][iq2020.audio:390]: Send Get Audio Status
+[10:25:04][I][iq2020.audio:396]: Send Change Audio Source:0x04
+[10:25:06][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:03:04 Checksum:Valid 68=68
+[10:25:06][I][iq2020.audio:1209]: Request Audio Change Source:0x04
+[10:25:06][I][iq2020.audio:357]: Emulating Audio Device
+[10:25:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:25:07][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:01 Checksum:Valid 6D=6D
+[10:25:07][I][iq2020.audio:1186]: Request Audio Play
+[10:25:07][I][iq2020.audio:357]: Emulating Audio Device
+[10:25:07][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:25:17][I][iq2020.component:529]: readline_ Full Packet 0x01 -> 0x33 Length:3 Operation:0x40 REQ  Data:19:01:00 Checksum:Valid 6E=6E
+[10:25:17][I][iq2020.audio:1181]: Request Audio Status
+[10:25:17][I][iq2020.audio:357]: Emulating Audio Device
+[10:25:17][I][iq2020.component:119]: sendCmd_ 33 -> 01 Length:0D Operation:80 Data:19:01:01:19:00:00:00:0B:01:04:01:00:00 Checksum:06
+[10:25:19][I][iq2020.audio:390]: Send Get Audio Status
+[10:25:19][I][iq2020.audio:396]: Send Change Audio Source:0x04

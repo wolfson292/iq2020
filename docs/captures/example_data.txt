@@ -1,0 +1,532 @@
+[11:32:52][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:32:52][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:32:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:33:10][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:33:10][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:33:19][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:33:28][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:33:28][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:33:39][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:33:46][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:33:46][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:33:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:34:04][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:34:04][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:34:19][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:34:22][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:34:22][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:34:39][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:34:40][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:34:41][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:34:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:34:59][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:34:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:35:17][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:35:17][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:35:19][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:35:35][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:35:35][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:35:39][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:35:53][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:35:53][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:35:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:36:11][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:36:11][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:36:19][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:36:29][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:36:29][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:36:39][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:36:48][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:36:48][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:37:00][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:37:06][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:37:06][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:37:20][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:37:24][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:37:24][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:37:40][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:37:42][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:37:42][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:38:00][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:38:00][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:38:00][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:38:18][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:38:18][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:38:20][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:38:36][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:38:36][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:38:40][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:38:55][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:38:55][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:39:00][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:39:13][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:39:13][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:39:20][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:39:31][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:39:31][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:39:40][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:39:49][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:39:49][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:40:00][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:40:07][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:40:07][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:40:20][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:40:25][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:40:25][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:40:41][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:40:44][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:40:44][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:41:01][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:41:02][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:41:02][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:41:20][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:41:20][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:41:21][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:41:38][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:41:38][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:41:41][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:41:56][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:41:56][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:42:01][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:42:14][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:42:14][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:42:21][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:42:33][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:42:33][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:42:41][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:42:51][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:42:51][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:43:01][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:43:09][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:43:09][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:43:21][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:43:27][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:43:27][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:43:41][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:43:45][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:43:45][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:44:01][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:44:03][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:44:03][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:44:21][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:44:21][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:44:21][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:44:40][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:44:40][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:44:42][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:44:58][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:44:58][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:45:02][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:45:16][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:45:16][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:45:22][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:45:34][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:45:34][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:45:42][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:45:52][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:45:52][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:46:02][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:46:10][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:46:10][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:46:22][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:46:29][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:46:29][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:46:42][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:46:47][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:46:47][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:47:02][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:47:05][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:47:05][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:47:22][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:47:23][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:47:23][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:47:41][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:47:41][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:47:42][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:47:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:47:59][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:48:02][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:48:17][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:48:17][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:48:22][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:48:36][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:48:36][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:48:42][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:48:54][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:48:54][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:49:03][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:49:12][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:49:12][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:49:23][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:49:30][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:49:30][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:49:43][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:49:48][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:49:48][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:50:03][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:50:06][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:50:06][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:50:23][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:50:25][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:50:25][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:50:43][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:50:43][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:50:43][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:51:01][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:51:01][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:51:03][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:51:19][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:51:19][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:51:23][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:51:37][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:51:37][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:51:43][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:51:55][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:51:55][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:52:03][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:52:14][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:52:14][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:52:23][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:52:32][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[11:52:32][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:83:08:07:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[11:52:43][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[11:59:09][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[11:59:09][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:38:83:08:03:00:00:0C:19:00:69:81 Checksum:4C ChecksumCalc:CD
+[12:29:07][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:29:07][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:38:84:08:03:00:00:0C:19:00:69:81 Checksum:4B ChecksumCalc:CC
+[12:29:12][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:29:25][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:29:25][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:38:84:08:03:00:00:0C:19:00:69:81 Checksum:4B ChecksumCalc:CC
+[12:29:32][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:29:43][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:29:43][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:38:84:08:03:00:00:0C:19:00:69:81 Checksum:4B ChecksumCalc:CC
+[12:29:52][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:29:54][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:29:54][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:38:84:08:03:00:00:0C:19:00:69:81 Checksum:4B ChecksumCalc:CC
+[12:29:54][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:29:54][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:38:84:08:03:00:00:0C:19:00:69:81 Checksum:4B ChecksumCalc:CC
+[12:29:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:01:FF:FF:FF Checksum:66 ChecksumCalc:65
+[12:29:59][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:38:84:08:03:00:00:0C:19:00:69:81 Checksum:4B ChecksumCalc:CC
+[12:29:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:29:59][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:38:84:00:0B:00:00:0C:19:00:69:01 Checksum:CB ChecksumCalc:CC
+[12:30:12][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:30:18][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:30:18][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C7 ChecksumCalc:C8
+[12:30:18][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:30:18][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C7 ChecksumCalc:C8
+[12:30:19][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:30:19][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C7 ChecksumCalc:C8
+[12:30:19][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:30:19][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C7 ChecksumCalc:C8
+[12:30:23][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:64
+[12:30:23][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:30:23][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:30:23][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:30:26][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:08:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:64 ChecksumCalc:63
+[12:30:26][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:08:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[12:30:26][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:08:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:66 ChecksumCalc:65
+[12:30:26][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:08:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[12:30:28][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:09:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:63 ChecksumCalc:62
+[12:30:28][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:09:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C4 ChecksumCalc:C5
+[12:30:28][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:09:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:64
+[12:30:28][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:09:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C4 ChecksumCalc:C5
+[12:30:29][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:0A:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:62 ChecksumCalc:61
+[12:30:29][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:0A:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C3 ChecksumCalc:C4
+[12:30:29][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:0A:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:64 ChecksumCalc:63
+[12:30:29][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:0A:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C3 ChecksumCalc:C4
+[12:30:30][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:00:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:6C ChecksumCalc:6B
+[12:30:30][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:00:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CD ChecksumCalc:CE
+[12:30:30][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:00:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6E ChecksumCalc:6D
+[12:30:30][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:00:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CD ChecksumCalc:CE
+[12:30:31][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:00:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6E ChecksumCalc:6D
+[12:30:31][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:00:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CD ChecksumCalc:CE
+[12:30:32][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:01:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:6B ChecksumCalc:6A
+[12:30:32][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:01:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CC ChecksumCalc:CD
+[12:30:32][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:01:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6D ChecksumCalc:6C
+[12:30:32][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:01:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CC ChecksumCalc:CD
+[12:30:32][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:30:33][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:01:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6D ChecksumCalc:6C
+[12:30:33][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:01:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CC ChecksumCalc:CD
+[12:30:33][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:01:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6D ChecksumCalc:6C
+[12:30:34][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:01:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CC ChecksumCalc:CD
+[12:30:35][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:02:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:6A ChecksumCalc:69
+[12:30:35][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:02:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CB ChecksumCalc:CC
+[12:30:35][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:02:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6C ChecksumCalc:6B
+[12:30:35][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:02:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CB ChecksumCalc:CC
+[12:30:36][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:03:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[12:30:36][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:03:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CA ChecksumCalc:CB
+[12:30:36][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:03:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6B ChecksumCalc:6A
+[12:30:36][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:03:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CA ChecksumCalc:CB
+[12:30:37][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:04:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:30:37][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:04:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C9 ChecksumCalc:CA
+[12:30:37][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:04:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6A ChecksumCalc:69
+[12:30:37][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:04:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C9 ChecksumCalc:CA
+[12:30:38][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:30:38][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C8 ChecksumCalc:C9
+[12:30:38][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[12:30:38][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C8 ChecksumCalc:C9
+[12:30:39][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:66 ChecksumCalc:65
+[12:30:39][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C7 ChecksumCalc:C8
+[12:30:39][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:30:39][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C7 ChecksumCalc:C8
+[12:30:40][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:64
+[12:30:40][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:30:40][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:30:40][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:30:41][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:08:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:64 ChecksumCalc:63
+[12:30:41][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:08:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[12:30:41][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:08:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:66 ChecksumCalc:65
+[12:30:41][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:08:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C5 ChecksumCalc:C6
+[12:30:45][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:09:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:63 ChecksumCalc:62
+[12:30:45][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:09:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C4 ChecksumCalc:C5
+[12:30:46][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:09:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:64
+[12:30:46][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:09:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C4 ChecksumCalc:C5
+[12:30:46][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:0A:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:62 ChecksumCalc:61
+[12:30:47][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:0A:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C3 ChecksumCalc:C4
+[12:30:47][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:0A:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:64 ChecksumCalc:63
+[12:30:47][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:0A:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C3 ChecksumCalc:C4
+[12:30:48][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:00:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:6C ChecksumCalc:6B
+[12:30:48][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:00:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CD ChecksumCalc:CE
+[12:30:48][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:00:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6E ChecksumCalc:6D
+[12:30:48][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:00:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CD ChecksumCalc:CE
+[12:30:49][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:00:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6E ChecksumCalc:6D
+[12:30:49][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:00:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CD ChecksumCalc:CE
+[12:30:49][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:00:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6E ChecksumCalc:6D
+[12:30:49][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:00:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CD ChecksumCalc:CE
+[12:30:51][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:01:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:6B ChecksumCalc:6A
+[12:30:51][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:01:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CC ChecksumCalc:CD
+[12:30:52][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:01:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6D ChecksumCalc:6C
+[12:30:52][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:01:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CC ChecksumCalc:CD
+[12:30:52][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:30:52][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:02:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:6A ChecksumCalc:69
+[12:30:53][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:02:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CB ChecksumCalc:CC
+[12:30:53][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:02:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6C ChecksumCalc:6B
+[12:30:53][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:02:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CB ChecksumCalc:CC
+[12:30:54][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:03:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[12:30:54][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:03:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CA ChecksumCalc:CB
+[12:30:54][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:03:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6B ChecksumCalc:6A
+[12:30:54][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:03:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:CA ChecksumCalc:CB
+[12:30:55][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:04:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:30:55][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:04:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C9 ChecksumCalc:CA
+[12:30:55][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:04:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6A ChecksumCalc:69
+[12:30:55][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:04:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C9 ChecksumCalc:CA
+[12:30:56][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:04:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6A ChecksumCalc:69
+[12:30:56][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:04:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C9 ChecksumCalc:CA
+[12:30:56][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:04:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:6A ChecksumCalc:69
+[12:30:56][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:04:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C9 ChecksumCalc:CA
+[12:30:57][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:30:57][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C8 ChecksumCalc:C9
+[12:30:57][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:69 ChecksumCalc:68
+[12:30:57][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:05:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C8 ChecksumCalc:C9
+[12:30:58][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:66 ChecksumCalc:65
+[12:30:58][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C7 ChecksumCalc:C8
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:06:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:68 ChecksumCalc:67
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:06:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C7 ChecksumCalc:C8
+
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:64
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+
+[12:31:04][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:01:00:FF:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:64
+[12:31:04][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+
+[12:31:04][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:31:04][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:00:07:00:00:0C:19:00:69:41 Checksum:8A ChecksumCalc:CB
+[12:31:07][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:31:07][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:00:07:00:00:0C:19:00:69:41 Checksum:8A ChecksumCalc:CB
+[12:31:07][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:31:07][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:00:07:00:00:0C:19:00:69:41 Checksum:8A ChecksumCalc:CB
+[12:31:13][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:31:13][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:00:07:00:00:0C:19:00:69:41 Checksum:8A ChecksumCalc:CB
+[12:31:13][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:31:13][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:31:13][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:00:07:00:00:0C:19:00:69:41 Checksum:8A ChecksumCalc:CB
+[12:31:31][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:31:31][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:0F:00:00:0C:19:00:69:01 Checksum:BA ChecksumCalc:BB
+[12:31:33][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:31:49][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:31:49][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:31:53][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:32:07][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:32:07][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:32:13][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:32:25][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:32:25][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:32:33][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:32:43][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:32:43][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:32:53][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:33:01][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:33:01][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:33:13][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:33:20][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:33:20][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:33:33][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:33:38][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:33:38][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:33:53][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:33:56][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:33:56][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:34:13][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:34:14][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:34:14][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:34:32][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:34:32][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:34:33][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:34:50][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:34:50][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:34:53][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:35:09][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:35:09][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:35:13][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:35:27][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:35:27][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:35:34][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:35:45][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:35:45][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:35:54][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:36:03][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:36:03][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:36:14][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:36:21][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:36:21][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:36:34][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:36:39][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:36:39][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:36:54][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:36:58][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:36:58][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:37:14][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:37:16][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:37:16][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:37:34][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:37:34][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:37:34][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+[12:37:52][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:37:52][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:38:84:08:07:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:37:54][I][iq2020.component:200]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 Data:21:01:00 Checksum:78 ChecksumCalc:78
+
+
+[13:57:11][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:14][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:0.3s
+[13:57:14][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[13:57:16][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:01:FF:FF:FF Checksum:65 ChecksumCalc:65 SinceLast:4.9s  [0B] FF->01
+[13:57:16][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:16][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:4.9s
+[13:57:16][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s  [0B] 01->FF
+[13:57:16][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:16][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:00:0F:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:0.3s  [06] 08->00  [07] 07->0F
+[13:57:33][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[13:57:34][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[13:57:34][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:34][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:18.2s  [04] 3C->38  [06] 00->08  [07] 0F->07
+[13:57:35][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.8s
+[13:57:35][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:35][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:0.8s
+[13:57:35][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s
+[13:57:35][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:35][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:0.3s
+[13:57:36][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s
+[13:57:36][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:36][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:0.3s
+[13:57:39][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:02:00:FF:01:FF:FF:FF:FF:FF Checksum:64 ChecksumCalc:64 SinceLast:2.7s  [06] FF->02
+[13:57:39][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:39][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:2.7s
+[13:57:39][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s  [06] 02->FF
+[13:57:39][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:39][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:00:0B:00:00:0D:19:00:69:81 Checksum:49 ChecksumCalc:49 SinceLast:0.3s  [06] 08->00  [07] 07->0B  [0E] 01->81
+[13:57:53][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[13:57:57][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[13:57:57][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:57][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:03:00:00:0D:19:00:69:81 Checksum:49 ChecksumCalc:49 SinceLast:18.2s  [06] 00->08  [07] 0B->03
+[13:57:58][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.8s
+[13:57:58][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:58][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:03:00:00:0D:19:00:69:81 Checksum:49 ChecksumCalc:49 SinceLast:0.8s
+[13:58:00][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:01:00:FF:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:65 SinceLast:2.2s  [06] FF->01
+[13:58:00][I][iq2020.component:295]: SWG Set:7 New:0
+[13:58:04][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:03:00:00:0D:19:00:69:81 Checksum:49 ChecksumCalc:49 SinceLast:2.2s
+[13:58:04][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s  [06] 01->FF
+[13:58:04][I][iq2020.component:295]: SWG Set:7 New:0
+[13:58:04][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:00:07:00:00:0D:19:00:69:41 Checksum:8D ChecksumCalc:8D SinceLast:0.3s  [06] 08->00  [07] 03->07  [0E] 81->41
+[13:58:13][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[13:58:18][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[13:58:18][I][iq2020.component:295]: SWG Set:7 New:0
+[13:58:18][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:06:07:00:00:0D:19:00:69:01 Checksum:C7 ChecksumCalc:C7 SinceLast:18.1s  [06] 00->06  [0E] 41->01
+[13:58:33][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[13:58:37][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[13:58:37][I][iq2020.component:295]: SWG Set:7 New:0
+[13:58:37][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:18.1s  [04] 38->3C  [06] 06->08
+[13:58:37][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s
+[13:58:37][I][iq2020.component:295]: SWG Set:7 New:0
+[13:58:39][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:0.3s
+[13:58:39][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s
+[14:57:37][I][iq2020.component:295]: SWG Set:7 New:0
+[14:57:37][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:18.2s
+[14:57:47][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[14:57:55][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.1s
+[14:57:55][I][iq2020.component:295]: SWG Set:7 New:0
+[14:57:55][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:18.1s
+[14:58:07][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[14:58:13][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.1s
+[14:58:13][I][iq2020.component:295]: SWG Set:7 New:0
+[14:58:13][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:18.1s
+[14:58:27][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[14:58:32][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[14:58:32][I][iq2020.component:295]: SWG Set:7 New:0
+[14:58:32][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0E:19:00:69:01 Checksum:C0 ChecksumCalc:C0 SinceLast:18.2s  [0A] 0D->0E
+[14:58:47][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[14:58:50][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.1s
+[14:58:50][I][iq2020.component:295]: SWG Set:7 New:0
+[14:58:50][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0E:19:00:69:01 Checksum:C0 ChecksumCalc:C0 SinceLast:18.1s
+[14:59:07][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[14:59:08][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[14:59:08][I][iq2020.component:295]: SWG Set:7 New:0
+[14:59:08][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0E:19:00:69:01 Checksum:C0 ChecksumCalc:C0 SinceLast:18.2s
+[14:59:26][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[14:59:26][I][iq2020.component:295]: SWG Set:7 New:0
+[14:59:26][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0E:19:00:69:01 Checksum:C0 ChecksumCalc:C0 SinceLast:18.2s
+[14:59:28][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+
+[16:12:23][I][iq2020.component:149]: sendCmd_ queue packet QueueSize:0 Dest:29
+[16:12:23][I][iq2020.component:149]: sendCmd_ queue packet QueueSize:1 Dest:29
+[16:12:23][I][iq2020.component:043]: Process Queue Retries:3 Attempt:1
+[16:12:23][I][iq2020.component:097]: sendCmd_ 99 -> 29 Length:0F Operation:40 Data1E:01:05:01:FF:FF:FF:00:FF:01:FF:01:FF:FF:FF Checksum:30
+[16:12:23][I][iq2020.component:315]: readline_ Full Packet 29 -> 99 Length:0F Operation:80 RESP Data:1E:01:05:00:38:84:08:07:00:00:0F:19:00:69:01 Checksum:2D ChecksumCalc:2D SinceLast:3.8s
+[16:12:23][D][iq2020.component:356]: Got response, removing from send queue Retries:3 Attempts:0
+[16:12:24][I][iq2020.component:043]: Process Queue Retries:3 Attempt:1
+[16:12:24][I][iq2020.component:097]: sendCmd_ 99 -> 29 Length:0F Operation:40 Data1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:2E
+[16:12:24][I][iq2020.component:315]: readline_ Full Packet 29 -> 99 Length:0F Operation:80 RESP Data:1E:01:05:00:38:84:00:0F:00:00:0F:19:00:69:01 Checksum:2D ChecksumCalc:2D SinceLast:0.3s  [06] 08->00  [07] 07->0F
+[16:12:24][D][iq2020.component:356]: Got response, removing from send queue Retries:3 Attempts:0
+[16:12:25][I][iq2020.component:149]: sendCmd_ queue packet QueueSize:0 Dest:29
+[16:12:25][I][iq2020.component:043]: Process Queue Retries:3 Attempt:1
+[16:12:25][I][iq2020.component:097]: sendCmd_ 99 -> 29 Length:0F Operation:40 Data1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:2E
+[16:12:25][I][iq2020.component:315]: readline_ Full Packet 29 -> 99 Length:0F Operation:80 RESP Data:1E:01:05:00:38:84:02:0F:00:00:0F:19:00:69:01 Checksum:2B ChecksumCalc:2B SinceLast:0.9s  [06] 00->02
+[16:12:25][D][iq2020.component:356]: Got response, removing from send queue Retries:3 Attempts:0
+[16:12:25][I][iq2020.component:315]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[16:12:30][I][iq2020.component:149]: sendCmd_ queue packet QueueSize:0 Dest:29
+[16:12:30][I][iq2020.component:043]: Process Queue Retries:3 Attempt:1
+[16:12:30][I][iq2020.component:097]: sendCmd_ 99 -> 29 Length:0F Operation:40 Data1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:2E
+[16:12:30][I][iq2020.component:315]: readline_ Full Packet 29 -> 99 Length:0F Operation:80 RESP Data:1E:01:05:00:38:84:08:0F:00:00:0F:19:00:69:01 Checksum:25 ChecksumCalc:25 SinceLast:5.0s  [06] 02->08
+[16:12:30][D][iq2020.component:356]: Got response, removing from send queue Retries:3 Attempts:0
+[16:12:35][I][iq2020.component:149]: sendCmd_ queue packet QueueSize:0 Dest:29
+[16:12:35][I][iq2020.component:043]: Process Queue Retries:3 Attempt:1
+[16:12:35][I][iq2020.component:097]: sendCmd_ 99 -> 29 Length:0F Operation:40 Data1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:2E
+[16:12:35][I][iq2020.component:315]: readline_ Full Packet 29 -> 99 Length:0F Operation:80 RESP Data:1E:01:05:00:38:84:08:0F:00:00:0F:19:00:69:01 Checksum:25 ChecksumCalc:25 SinceLast:5.0s
+[16:12:35][D][iq2020.component:356]: Got response, removing from send queue Retries:3 Attempts:0
+[16:12:39][I][iq2020.component:315]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[16:12:39][I][iq2020.component:368]: SWG Set:7 New:0
+[16:12:39][I][iq2020.component:315]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0F:19:00:69:01 Checksum:C3 ChecksumCalc:C3 SinceLast:18.1s
+[16:12:40][I][iq2020.component:149]: sendCmd_ queue packet QueueSize:0 Dest:29
+[16:12:40][I][iq2020.component:043]: Process Queue Retries:3 Attempt:1
+[16:12:40][I][iq2020.component:097]: sendCmd_ 99 -> 29 Length:0F Operation:40 Data1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:2E
+[16:12:40][I][iq2020.component:315]: readline_ Full Packet 29 -> 99 Length:0F Operation:80 RESP Data:1E:01:05:00:38:84:08:07:00:00:0F:19:00:69:01 Checksum:2D ChecksumCalc:2D SinceLast:5.0s  [07] 0F->07
+[16:12:40][D][iq2020.component:356]: Got response, removing from send queue Retries:3 Attempts:0
+[16:12:45][I][iq2020.component:149]: sendCmd_ queue packet QueueSize:0 Dest:29
+[16:12:45][I][iq2020.component:043]: Process Queue Retries:3 Attempt:1
+[16:12:45][I][iq2020.component:097]: sendCmd_ 99 -> 29 Length:0F Operation:40 Data1E:01:05:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:2E
+[16:12:45][I][iq2020.component:315]: readline_ Full Packet 29 -> 99 Length:0F Operation:80 RESP Data:1E:01:05:00:38:84:08:07:00:00:0F:19:00:69:01 Checksum:2D ChecksumCalc:2D SinceLast:5.0s
+[16:12:45][D][iq2020.component:356]: Got response, removing from send queue Retries:3 Attempts:0
+[16:12:45][I][iq2020.component:315]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[16:12:50][I][iq2020.component:149]: sendCmd_ queue packet QueueSize:0 Dest:29

@@ -1,0 +1,120 @@
+Set SWG % Change in value                                                                       00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:64
+0x02 = SWG Set 01-10
+0x08 = Set 0x01=New 0xFF=Existing
+
+
+Periodic
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+
+
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:01:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:64
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:66
+[12:31:04][I][iq2020.component:200]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 Data:1E:01:07:01:FF:FF:01:00:FF:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:64
+
+
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:30:59][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+[12:31:04][I][iq2020.component:200]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 Data:1E:01:07:00:3C:84:08:03:00:00:0C:19:00:69:01 Checksum:C6 ChecksumCalc:C7
+
+10s  0s     Start Testing
+27s  17s    Testing Done
+31s  21s    Boost Off
+            Testing
+50s  40s    Testing Done
+53s  43s    Boost On
+
+Start Testing
+REQ     [0B] FF->01
+REQ     [0B] 01->FF
+RESP    [06] 08->00  [07] 07->0F
++18s
+RESP    [04] 3C->38  [06] 00->08  [07] 0F->07
+
+Boost Off
+REQ     [06] FF->02
+REQ     [06] 02->FF
+RESP    [06] 08->00  [07] 07->0B  [0E] 01->81
+
+Push Start Test
+UI Says Testing
+0   [13:57:16] REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:01:FF:FF:FF Checksum:65 ChecksumCalc:65 SinceLast:4.9s  [0B] FF->01
+0   [13:57:16] REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s  [0B] 01->FF
+0   [13:57:16] RESP Data:1E:01:07:00:3C:84:00:0F:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:0.3s  [06] 08->00  [07] 07->0F
+
+UI Says Testing Done
+18  [13:57:34] RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:18.2s  [04] 3C->38  [06] 00->08  [07] 0F->07
+
+Push Boost Off
+UI Says Testing
+23  [13:57:39] REQ  Data:1E:01:07:01:FF:FF:02:00:FF:01:FF:FF:FF:FF:FF Checksum:64 ChecksumCalc:64 SinceLast:2.7s  [06] FF->02
+23  [13:57:39] REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s  [06] 02->FF
+23  [13:57:39] RESP Data:1E:01:07:00:38:84:00:0B:00:00:0D:19:00:69:81 Checksum:49 ChecksumCalc:49 SinceLast:0.3s  [06] 08->00  [07] 07->0B  [0E] 01->81
+
+UI Says Testing Done
+41  [13:57:57] RESP Data:1E:01:07:00:38:84:08:03:00:00:0D:19:00:69:81 Checksum:49 ChecksumCalc:49 SinceLast:18.2s  [06] 00->08  [07] 0B->03
+
+Push Boost On
+44  [13:58:00] REQ  Data:1E:01:07:01:FF:FF:01:00:FF:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:65 SinceLast:2.2s  [06] FF->01
+48  [13:58:04] REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s  [06] 01->FF
+48  [13:58:04] RESP Data:1E:01:07:00:38:84:00:07:00:00:0D:19:00:69:41 Checksum:8D ChecksumCalc:8D SinceLast:0.3s  [06] 08->00  [07] 03->07  [0E] 81->41
+
+62  [13:58:18] RESP Data:1E:01:07:00:38:84:06:07:00:00:0D:19:00:69:01 Checksum:C7 ChecksumCalc:C7 SinceLast:18.1s  [06] 00->06  [0E] 41->01
+81  [13:58:37] RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:18.1s  [04] 38->3C  [06] 06->08
+
+[14:58:32] RESP Data:1E:01:07:00:3C:84:08:07:00:00:0E:19:00:69:01 Checksum:C0 ChecksumCalc:C0 SinceLast:18.2s  [0A] 0D->0E
+
+
+[13:57:11][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:14][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:0.3s
+[13:57:14][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[13:57:16][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:01:FF:FF:FF Checksum:65 ChecksumCalc:65 SinceLast:4.9s  [0B] FF->01
+[13:57:16][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:16][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:4.9s
+[13:57:16][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s  [0B] 01->FF
+[13:57:16][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:16][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:00:0F:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:0.3s  [06] 08->00  [07] 07->0F
+[13:57:33][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[13:57:34][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[13:57:34][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:34][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:18.2s  [04] 3C->38  [06] 00->08  [07] 0F->07
+[13:57:35][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.8s
+[13:57:35][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:35][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:0.8s
+[13:57:35][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s
+[13:57:35][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:35][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:0.3s
+[13:57:36][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s
+[13:57:36][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:36][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:0.3s
+[13:57:39][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:02:00:FF:01:FF:FF:FF:FF:FF Checksum:64 ChecksumCalc:64 SinceLast:2.7s  [06] FF->02
+[13:57:39][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:39][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:07:00:00:0D:19:00:69:01 Checksum:C5 ChecksumCalc:C5 SinceLast:2.7s
+[13:57:39][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s  [06] 02->FF
+[13:57:39][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:39][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:00:0B:00:00:0D:19:00:69:81 Checksum:49 ChecksumCalc:49 SinceLast:0.3s  [06] 08->00  [07] 07->0B  [0E] 01->81
+[13:57:53][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[13:57:57][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[13:57:57][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:57][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:03:00:00:0D:19:00:69:81 Checksum:49 ChecksumCalc:49 SinceLast:18.2s  [06] 00->08  [07] 0B->03
+[13:57:58][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.8s
+[13:57:58][I][iq2020.component:295]: SWG Set:7 New:0
+[13:57:58][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:03:00:00:0D:19:00:69:81 Checksum:49 ChecksumCalc:49 SinceLast:0.8s
+[13:58:00][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:01:00:FF:01:FF:FF:FF:FF:FF Checksum:65 ChecksumCalc:65 SinceLast:2.2s  [06] FF->01
+[13:58:00][I][iq2020.component:295]: SWG Set:7 New:0
+[13:58:04][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:08:03:00:00:0D:19:00:69:81 Checksum:49 ChecksumCalc:49 SinceLast:2.2s
+[13:58:04][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s  [06] 01->FF
+[13:58:04][I][iq2020.component:295]: SWG Set:7 New:0
+[13:58:04][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:00:07:00:00:0D:19:00:69:41 Checksum:8D ChecksumCalc:8D SinceLast:0.3s  [06] 08->00  [07] 03->07  [0E] 81->41
+[13:58:13][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[13:58:18][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[13:58:18][I][iq2020.component:295]: SWG Set:7 New:0
+[13:58:18][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:38:84:06:07:00:00:0D:19:00:69:01 Checksum:C7 ChecksumCalc:C7 SinceLast:18.1s  [06] 00->06  [0E] 41->01
+[13:58:33][I][iq2020.component:256]: readline_ Full Packet 01 -> 21 Length:03 Operation:40 REQ  Data:21:01:00 Checksum:78 ChecksumCalc:78 SinceLast:20.1s
+[13:58:37][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:18.2s
+[13:58:37][I][iq2020.component:295]: SWG Set:7 New:0
+[13:58:37][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:18.1s  [04] 38->3C  [06] 06->08
+[13:58:37][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s
+[13:58:37][I][iq2020.component:295]: SWG Set:7 New:0
+[13:58:39][I][iq2020.component:256]: readline_ Full Packet 29 -> 01 Length:0F Operation:80 RESP Data:1E:01:07:00:3C:84:08:07:00:00:0D:19:00:69:01 Checksum:C1 ChecksumCalc:C1 SinceLast:0.3s
+[13:58:39][I][iq2020.component:256]: readline_ Full Packet 01 -> 29 Length:0F Operation:40 REQ  Data:1E:01:07:01:FF:FF:FF:00:FF:01:FF:FF:FF:FF:FF Checksum:67 ChecksumCalc:67 SinceLast:0.3s
