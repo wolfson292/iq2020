@@ -19,7 +19,8 @@ namespace iq2020 {
     auto *white = new SpaLightColor("White", 0x05);
     auto *yellow = new SpaLightColor("Yellow", 0x06);
     auto *red = new SpaLightColor("Red", 0x07);
-    light_state_->add_effects({violet, blue, cyan, green, white, yellow, red});
+    auto *cycle = new SpaLightCycle("Color Cycle");
+    light_state_->add_effects({violet, blue, cyan, green, white, yellow, red, cycle});
     violet->init_internal(this->light_state_);
     blue->init_internal(this->light_state_);
     cyan->init_internal(this->light_state_);
@@ -27,6 +28,7 @@ namespace iq2020 {
     white->init_internal(this->light_state_);
     yellow->init_internal(this->light_state_);
     red->init_internal(this->light_state_);
+    cycle->init_internal(this->light_state_);
 	}
  
   void SpaLight::write_state(light::LightState *state) {
@@ -161,8 +163,10 @@ namespace iq2020 {
       this->light_state_->publish_state();
 
       // Effect N == colour N now that both are 1-based; colour 0 means the
-      // controller has not reported one yet, so leave the effect alone.
-      if(state_on && light_num_ != 4 && color >= 1 && color <= 7) {
+      // controller has not reported one yet, so leave the effect alone. While
+      // the zone is cycling, effect 8 (Color Cycle) is showing instead - don't
+      // stomp it with the underlying colour.
+      if(state_on && light_num_ != 4 && !cycling_ && color >= 1 && color <= 7) {
         light::LightCall call2 = light_state_->make_call();
         call2.set_effect(color);
         call2.perform();
@@ -171,6 +175,30 @@ namespace iq2020 {
       
     }
 	}
+
+  void SpaLight::on_light_cycle(uint8_t light_num, bool cycling, uint8_t speed) {
+    if(light_num != light_num_) {
+      return;
+    }
+    ESP_LOGI(TAG, "on_light_cycle (from IQ2020) Light:%s Cycling:%d Speed:%s",
+      this->parent_->decodeLightNumber_(light_num).c_str(), cycling,
+      this->parent_->decodeLightSpeed_(speed).c_str());
+    if(cycling == cycling_) {
+      return;
+    }
+    cycling_ = cycling;
+    // Effect 8 is Color Cycle; 0 is "no effect". Falling back to 0 rather than
+    // the colour avoids a redundant colour command - the next status poll
+    // reports the colour and restores the matching effect.
+    light::LightCall call = light_state_->make_call();
+    call.set_effect(cycling ? 8 : 0);
+    call.perform();
+  }
+
+  void SpaLight::set_cycle(bool cycling) {
+    ESP_LOGI(TAG, "set_cycle Light:%s Cycling:%d", this->parent_->decodeLightNumber_(this->light_num_).c_str(), cycling);
+    this->parent_->set_light_cycle(this->light_num_, cycling);
+  }
 
   void SpaLight::set_color(int8_t color_num) {
     ESP_LOGI(TAG, "set_color Light:%s Color:%s", this->parent_->decodeLightNumber_(this->light_num_).c_str(), this->parent_->decodeLightColor_(color_num).c_str());

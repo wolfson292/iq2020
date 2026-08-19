@@ -26,7 +26,9 @@ class SpaLight : public Component, public light::LightOutput, public IQ2020Devic
   void on_set_temp(float temp_c) override;
   void on_heating(bool heating) override;
   void on_light(uint8_t light_num, uint8_t brightness, uint8_t color) override;
+  void on_light_cycle(uint8_t light_num, bool cycling, uint8_t speed) override;
   void set_color(int8_t color_num);
+  void set_cycle(bool cycling);
   uint8_t light_num() { return light_num_; }
 
  protected:
@@ -35,6 +37,7 @@ class SpaLight : public Component, public light::LightOutput, public IQ2020Devic
     uint8_t last_on_ = 255;
     float last_brightness_ = 100;
     uint8_t last_color_update_ = 255;
+    bool cycling_ = false;
     uint8_t last_brightnessLevel_update_ = 255;
 };
 
@@ -65,6 +68,40 @@ class SpaLightColor : public light::LightEffect {
       return nullptr;
     }
     uint8_t color_num_;
+};
+
+// The colour cycle is a separate per-zone flag rather than a colour, but it
+// belongs in the same picker as the colours from the user's point of view.
+// Selecting any colour effect stops the cycle, which is what the controller
+// does on its own when a colour changes.
+class SpaLightCycle : public light::LightEffect {
+  public:
+    explicit SpaLightCycle(const char *name) : LightEffect(name) {}
+    void apply() override { }
+    void start() override {
+      auto light = this->get_spa_light_();
+      if(light != nullptr) {
+        ESP_LOGI(TAG, "Effect SpaLightCycle Start Light:%s", light->get_parent()->decodeLightNumber_(light->light_num()).c_str());
+        light->set_cycle(true);
+      }
+    }
+    void stop() override {
+      auto light = this->get_spa_light_();
+      if(light != nullptr) {
+        ESP_LOGI(TAG, "Effect SpaLightCycle Stop Light:%s", light->get_parent()->decodeLightNumber_(light->light_num()).c_str());
+        light->set_cycle(false);
+      }
+    }
+  protected:
+    SpaLight *get_spa_light_() const {
+      if(this->state_ != nullptr) {
+        auto output = this->state_->get_output();
+        if(output != nullptr) {
+          return (SpaLight *) output;
+        }
+      }
+      return nullptr;
+    }
 };
 
 }  // namespace iq2020
