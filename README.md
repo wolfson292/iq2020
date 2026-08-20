@@ -113,6 +113,7 @@ colour cycle and its speed are separate from colour — see
 | [docs/lights.md](docs/lights.md) | Light state model and commands |
 | [docs/status-packet-0255.md](docs/status-packet-0255.md) | The `02/55` status block, byte by byte |
 | [docs/capturing.md](docs/capturing.md) | Capturing bus traffic and analysing it |
+| [docs/decoding-session.md](docs/decoding-session.md) | What to do at the spa to decode unknown fields |
 | [docs/captures/](docs/captures/) | Raw bus captures |
 
 The frame is short enough to state here:
