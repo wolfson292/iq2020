@@ -107,6 +107,7 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   SUB_SENSOR(swg_spa_size)
   SUB_SENSOR(swg_output_level)
   SUB_SENSOR(swg_salt_test)
+  SUB_SENSOR(swg_cell_state)
   
   SUB_SWITCH(clean_mode)
   SUB_SWITCH(jets1)

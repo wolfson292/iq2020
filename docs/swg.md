@@ -36,13 +36,27 @@ parses.
 | 1 | `salt_test_reading` | 15 raises "Test Water & Confirm Level", 20 raises "Level Set To 3". Above 9 it also locks the level out of adjustment. Cleared when the level changes or the prompt is acknowledged. |
 | 2 | **Packed** | Low 2 bits = `condition_code`, high 6 bits = `salinity_index`. |
 | 3 | `cartridge_days` | Age in days. 120 (4 months) triggers the replace prompt; acknowledging it snoozes for 7 days. |
-| 4 | `passthrough_1` | Relay only — see below. |
+| 4 | `cell_state` | Relayed untouched by the controller, but **not static** — see below. |
 | 5 | `flags` | bit 0 generating, bit 1 active, bit 2 24-hour boost, bit 3 test lockout, bit 5 cartridge-service gate. |
 | 6 | `error_code` | Shown on the panel as "Error N". |
 | 7 | Status (variant B only) | Folded in as `byte7 * 10 + byte6`. |
-| 8–10 | `cell_runtime` | 24-bit **little-endian** counter. |
+| 8–10 | `cell_runtime` | 24-bit **little-endian** counter, in hours — see below. |
 | 11 | `passthrough_2` | Relay only — see below. |
-| 12 | `cartridge_state` | Low nibble is cartridge presence: 0 = absent, 1 = seated. Bits 6–7 (variant C) or 4–5 (variant B) carry separate flags. |
+| 12 | `cartridge_state` | Low nibble is cartridge presence: 0 = absent, 1 = seated. Bits 6–7 (variant C) or 4–5 (variant B) carry separate flags; they were observed cycling through `0x00`, `0x40` and `0x80`. |
+
+### Counter cadence and the flags byte
+
+Two things the captures settle that the protocol alone does not:
+
+**The counter at bytes 8–10 is in hours, and only counts generation.** It
+advanced by one at intervals of 145, 61 and 74 minutes of wall clock — which is
+what an hours counter looks like on a cell running at part duty, not a
+wall-clock timer.
+
+**Flags bit 0 was set in all 190 captured frames.** It never once cleared, at
+output levels from 0 to 10. So treat "generating" as closer to *powered and
+present* than to *actively producing right now*; bit 2 (boost) and bit 3 (test)
+are the bits observed to actually move. Bit 1 was likewise always set.
 
 `condition_code` is a 2-bit class: **1** means the summer timer is suppressing
 output, **3** means low salt. It is forced to 3 whenever the salinity index reads
@@ -52,14 +66,31 @@ Cartridge presence is worth calling out because it is what the controller's own
 replace wizard waits on — the wizard advances when the byte reads 0 (after
 "Remove Cartridge Now") and again when it reads 1 (after "Insert New Cartridge").
 
-### Bytes 4 and 11 are relay-only
+### Bytes 4 and 11 are relayed without interpretation
 
-The controller writes these two straight from the module's frame and never reads
-them again except to copy them back out into its `1E/03` summary (offsets 8 and
-7). Nothing else in the controller touches them. So their meaning cannot be
-recovered from the controller side at all — only the salt module itself knows
-what they are. They are named `passthrough_1` / `passthrough_2` to say exactly
-that, rather than implying a meaning nobody has established.
+The controller copies both straight from the module's frame into its `1E/03`
+summary (offsets 8 and 7) and never looks at them. So their meaning cannot be
+recovered from the controller side — only the salt module itself knows.
+
+They behave very differently on the wire, though, and that is worth acting on:
+
+- **Byte 11 is static.** It held `0x69` across all 190 frames in the capture set.
+- **Byte 4 moves.** It takes values 0, 2, 6 and 8, and steps during a water test
+  (`8 → 0 → 2 → 8` over seven seconds in one capture). This component publishes
+  it raw as `swg_cell_state` so it can be correlated against real behaviour;
+  the name says where it comes from, not what it means.
+
+### Frames addressed to `0x99`
+
+The module normally answers the controller at `0x01`, but it also emits frames
+addressed to **`0x99`** — seven of them in the capture set, clustered around
+water-test activity, with valid checksums and well-formed payloads.
+
+The controller ignores these: its receive path only accepts frames addressed to
+its own address or to broadcast. **A sniffer should not.** The state they carry
+is exactly as good as the frames sent to `0x01`, and filtering on destination
+throws away updates precisely when something interesting is happening. This
+component matches `1E/01` from `0x24`/`0x29` regardless of destination.
 
 **Byte 2 is two fields, not one.** Decode it as:
 

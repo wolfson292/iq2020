@@ -1639,7 +1639,14 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
             // ("legacy") module and 0x24 the ACE module. This is the same test the
             // controller makes, and it is what resolves which of the three 1E/03
             // layouts the controller will subsequently emit.
-            else if((src == 0x29 || src == 0x24) && dest == 0x01 && operation == 0x80
+            // Deliberately NOT filtered on destination. The module normally
+            // answers the controller at 0x01, but it also emits frames addressed
+            // to 0x99 - seen clustered around water-test activity in
+            // docs/captures, with valid checksums and a well-formed payload. The
+            // controller drops those (its destination check only accepts its own
+            // address or broadcast), but a sniffer has no reason to: the state
+            // they carry is just as good, and filtering them out loses updates.
+            else if((src == 0x29 || src == 0x24) && operation == 0x80
                     && data.size() >= 15 && data[0] == 0x1e && data[1] == 0x01) {
                 ESP_LOGI(TAG, "RAW SWG Packet Src:%s Dest:%s Operation:0x%02X Data:%s Length:%d", decodeAddr_(src).c_str(), decodeAddr_(dest).c_str(), operation, buffer_to_string_(data).c_str(), data.size());
 
@@ -1659,6 +1666,11 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 // ("Remove Cartridge Now" satisfied) and again when it reads 1
                 // ("Insert New Cartridge" satisfied).
                 uint8_t cartridge  = p[12] & 0x0F;
+                // p[4] is relayed untouched by the controller, but it is NOT
+                // static: captures show it moving between 0, 2, 6 and 8, and
+                // stepping during a water test. Exposed raw so it can be
+                // correlated against the spa; its meaning is not established.
+                uint8_t cell_state = p[4];
 
                 // A salinity index of zero forces the "low" class, before
                 // anything else looks at it.
@@ -1759,6 +1771,9 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 // prompt is acknowledged.
                 if(this->swg_salt_test_sensor_ != nullptr) {
                     this->swg_salt_test_sensor_->publish_state(test_val);
+                }
+                if(this->swg_cell_state_sensor_ != nullptr) {
+                    this->swg_cell_state_sensor_->publish_state(cell_state);
                 }
                 if(this->swg_status_text_sensor_ != nullptr) {
                     this->swg_status_text_sensor_->publish_state(this->decodeSWGStatus_(status));

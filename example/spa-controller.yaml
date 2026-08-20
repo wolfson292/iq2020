@@ -108,6 +108,8 @@ sensor:
       name: "SWG Output Level"
     swg_salt_test:
       name: "SWG Salt Test"
+    swg_cell_state:
+      name: "SWG Cell State"
     swg_salinity:
       name: "SWG Salinity"
     swg_salinity_index:

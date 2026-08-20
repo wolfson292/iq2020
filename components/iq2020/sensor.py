@@ -94,6 +94,7 @@ CONF_SWG_CELL_RUNTIME = "swg_cell_runtime"
 CONF_SWG_SPA_SIZE = "swg_spa_size"
 CONF_SWG_OUTPUT_LEVEL = "swg_output_level"
 CONF_SWG_SALT_TEST = "swg_salt_test"
+CONF_SWG_CELL_STATE = "swg_cell_state"
 
 
 TYPES = (
@@ -152,6 +153,7 @@ TYPES = (
     CONF_SWG_SPA_SIZE,
     CONF_SWG_OUTPUT_LEVEL,
     CONF_SWG_SALT_TEST,
+    CONF_SWG_CELL_STATE,
 )
 
 CONFIG_SCHEMA = cv.Schema(
@@ -444,9 +446,20 @@ CONFIG_SCHEMA = cv.Schema(
             icon=ICON_WATER,
             entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
         ),
-        # 24-bit counter from the SWG module. Believed to be cell runtime.
+        # 24-bit counter from the SWG module. Captures put its cadence at one
+        # count per 60-145 minutes of wall clock, which is what a counter that
+        # only advances while the cell is generating looks like at part duty.
         cv.Optional(CONF_SWG_CELL_RUNTIME): sensor.sensor_schema(
+            unit_of_measurement="h",
+            device_class=DEVICE_CLASS_DURATION,
             icon=ICON_TIMER,
+            entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
+        ),
+        # Live state byte relayed by the controller without being interpreted.
+        # Observed values 0, 2, 6, 8, stepping during a water test. Raw on
+        # purpose - the meaning is not established.
+        cv.Optional(CONF_SWG_CELL_STATE): sensor.sensor_schema(
+            icon=ICON_MAGNET,
             entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
         ),
         cv.Optional(CONF_SWG_SPA_SIZE): sensor.sensor_schema(
