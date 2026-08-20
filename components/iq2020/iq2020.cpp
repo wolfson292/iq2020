@@ -158,6 +158,7 @@ void IQ2020Component::update() {
         this->sendCMDGetDataExtended();
         this->sendCMDGetLightStatus();
         this->sendCMDGetSWG();
+        this->sendCMDGetFilterConfig();
         this->sendCmdGetAudio();
         sent_get_lights_since_last_cycle_ = false;
     } else {
@@ -206,18 +207,80 @@ void IQ2020Component::sendCMDGetDataExtended() {
     this->sendCmd_(remote_addr_, 0x01, data);
 }
 
-void IQ2020Component::sendCmdSetJets(uint8_t jet, bool on)
+// The whole 0x0B control group shares one encoding: the payload byte is the
+// desired state + 1, so 1 = off and 2 = on. Jets extend that to speeds, where
+// the byte is speed + 1. A payload of 0 is a query - the controller changes
+// nothing and just answers with the current value.
+//
+// Every 0x0B command answers with a single byte carrying the resulting state,
+// so the reply is worth parsing: it reports what the controller actually did,
+// which is not always what was asked. A single-speed pump silently promotes
+// speed 1 to speed 2, and an unconfigured jet reports 0 whatever you send.
+void IQ2020Component::sendCmdSetJets(uint8_t jet, uint8_t speed)
 {
-    if(jet == 0x01)
-    {
-        std::vector<uint8_t> data = {0x0b, 0x02, 0x01};
-        if(on == true)
-        {
-            data[2] = 0x03;
-        }
-        this->sendCmd_(remote_addr_, 0x01, data);
-        this->sendCMDGetDataExtended();
+    if(jet < 1 || jet > 3) {
+        ESP_LOGW(TAG, "sendCmdSetJets ignoring out-of-range jet:%d", jet);
+        return;
     }
+    if(speed > 2) {
+        ESP_LOGW(TAG, "sendCmdSetJets jet:%d clamping speed:%d to 2", jet, speed);
+        speed = 2;
+    }
+    // 0x0B/0x02, 0x03, 0x04 for jets 1, 2, 3.
+    std::vector<uint8_t> data = {0x0b, (uint8_t)(0x01 + jet), (uint8_t)(speed + 1)};
+    ESP_LOGI(TAG, "sendCmdSetJets jet:%d speed:%d", jet, speed);
+    this->sendCmd_(remote_addr_, 0x01, data);
+    this->sendCMDGetDataExtended();
+}
+
+void IQ2020Component::sendCmdQueryJets(uint8_t jet)
+{
+    if(jet < 1 || jet > 3) {
+        return;
+    }
+    std::vector<uint8_t> data = {0x0b, (uint8_t)(0x01 + jet), 0x00};
+    this->sendCmd_(remote_addr_, 0x01, data);
+}
+
+void IQ2020Component::sendCmdSetBlower(bool on)
+{
+    ESP_LOGI(TAG, "sendCmdSetBlower %s", on ? "On" : "Off");
+    std::vector<uint8_t> data = {0x0b, 0x07, (uint8_t)(on ? 0x02 : 0x01)};
+    this->sendCmd_(remote_addr_, 0x01, data);
+    this->sendCMDGetDataExtended();
+}
+
+void IQ2020Component::sendCmdSetSummerTimer(bool on)
+{
+    ESP_LOGI(TAG, "sendCmdSetSummerTimer %s", on ? "On" : "Off");
+    std::vector<uint8_t> data = {0x0b, 0x1c, (uint8_t)(on ? 0x02 : 0x01)};
+    this->sendCmd_(remote_addr_, 0x01, data);
+    this->sendCMDGetDataExtended();
+}
+
+void IQ2020Component::sendCmdSetSpaLock(bool on)
+{
+    ESP_LOGI(TAG, "sendCmdSetSpaLock %s", on ? "Locked" : "Unlocked");
+    std::vector<uint8_t> data = {0x0b, 0x1d, (uint8_t)(on ? 0x02 : 0x01)};
+    this->sendCmd_(remote_addr_, 0x01, data);
+    this->sendCMDGetDataExtended();
+}
+
+void IQ2020Component::sendCmdSetTempLock(bool on)
+{
+    ESP_LOGI(TAG, "sendCmdSetTempLock %s", on ? "Locked" : "Unlocked");
+    std::vector<uint8_t> data = {0x0b, 0x1e, (uint8_t)(on ? 0x02 : 0x01)};
+    this->sendCmd_(remote_addr_, 0x01, data);
+    this->sendCMDGetDataExtended();
+}
+
+// 0x02/0x41 reads and writes the two filter cycle times plus the econ flag.
+// The trailing flags byte gates the write: bit 7 commits the times, bit 6
+// commits econ from bit 0. Sent all-zero it is a pure read.
+void IQ2020Component::sendCMDGetFilterConfig()
+{
+    std::vector<uint8_t> data = {0x02, 0x41, 0x00, 0x00, 0x00, 0x00, 0x00};
+    this->sendCmd_(remote_addr_, 0x01, data);
 }
 
 void IQ2020Component::sendCmdSetCleanMode(bool state) {
@@ -1290,6 +1353,70 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 }
             }
 
+            // 0x0B control group replies. Every one is a single byte holding the
+            // state the controller settled on, which can differ from what was
+            // requested - a single-speed pump promotes speed 1 to 2, and an
+            // unconfigured jet or blower answers 0 regardless.
+            else if(src == 0x01 && dest == 0x1f && operation == 0x80 && data.size() >= 3 && data[0] == 0x0b &&
+                    (data[1] == 0x02 || data[1] == 0x03 || data[1] == 0x04))
+            {
+                uint8_t jet = data[1] - 0x01;   // 0x02..0x04 -> 1..3
+                uint8_t speed = data[2];
+                ESP_LOGI(TAG, "Jets %d Speed:%d", jet, speed);
+                switch_::Switch *sw = (jet == 1) ? this->jets1_switch_
+                                    : (jet == 2) ? this->jets2_switch_
+                                                 : this->jets3_switch_;
+                if(sw != nullptr) {
+                    sw->publish_state(speed != 0);
+                }
+            }
+
+            else if(src == 0x01 && dest == 0x1f && operation == 0x80 && data.size() >= 3 && data[0] == 0x0b && data[1] == 0x07)
+            {
+                ESP_LOGI(TAG, "Blower Speed:%d", data[2]);
+                if(this->blower_switch_ != nullptr) {
+                    this->blower_switch_->publish_state(data[2] != 0);
+                }
+            }
+
+            else if(src == 0x01 && dest == 0x1f && operation == 0x80 && data.size() >= 3 && data[0] == 0x0b &&
+                    (data[1] == 0x1c || data[1] == 0x1d || data[1] == 0x1e))
+            {
+                bool on = data[2] != 0;
+                switch_::Switch *sw = (data[1] == 0x1c) ? this->summer_timer_switch_
+                                    : (data[1] == 0x1d) ? this->spa_lock_switch_
+                                                        : this->temp_lock_switch_;
+                ESP_LOGI(TAG, "0B/%02X State:%d", data[1], on);
+                if(sw != nullptr) {
+                    sw->publish_state(on);
+                }
+            }
+
+            // 0x02/0x41 - filter cycle times and the econ / circulation flags.
+            // The two times also appear in the 02/55 status block; this reply is
+            // the only place the econ and circulation bits are exposed.
+            else if(src == 0x01 && dest == 0x1f && operation == 0x80 && data.size() >= 7 && data[0] == 0x02 && data[1] == 0x41)
+            {
+                uint16_t filter1 = read_uint16(data, 2);
+                uint16_t filter2 = read_uint16(data, 4);
+                bool econ = (data[6] & 0x01) != 0;
+                bool circ = (data[6] & 0x02) != 0;
+                ESP_LOGI(TAG, "Filter Config Filter1:%d Filter2:%d Econ:%d Circ:%d", filter1, filter2, econ, circ);
+
+                if(this->filter1_time_sensor_ != nullptr) {
+                    this->filter1_time_sensor_->publish_state(filter1);
+                }
+                if(this->filter2_time_sensor_ != nullptr) {
+                    this->filter2_time_sensor_->publish_state(filter2);
+                }
+                if(this->econ_mode_binary_sensor_ != nullptr) {
+                    this->econ_mode_binary_sensor_->publish_state(econ);
+                }
+                if(this->circulation_binary_sensor_ != nullptr) {
+                    this->circulation_binary_sensor_->publish_state(circ);
+                }
+            }
+
             // Get Versions
             else if(src == 0x01 && dest == 0x1f && operation == 0x80 && length == 0x17 && data[0] == 0x01 && data[1] == 0x00)
             {
@@ -1481,6 +1608,11 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 uint8_t flags      = p[5];          // b0 generating, b2 boost
                 uint8_t error_code = p[6];
                 uint32_t runtime   = (uint32_t) p[8] | ((uint32_t) p[9] << 8) | ((uint32_t) p[10] << 16);
+                // Low nibble of payload[12] is cartridge presence. The controller's
+                // replace wizard waits on it: it steps forward when this reads 0
+                // ("Remove Cartridge Now" satisfied) and again when it reads 1
+                // ("Insert New Cartridge" satisfied).
+                uint8_t cartridge  = p[12] & 0x0F;
 
                 // A salinity index of zero forces the "low" class, before
                 // anything else looks at it.
@@ -1503,7 +1635,7 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 bool boost      = (flags & 0x04) != 0;
                 bool cartridge_due = cell_days >= 120;   // the 4-month replace prompt
 
-                ESP_LOGI(TAG, "SWG %s Level:%d Salinity:%d(idx %d) Class:%d CellDays:%d Flags:0x%02X Error:%d Runtime:%u",
+                ESP_LOGI(TAG, "SWG %s Level:%d Salinity:%.0f%%(idx %d) Class:%d CellDays:%d Flags:0x%02X Error:%d Runtime:%u",
                     is_freshwater ? "FreshWater" : "ACE",
                     level, swg_salinity_from_index(salinity_i), salinity_i,
                     status_cls, cell_days, flags, error_code, (unsigned) runtime);
@@ -1568,6 +1700,16 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 }
                 if(this->swg_cartridge_due_binary_sensor_ != nullptr) {
                     this->swg_cartridge_due_binary_sensor_->publish_state(cartridge_due);
+                }
+                if(this->swg_cartridge_present_binary_sensor_ != nullptr) {
+                    this->swg_cartridge_present_binary_sensor_->publish_state(cartridge == 1);
+                }
+                // Salt test reading. Drives the panel's "Test Water & Confirm
+                // Level" prompt at 15 and "Level Set To 3" at 20, and locks level
+                // adjustment above 9. Cleared when the level changes or the
+                // prompt is acknowledged.
+                if(this->swg_salt_test_sensor_ != nullptr) {
+                    this->swg_salt_test_sensor_->publish_state(test_val);
                 }
                 if(this->swg_status_text_sensor_ != nullptr) {
                     this->swg_status_text_sensor_->publish_state(this->decodeSWGStatus_(status));
@@ -1674,17 +1816,28 @@ std::string IQ2020Component::decodeLightSpeed_(uint8_t raw) {
 }
 
 // Salinity index (payload[2] >> 2) -> the value the controller puts on the panel.
-// The controller adds 249 to the table entry; indices >= 32 read as 0 before
-// the offset is applied.
-uint16_t IQ2020Component::swg_salinity_from_index(uint8_t index) {
+// Salinity index -> position along the panel's salt scale, as a percentage.
+//
+// The panel does not show a salt concentration anywhere - it draws a marker on a
+// bar. The controller converts the index through this table to get how far along
+// that bar the marker sits, then adds a fixed origin to turn it into a screen
+// coordinate. The origin is display geometry, not measurement, so it is left out
+// here: what is reported is the position on the scale, 0-100%, which is exactly
+// what the bar shows.
+//
+// Indices of 32 or more read as 0. The table is deliberately non-linear - about
+// 5 units of travel per index at the bottom, 3 through the middle, and 6-7 at
+// the top - so the marker barely moves while salt is in range and swings hard at
+// the extremes.
+float IQ2020Component::swg_salinity_from_index(uint8_t index) {
     static const uint8_t table[32] = {
           0,   5,  10,  15,  20,  25,  30,  35,
          40,  45,  50,  53,  56,  60,  63,  66,
          69,  73,  76,  79,  82,  85,  89,  92,
          95, 100, 106, 113, 119, 126, 132, 139,
     };
-    uint8_t base = (index < 32) ? table[index] : 0;
-    return (uint16_t) base + 249;
+    uint8_t pos = (index < 32) ? table[index] : 0;
+    return (float) pos * 100.0f / 139.0f;
 }
 
 // Human-readable SWG status. This mirrors the controller's own logic, restricted

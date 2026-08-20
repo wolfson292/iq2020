@@ -118,10 +118,12 @@ data byte; the `0x1C` is excluded. `op` bit 6 requests a response, bit 7 marks
 one.
 
 [docs/protocol.md](docs/protocol.md) ends with an explicit note on confidence.
-Two things are worth knowing before relying on the docs: the light **colour
-names** are fitted to hardware observation rather than read off the bus, and the
-**salinity unit** is unknown — the conversion is exact, but nothing labels the
-result.
+One thing is worth knowing before relying on the docs: the light **colour names**
+are fitted to hardware observation rather than read off the bus.
+
+On salinity — the panel shows a **bar, not a ppm figure**, and no salt
+concentration exists anywhere on the bus. `swg_salinity` reports the marker's
+position along that bar as a percentage. See [docs/swg.md](docs/swg.md).
 
 ## Licence
 

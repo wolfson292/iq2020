@@ -93,6 +93,7 @@ CONF_SWG_SALINITY_INDEX = "swg_salinity_index"
 CONF_SWG_CELL_RUNTIME = "swg_cell_runtime"
 CONF_SWG_SPA_SIZE = "swg_spa_size"
 CONF_SWG_OUTPUT_LEVEL = "swg_output_level"
+CONF_SWG_SALT_TEST = "swg_salt_test"
 
 
 TYPES = (
@@ -150,6 +151,7 @@ TYPES = (
     CONF_SWG_CELL_RUNTIME,
     CONF_SWG_SPA_SIZE,
     CONF_SWG_OUTPUT_LEVEL,
+    CONF_SWG_SALT_TEST,
 )
 
 CONFIG_SCHEMA = cv.Schema(
@@ -429,9 +431,12 @@ CONFIG_SCHEMA = cv.Schema(
         cv.Optional(CONF_SWG_ERROR): sensor.sensor_schema(
             icon=ICON_MAGNET,
         ),
-        # Salinity as the controller displays it: table[index] + 249. Nothing
-        # on the bus attaches a unit, so none is claimed here.
+        # Position along the panel's salt scale, 0-100%. The panel shows a bar,
+        # not a concentration, and nothing on the bus carries a ppm figure - so
+        # this reports where the marker sits, which is what you actually see.
         cv.Optional(CONF_SWG_SALINITY): sensor.sensor_schema(
+            unit_of_measurement=UNIT_PERCENT,
+            accuracy_decimals=0,
             icon=ICON_WATER,
         ),
         # Raw 6-bit salinity index, 0-63. >= 24 is the controller's "high" test.
@@ -451,6 +456,12 @@ CONFIG_SCHEMA = cv.Schema(
         # Output level 0-10 as reported by the module itself.
         cv.Optional(CONF_SWG_OUTPUT_LEVEL): sensor.sensor_schema(
             icon=ICON_MAGNET,
+        ),
+        # Salt test reading. 15 raises the "Test Water" prompt, 20 the
+        # "Level Set To 3" prompt, and anything above 9 locks level adjustment.
+        cv.Optional(CONF_SWG_SALT_TEST): sensor.sensor_schema(
+            icon=ICON_WATER,
+            entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
         ),
 
 

@@ -100,6 +100,8 @@ sensor:
       id: swg_error
     swg_output_level:
       name: "SWG Output Level"
+    swg_salt_test:
+      name: "SWG Salt Test"
     swg_salinity:
       name: "SWG Salinity"
     swg_salinity_index:
@@ -215,6 +217,12 @@ binary_sensor:
       name: "SWG Boost Cycle"
     swg_cartridge_due:
       name: "SWG Cartridge Due"
+    swg_cartridge_present:
+      name: "SWG Cartridge Present"
+    econ_mode:
+      name: "Econ Mode"
+    circulation:
+      name: "Circulation"
 
   
 datetime:
@@ -258,7 +266,23 @@ switch:
       name: "Clean Mode"
       id: clean_mode
     jets1:
-      name: "Jets"
+      name: "Jets 1"
+    # Jets 2 and 3 and the blower exist on larger spas. Leave them out if your
+    # spa does not have them - the controller answers 0 for anything it is not
+    # configured for, so they would simply sit at off.
+    jets2:
+      name: "Jets 2"
+    jets3:
+      name: "Jets 3"
+    blower:
+      name: "Blower"
+    # Config-category switches: these mirror the panel's lock and timer options.
+    summer_timer:
+      name: "Summer Timer"
+    spa_lock:
+      name: "Spa Lock"
+    temp_lock:
+      name: "Temp Lock"
   - platform: gpio
     pin: GPIO17
     name: "LDO2"

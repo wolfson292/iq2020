@@ -32,17 +32,34 @@ parses.
 
 | Byte | Field | Notes |
 |---|---|---|
-| 0 | Output level | 0–10. Anything above 10 is treated as 3. |
-| 1 | Salt test reading | Drives the "Test Water" / "Level Set To 3" prompts. Above 9 it also locks the level out of adjustment. |
-| 2 | **Packed** | Low 2 bits = status class, high 6 bits = salinity index. |
-| 3 | Cartridge age | In days. 120 (4 months) triggers the replace prompt. |
-| 4 | Unknown | |
-| 5 | Flags | bit 0 generating, bit 1 active, bit 2 24-hour boost, bit 3 test/lockout. |
-| 6 | Error code | Shown on the panel as "Error N". |
+| 0 | `output_level` | 0–10. Anything above 10 is treated as 3. |
+| 1 | `salt_test_reading` | 15 raises "Test Water & Confirm Level", 20 raises "Level Set To 3". Above 9 it also locks the level out of adjustment. Cleared when the level changes or the prompt is acknowledged. |
+| 2 | **Packed** | Low 2 bits = `condition_code`, high 6 bits = `salinity_index`. |
+| 3 | `cartridge_days` | Age in days. 120 (4 months) triggers the replace prompt; acknowledging it snoozes for 7 days. |
+| 4 | `passthrough_1` | Relay only — see below. |
+| 5 | `flags` | bit 0 generating, bit 1 active, bit 2 24-hour boost, bit 3 test lockout, bit 5 cartridge-service gate. |
+| 6 | `error_code` | Shown on the panel as "Error N". |
 | 7 | Status (variant B only) | Folded in as `byte7 * 10 + byte6`. |
-| 8–10 | Counter | 24-bit **little-endian**. Believed to be cell runtime. |
-| 11 | Unknown | |
-| 12 | Packed flags | Low nibble, plus bits 6–7 (variant C) or 4–5 (variant B). |
+| 8–10 | `cell_runtime` | 24-bit **little-endian** counter. |
+| 11 | `passthrough_2` | Relay only — see below. |
+| 12 | `cartridge_state` | Low nibble is cartridge presence: 0 = absent, 1 = seated. Bits 6–7 (variant C) or 4–5 (variant B) carry separate flags. |
+
+`condition_code` is a 2-bit class: **1** means the summer timer is suppressing
+output, **3** means low salt. It is forced to 3 whenever the salinity index reads
+zero, before anything else looks at it.
+
+Cartridge presence is worth calling out because it is what the controller's own
+replace wizard waits on — the wizard advances when the byte reads 0 (after
+"Remove Cartridge Now") and again when it reads 1 (after "Insert New Cartridge").
+
+### Bytes 4 and 11 are relay-only
+
+The controller writes these two straight from the module's frame and never reads
+them again except to copy them back out into its `1E/03` summary (offsets 8 and
+7). Nothing else in the controller touches them. So their meaning cannot be
+recovered from the controller side at all — only the salt module itself knows
+what they are. They are named `passthrough_1` / `passthrough_2` to say exactly
+that, rather than implying a meaning nobody has established.
 
 **Byte 2 is two fields, not one.** Decode it as:
 
@@ -54,20 +71,38 @@ salinity_idx = payload[2] >> 2        # 0..63
 A salinity index of zero forces the status class to 3 (low), before anything
 else examines it.
 
-### Salinity
+### Salinity — there is no ppm figure anywhere
 
-The index is not a reading — it is a table lookup. It converts through a
-32-entry table, plus an offset of 249:
+This is the field most likely to be misread, so it is worth being precise about
+what it is and is not.
+
+**The panel never displays a salt concentration.** There is no `ppm` string
+anywhere in the controller, and no numeric salt reading is drawn. What the panel
+shows is a **marker on a bar**. The index is converted through a 32-entry table
+to get how far along that bar the marker sits:
 
 ```
 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 53, 56, 60, 63, 66,
 69, 73, 76, 79, 82, 85, 89, 92, 95, 100, 106, 113, 119, 126, 132, 139
 ```
 
-An index of 32 or more reads as 0 before the offset. The resulting range is
-249–388. **Nothing on the bus labels this value with a unit**, so this component
-publishes it without one rather than guessing at ppm and a scale factor. An index
-of 24 or above is treated as "high salt".
+An index of 32 or more reads as 0. The controller then adds a fixed origin of
+249 to turn that into a screen X coordinate and emits two draw commands: a fixed
+element at `(249, 124)` and the moving marker at `(249 + table[index], 117)`.
+
+Those are pixel coordinates, in the same parameter slots the home screen uses to
+place the water temperature at `(100, 35)` and its "F" suffix at `(385, 110)`.
+**So `249 + table[index]` is a screen position, not a measurement** — reporting it
+as a salinity value conflates the reading with display geometry.
+
+What is meaningful is `table[index]`, the marker's travel along a 139-unit scale.
+This component publishes that as a percentage, which is exactly what the bar
+shows. The raw index is published separately.
+
+The table is deliberately non-linear — roughly 5 units of travel per index at the
+bottom, 3 through the middle, 6–7 at the top — so the marker barely moves while
+salt is in range and swings hard at the extremes. An index of 24 or above is
+treated as "high salt", which lands at 95/139 ≈ 68% of the bar.
 
 ### Request (controller → module)
 

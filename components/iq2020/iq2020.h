@@ -48,6 +48,9 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   SUB_BINARY_SENSOR(swg_generating)
   SUB_BINARY_SENSOR(swg_boost)
   SUB_BINARY_SENSOR(swg_cartridge_due)
+  SUB_BINARY_SENSOR(swg_cartridge_present)
+  SUB_BINARY_SENSOR(econ_mode)
+  SUB_BINARY_SENSOR(circulation)
   
   SUB_SENSOR(jets1_timeout)
   SUB_SENSOR(jets2_timeout)
@@ -103,9 +106,16 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   SUB_SENSOR(swg_cell_runtime)
   SUB_SENSOR(swg_spa_size)
   SUB_SENSOR(swg_output_level)
+  SUB_SENSOR(swg_salt_test)
   
   SUB_SWITCH(clean_mode)
   SUB_SWITCH(jets1)
+  SUB_SWITCH(jets2)
+  SUB_SWITCH(jets3)
+  SUB_SWITCH(blower)
+  SUB_SWITCH(summer_timer)
+  SUB_SWITCH(spa_lock)
+  SUB_SWITCH(temp_lock)
   
   SUB_NUMBER(swg_level)
 
@@ -126,7 +136,16 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   void sendCMDGetSWG();
   void sendCmdSetCleanMode(bool state);
   void sendCmdSetTemp(float temp_c);
-  void sendCmdSetJets(uint8_t jet, bool on);
+  // jet is 1..3, speed 0 = off. Two-speed pumps accept 1 and 2; single-speed
+  // pumps are coerced to 2 by the controller.
+  void sendCmdSetJets(uint8_t jet, uint8_t speed);
+  void sendCmdSetJets(uint8_t jet, bool on) { this->sendCmdSetJets(jet, (uint8_t)(on ? 2 : 0)); }
+  void sendCmdQueryJets(uint8_t jet);
+  void sendCmdSetBlower(bool on);
+  void sendCmdSetSummerTimer(bool on);
+  void sendCmdSetSpaLock(bool on);
+  void sendCmdSetTempLock(bool on);
+  void sendCMDGetFilterConfig();
   void sendCmdSetSWG(float value);
   void sendCmdSetLightColorUp(uint8_t lightNum);
   void sendCmdSetLightColorDown(uint8_t lightNum);
@@ -161,8 +180,8 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   std::string decodeLightSpeed_(uint8_t raw);
   std::string decodeSWGStatus_(uint8_t raw);
 
-  // Salinity index -> the value the controller displays.
-  static uint16_t swg_salinity_from_index(uint8_t index);
+  // Salinity index -> position along the panel's salt scale, 0-100%.
+  static float swg_salinity_from_index(uint8_t index);
   
 
   void set_simulate_music(bool simulate) { simulate_music_ = simulate; }

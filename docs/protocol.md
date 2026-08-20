@@ -99,14 +99,14 @@ The controller dispatches on `data[0]` (group) and `data[1]` (command).
 |---|---|
 | `01/00` | Get versions |
 | `01/09` | Set temperature |
-| `02/41` | Undocumented |
+| `02/41` | Filter cycle times and econ — see below |
 | `02/4C` | Get/set clock |
-| `02/50` | Undocumented |
+| `02/50` | Diagnostic toggle; only acts when `payload[0] == 6` |
 | `02/55` | Status block — see [status-packet-0255.md](status-packet-0255.md) |
 | `02/56` | Extended status block |
 | `02/73` | Hangs the controller until its watchdog resets it |
 | `0B/01` | Ping |
-| `0B/02`–`04` | Jets 1/2/3 |
+| `0B/02`–`04` | Jets 1/2/3 — see below |
 | `0B/07` | Blower |
 | `0B/1C` | Summer timer |
 | `0B/1D` | Spa lock |
@@ -122,6 +122,56 @@ The controller dispatches on `data[0]` (group) and `data[1]` (command).
 | `1E/02` | Set salt level |
 | `1E/03` | Get salt status — see [swg.md](swg.md) |
 
+## The `0x0B` control group
+
+Every command in this group shares one encoding. The payload is a single byte
+holding **the desired state plus one**:
+
+| Byte | Meaning |
+|---|---|
+| `0` | Query — change nothing, just report |
+| `1` | Off |
+| `2` | On |
+
+Jets extend the same idea to speeds, so the byte is `speed + 1`: `1` is off, `2`
+is speed 1, `3` is speed 2. Jets 1, 2 and 3 are commands `0x02`, `0x03`, `0x04`.
+
+**Every reply is a single byte carrying the state the controller settled on**,
+which is worth parsing rather than assuming the command took:
+
+- A single-speed pump silently promotes speed 1 to speed 2.
+- A jet or blower the spa is not configured for answers `0` no matter what you
+  send, so an absent device reports itself as off rather than erroring.
+- The summer timer answers `0` if the feature is disabled for the spa.
+
+The locks (`0x1D` spa lock, `0x1E` temperature lock) use plain `1` = unlocked,
+`2` = locked, and echo the resulting state.
+
+## Filter cycles and econ — `02/41`
+
+Reads and writes the two filter cycle times plus an econ flag. Both request and
+response are 5 bytes:
+
+| Byte | Meaning |
+|---|---|
+| 0–1 | Filter time 1, 16-bit little-endian |
+| 2–3 | Filter time 2, 16-bit little-endian |
+| 4 | Flags |
+
+On the **request**, the flags byte gates what gets committed: bit 7 writes the
+two times, bit 6 writes econ from bit 0. Sent with a flags byte of `0x00`,
+nothing is written — it is a pure read.
+
+On the **response**, the flags byte reports bit 0 = econ, bit 1 = circulation.
+The two times also appear in the `02/55` status block at offsets 118 and 120,
+but econ and circulation appear nowhere else.
+
+## Heat pump — `1D/07`
+
+Present in the controller but not implemented here; the spa this component was
+developed against has no heat pump. The request's first payload byte is a mode,
+accepted only if `< 5`; the response is two bytes, `[mode, value]`.
+
 ## Confidence
 
 Not everything here is equally solid, and it is worth being explicit about which
@@ -130,8 +180,14 @@ is which.
 **Well established** — the frame format and checksum (validated against every
 captured frame, including a 3-byte CoolZone frame), the framing and inter-frame
 gap behaviour, the salt system exchange in both directions, the three `1E/03`
-layout variants and which of their offsets are unused, the salt status states,
-the `17/02` and `17/05` light layouts, and the 1–7 colour range.
+layout variants and which of their offsets are unused, the salt status states
+and their thresholds, the `0x0B` control encoding and its replies, the `02/41`
+filter/econ layout, the `17/02` and `17/05` light layouts, and the 1–7 colour
+range.
+
+Salinity is also settled, in the negative: **there is no salt concentration on
+the bus at all.** The panel draws a marker on a bar, and the value behind it is a
+screen coordinate. See [swg.md](swg.md).
 
 **Inferred, not proven**
 
@@ -139,16 +195,15 @@ the `17/02` and `17/05` light layouts, and the 1–7 colour range.
   [lights.md](lights.md) come from watching hardware. Seven names had to be
   fitted to seven slots after "Rainbow" was identified as the colour-cycle flag
   rather than a colour, so the table could be rotated by one.
-- **Salinity units.** The index-to-value conversion is exact, but nothing labels
-  the result, so this component publishes it without a unit rather than guessing
-  at ppm and a scale factor.
 - **Cell runtime.** The 24-bit counter in the salt frames is believed to be
   runtime; that name is a guess.
+- **Salt frame bytes 4 and 11.** Relayed by the controller without ever being
+  read, so nothing on this side of the bus can name them.
 
-**Unverified** — the command names for groups `0x02` and `0x0B` are inherited
-from earlier work on this project and were not all independently confirmed. The
-`1D/07` heat pump command is only partly understood; the spa this component was
-developed against has no heat pump.
+**Unverified** — some command names for group `0x02` are inherited from earlier
+work on this project and were not all independently confirmed. The `1D/07` heat
+pump command is only partly understood; the spa this component was developed
+against has no heat pump.
 
 ## The other serial link
 

@@ -47,6 +47,9 @@ CONF_PUMP = "pump"
 CONF_SWG_GENERATING = "swg_generating"
 CONF_SWG_BOOST = "swg_boost"
 CONF_SWG_CARTRIDGE_DUE = "swg_cartridge_due"
+CONF_ECON_MODE = "econ_mode"
+CONF_CIRCULATION = "circulation"
+CONF_SWG_CARTRIDGE_PRESENT = "swg_cartridge_present"
 
 TYPES = (
     CONF_SUMMER_TIMER,
@@ -57,6 +60,9 @@ TYPES = (
     CONF_SWG_GENERATING,
     CONF_SWG_BOOST,
     CONF_SWG_CARTRIDGE_DUE,
+    CONF_ECON_MODE,
+    CONF_CIRCULATION,
+    CONF_SWG_CARTRIDGE_PRESENT,
 )
 
 CONFIG_SCHEMA = cv.Schema(
@@ -89,6 +95,19 @@ CONFIG_SCHEMA = cv.Schema(
         ),
         # Cartridge age has reached the controller's 120-day replace prompt.
         cv.Optional(CONF_SWG_CARTRIDGE_DUE): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        # From the 02/41 filter-config reply. These two bits are not carried in
+        # the 02/55 status block, so this is the only place they appear.
+        cv.Optional(CONF_ECON_MODE): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        cv.Optional(CONF_CIRCULATION): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        # Cartridge seated in the cell. This is the flag the controller's own
+        # replace wizard waits on.
+        cv.Optional(CONF_SWG_CARTRIDGE_PRESENT): binary_sensor.binary_sensor_schema(
             entity_category=ENTITY_CATEGORY_NONE,
         ),
         
