@@ -44,3 +44,9 @@ secrets.yaml
 *.bin
 internal/
 analysis/
+
+# Bus capture logs. Curated captures belong in docs/captures/; raw streaming
+# traces do not - they are large, live-appended, and often session-specific.
+trace-*.txt
+*.capture.log
+capture.log

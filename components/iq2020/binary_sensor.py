@@ -50,6 +50,7 @@ CONF_SWG_CARTRIDGE_DUE = "swg_cartridge_due"
 CONF_ECON_MODE = "econ_mode"
 CONF_CIRCULATION = "circulation"
 CONF_SWG_CARTRIDGE_PRESENT = "swg_cartridge_present"
+CONF_SWG_LEVEL_LOCKED = "swg_level_locked"
 
 TYPES = (
     CONF_SUMMER_TIMER,
@@ -63,6 +64,7 @@ TYPES = (
     CONF_ECON_MODE,
     CONF_CIRCULATION,
     CONF_SWG_CARTRIDGE_PRESENT,
+    CONF_SWG_LEVEL_LOCKED,
 )
 
 CONFIG_SCHEMA = cv.Schema(
@@ -108,6 +110,11 @@ CONFIG_SCHEMA = cv.Schema(
         # Cartridge seated in the cell. This is the flag the controller's own
         # replace wizard waits on.
         cv.Optional(CONF_SWG_CARTRIDGE_PRESENT): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_NONE,
+        ),
+        # Salt test reading above 9 - the controller locks output level
+        # adjustment while this is set.
+        cv.Optional(CONF_SWG_LEVEL_LOCKED): binary_sensor.binary_sensor_schema(
             entity_category=ENTITY_CATEGORY_NONE,
         ),
         

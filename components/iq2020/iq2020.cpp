@@ -1714,6 +1714,10 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 bool generating = (flags & 0x01) != 0;
                 bool boost      = (flags & 0x04) != 0;
                 bool cartridge_due = cell_days >= 120;   // the 4-month replace prompt
+                // A salt test reading above 9 locks level adjustment. Worth
+                // surfacing on its own - otherwise the level simply stops
+                // responding with nothing to explain why.
+                bool level_locked = test_val > 9;
 
                 ESP_LOGI(TAG, "SWG %s Level:%d Salinity:%.0f%%(idx %d) Class:%d CellDays:%d Flags:0x%02X Error:%d Runtime:%u",
                     is_freshwater ? "FreshWater" : "ACE",
@@ -1738,6 +1742,12 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                     status = 5;
                 } else if(test_val >= 15) {
                     status = 4;
+                } else if(test_val >= 10) {
+                    // The controller treats 10..14 as its own state and shows no
+                    // panel message for it. What matters practically is the side
+                    // effect: a reading above 9 locks the output level against
+                    // adjustment, so the panel's +/- stops responding.
+                    status = 3;
                 } else if(!generating) {
                     status = 1;
                 } else if(status_cls == 1) {
@@ -1783,6 +1793,9 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 }
                 if(this->swg_cartridge_due_binary_sensor_ != nullptr) {
                     this->swg_cartridge_due_binary_sensor_->publish_state(cartridge_due);
+                }
+                if(this->swg_level_locked_binary_sensor_ != nullptr) {
+                    this->swg_level_locked_binary_sensor_->publish_state(level_locked);
                 }
                 if(this->swg_cartridge_present_binary_sensor_ != nullptr) {
                     this->swg_cartridge_present_binary_sensor_->publish_state(cartridge == 1);
@@ -1935,6 +1948,9 @@ std::string IQ2020Component::decodeSWGStatus_(uint8_t raw) {
         case 0:  return "Okay";
         case 1:  return "Inactive - System Off";
         case 2:  return "24-Hour Boost Cycle On";
+        // The controller shows no message here; the meaningful part is that the
+        // salt test reading has locked level adjustment.
+        case 3:  return "Level Locked - Confirm Salt Level";
         case 4:  return "Test Water & Confirm Level";
         case 5:  return "Level Set To 3 - Test & Adjust";
         case 6:  return "Level Set To 1 - Test & Adjust";

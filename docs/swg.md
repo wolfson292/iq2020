@@ -33,7 +33,7 @@ parses.
 | Byte | Field | Notes |
 |---|---|---|
 | 0 | `output_level` | 0–10. Anything above 10 is treated as 3. |
-| 1 | `salt_test_reading` | 15 raises "Test Water & Confirm Level", 20 raises "Level Set To 3". Above 9 it also locks the level out of adjustment. Cleared when the level changes or the prompt is acknowledged. |
+| 1 | `salt_test_reading` | Drives three thresholds: **above 9 locks the output level against adjustment**, 15 raises "Test Water & Confirm Level", 20 raises "Level Set To 3". Cleared when the level changes or the prompt is acknowledged. The 10–14 band is a state of its own for which the panel shows no message — the only visible effect is that the level stops responding, which is why this component publishes `swg_level_locked` separately. |
 | 2 | **Packed** | Low 2 bits = `condition_code`, high 6 bits = `salinity_index`. |
 | 3 | `cartridge_days` | Age in days. 120 (4 months) triggers the replace prompt; acknowledging it snoozes for 7 days. |
 | 4 | `cell_state` | Relayed untouched by the controller, but **not static** — see below. |
@@ -230,6 +230,7 @@ data allows:
 | 0 | Okay |
 | 1 | Inactive - System Off |
 | 2 | 24-Hour Boost Cycle On |
+| 3 | *(no panel message — level locked, salt test 10–14)* |
 | 4 | Test Water & Confirm Level |
 | 5 | Level Set To 3 - Test & Adjust |
 | 6 | Level Set To 1 - Test & Adjust |

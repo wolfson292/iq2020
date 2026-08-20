@@ -49,6 +49,7 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   SUB_BINARY_SENSOR(swg_boost)
   SUB_BINARY_SENSOR(swg_cartridge_due)
   SUB_BINARY_SENSOR(swg_cartridge_present)
+  SUB_BINARY_SENSOR(swg_level_locked)
   SUB_BINARY_SENSOR(econ_mode)
   SUB_BINARY_SENSOR(circulation)
   

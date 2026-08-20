@@ -227,6 +227,8 @@ binary_sensor:
       name: "SWG Cartridge Due"
     swg_cartridge_present:
       name: "SWG Cartridge Present"
+    swg_level_locked:
+      name: "SWG Level Locked"
     econ_mode:
       name: "Econ Mode"
     circulation:
