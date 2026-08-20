@@ -43,6 +43,9 @@ external_components:
       url: https://github.com/wolfson292/iq2020
       ref: main
     components: [iq2020]
+    # ESPHome caches the clone for a day by default, which will happily build
+    # from a stale checkout after you push. Keep this short while tracking main.
+    refresh: 1min
 
 uart:
   id: uart_spa
