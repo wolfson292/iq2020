@@ -66,10 +66,10 @@ taking the linear difference will **never converge on 0** — it will step down,
 wrap to 7, and try again forever. This component clamps requested colours into
 1–7 for exactly that reason.
 
-The names below come from the panel's own colour palette, read off a photograph
-of it, and the wire values were matched against it in the same capture. Nothing
-on the bus carries names, but the palette is laid out in value order — four
-swatches on the top row, four on the bottom — so the mapping is direct.
+These names are the manufacturer's own, from the spa manual. The wire values were
+matched to them by pressing each swatch and watching the reported value: the
+panel's palette is laid out in value order — four swatches on the top row, four
+on the bottom — so the mapping is direct.
 
 | Value | Colour |
 |---|---|
@@ -82,8 +82,8 @@ swatches on the top row, four on the bottom — so the mapping is direct.
 | 7 | Red |
 | 8 | Rainbow — the colour cycle |
 
-The one to double-check on your own panel is **7**: the swatch photographs as a
-distinct orange rather than red. Everything either side of it is unambiguous.
+Worth noting that **7 renders closer to orange than red** on the panel, so don't
+be thrown if it looks wrong next to the name — the manual calls it Red.
 
 ## Writing state — `17/02`
 

@@ -324,8 +324,9 @@ captured frame, including a 3-byte CoolZone frame), the framing and inter-frame
 gap behaviour, the salt system exchange in both directions, the three `1E/03`
 layout variants and which of their offsets are unused, the salt status states
 and their thresholds, the `0x0B` control encoding and its replies, the `02/41`
-filter/econ layout, the `17/02` and `17/05` light layouts, and the 1–7 colour
-range.
+filter/econ layout, the `17/02` and `17/05` light layouts, and the 1–8 colour
+range with its names — those are the manufacturer's, from the manual, each
+matched to its wire value by pressing the swatch and watching the bus.
 
 Salinity is also settled, in the negative: **there is no salt concentration on
 the bus at all.** The panel draws a marker on a bar, and the value behind it is a
@@ -333,14 +334,12 @@ screen coordinate. See [swg.md](swg.md).
 
 **Inferred, not proven**
 
-- **Light colour names.** The range 1–7 is certain, but the names in
-  [lights.md](lights.md) come from watching hardware. Seven names had to be
-  fitted to seven slots after "Rainbow" was identified as the colour-cycle flag
-  rather than a colour, so the table could be rotated by one.
 - **Cell runtime.** The 24-bit counter in the salt frames is believed to be
   runtime; that name is a guess.
 - **Salt frame bytes 4 and 11.** Relayed by the controller without ever being
-  read, so nothing on this side of the bus can name them.
+  read, so nothing on this side of the bus can name them. Byte 4's *behaviour*
+  is characterised — it moves during a water test — but that is not the same as
+  knowing what it measures.
 
 **Unverified** — some command names for group `0x02` are inherited from earlier
 work on this project and were not all independently confirmed. The `1D/07` heat
