@@ -116,6 +116,7 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   SUB_SWITCH(summer_timer)
   SUB_SWITCH(spa_lock)
   SUB_SWITCH(temp_lock)
+  SUB_SWITCH(swg_boost)
   
   SUB_NUMBER(swg_level)
 
@@ -179,6 +180,8 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   std::string decodeAddr_(uint8_t raw);
   std::string decodeLightSpeed_(uint8_t raw);
   std::string decodeSWGStatus_(uint8_t raw);
+  std::vector<uint8_t> buildSWGCommand_();
+  uint8_t swgAddr_();
 
   // Salinity index -> position along the panel's salt scale, 0-100%.
   static float swg_salinity_from_index(uint8_t index);
@@ -290,7 +293,8 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   // the controller decodes, so we key off it the same way.
   uint8_t swg_addr_ = 0;
   uint8_t swg_level_reported_ = 0xFF;
-  uint8_t swg_test_value_ = 0xFF;   // payload[1]
+  uint8_t swg_test_value_ = 0xFF;   // payload[1] of the module's reply
+  uint8_t swg_spa_size_ = 0xFF;     // from the controller's 1E/03 summary
   uint8_t swg_status_class_ = 0xFF; // payload[2] & 3
   uint8_t swg_salinity_idx_ = 0xFF; // payload[2] >> 2
   uint8_t swg_cell_days_ = 0xFF;    // payload[3]

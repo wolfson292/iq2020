@@ -548,26 +548,69 @@ void IQ2020Component::set_light_brightness(uint8_t lightNum, bool On, uint8_t br
 }
 
 
-// Direct Commands to SWG, not via Controller
+// Direct commands to the salt module, bypassing the controller.
+//
+// These reproduce the poll the controller itself sends: a 13-byte payload
+// prefilled with 0xFF, where 0xFF means "no change". Two fields are NOT
+// no-change and must carry live values every time:
+//
+//   payload[0]  output level  - the module takes this as the level unconditionally
+//   payload[1]  spa size
+//
+// Getting payload[0] wrong silently reprograms the output level as a side effect
+// of whatever else the command was for.
+std::vector<uint8_t> IQ2020Component::buildSWGCommand_() {
+    // Fall back to the module's last reported level rather than inventing one.
+    uint8_t level = (this->swg_level_reported_ <= 10) ? this->swg_level_reported_ : 0;
+    uint8_t spa_size = (this->swg_spa_size_ != 0xFF) ? this->swg_spa_size_ : 0x01;
+    return { 0x1E, 0x01,
+             level, spa_size, 0xFF, 0xFF, 0xFF, 0x00, 0xFF, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+}
+
+uint8_t IQ2020Component::swgAddr_() {
+    // 0x29 (FreshWater) unless the module has actually been seen at 0x24 (ACE).
+    return this->swg_seen_ ? this->swg_addr_ : 0x29;
+}
+
+// payload[4]: 1 starts the 24-hour boost cycle, 2 stops it. Sent once and then
+// reverted to 0xFF, because the module acts on the transition - leaving the byte
+// set would re-issue the command on every poll.
 void IQ2020Component::sendSWGBoostCmd(bool enableBoost) {
-    std::vector<uint8_t> data = {0x1E, 0x01, 0x05, 0x01, 0xFF, 0xFF, 0xFF, 0x00, 0xFF, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
-    data[0x06] = enableBoost ? 0x01 : 0x02;
-    this->sendCmd_(remote_addr_, 0x29, data);
+    if(!this->swg_seen_) {
+        ESP_LOGW(TAG, "sendSWGBoostCmd: no SWG seen on the bus yet, skipping");
+        return;
+    }
+    ESP_LOGI(TAG, "sendSWGBoostCmd %s", enableBoost ? "Start" : "Stop");
+    std::vector<uint8_t> data = this->buildSWGCommand_();
+    uint8_t addr = this->swgAddr_();
+    data[0x06] = enableBoost ? 0x01 : 0x02;   // payload[4]
+    this->sendCmd_(remote_addr_, addr, data);
     data[0x06] = 0xff;
-    this->sendCmd_(remote_addr_, 0x29, data);
+    this->sendCmd_(remote_addr_, addr, data);
 }
 
 void IQ2020Component::sendSWGDefault() {
-    std::vector<uint8_t> data = {0x1E, 0x01, 0x05, 0x01, 0xFF, 0xFF, 0xFF, 0x00, 0xFF, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
-    this->sendCmd_(remote_addr_, 0x29, data);
+    if(!this->swg_seen_) {
+        return;
+    }
+    std::vector<uint8_t> data = this->buildSWGCommand_();
+    this->sendCmd_(remote_addr_, this->swgAddr_(), data);
 }
 
+// payload[9] = 1 starts the water test - the same action as the panel's test
+// button. Also one-shot.
 void IQ2020Component::sendSWGTestCmd() {
-    std::vector<uint8_t> data = {0x1E, 0x01, 0x05, 0x01, 0xFF, 0xFF, 0xFF, 0x00, 0xFF, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
-    data[0x0B] = 0x01;
-    this->sendCmd_(remote_addr_, 0x29, data);
+    if(!this->swg_seen_) {
+        ESP_LOGW(TAG, "sendSWGTestCmd: no SWG seen on the bus yet, skipping");
+        return;
+    }
+    ESP_LOGI(TAG, "sendSWGTestCmd start water test");
+    std::vector<uint8_t> data = this->buildSWGCommand_();
+    uint8_t addr = this->swgAddr_();
+    data[0x0B] = 0x01;   // payload[9]
+    this->sendCmd_(remote_addr_, addr, data);
     data[0x0B] = 0xff;
-    this->sendCmd_(remote_addr_, 0x29, data);
+    this->sendCmd_(remote_addr_, addr, data);
 }
 
 void IQ2020Component::sendResponseEmulateAudio() {
@@ -1305,6 +1348,9 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 }
 
                 // Spa size is only written in the A and C layouts.
+                if (q[1] != 0xFF) {
+                    this->swg_spa_size_ = q[1];
+                }
                 if (this->swg_spa_size_sensor_ != nullptr && q[1] != 0xFF) {
                     this->swg_spa_size_sensor_->publish_state(q[1]);
                 }
@@ -1697,6 +1743,9 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 }
                 if(this->swg_boost_binary_sensor_ != nullptr) {
                     this->swg_boost_binary_sensor_->publish_state(boost);
+                }
+                if(this->swg_boost_switch_ != nullptr) {
+                    this->swg_boost_switch_->publish_state(boost);
                 }
                 if(this->swg_cartridge_due_binary_sensor_ != nullptr) {
                     this->swg_cartridge_due_binary_sensor_->publish_state(cartridge_due);

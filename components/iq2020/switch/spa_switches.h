@@ -52,5 +52,14 @@ class TempLockSwitch : public switch_::Switch, public Parented<IQ2020Component> 
   void write_state(bool state) override;
 };
 
+// Starts and stops the salt module's 24-hour boost cycle. State comes back in
+// the module's flags byte, so the switch is corrected by the next poll.
+class SWGBoostSwitch : public switch_::Switch, public Parented<IQ2020Component> {
+ public:
+  SWGBoostSwitch() = default;
+ protected:
+  void write_state(bool state) override;
+};
+
 }  // namespace iq2020
 }  // namespace esphome

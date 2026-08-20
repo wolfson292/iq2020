@@ -116,10 +116,19 @@ queued, so a plain poll is all-`0xFF` after the first two fields.
 | 4 | 1 / 2 | **24-hour boost cycle: 1 = start, 2 = stop** |
 | 6 | 1 / 2 | Level changed, take the value in byte 0 |
 | 8 | 1 / 2 | Cartridge replacement sequence |
-| 9 | 1 | **Start water test** |
+| 9 | 1 | **Start water test** — the panel's test button |
 | 10 | 1 | Unknown |
 | 11 | 1 / 2 / 0x5A | Unknown |
 | 2, 3, 12 | | ACE (`0x24`) only; byte 12 is a computed check value |
+
+Two of those bytes are **not** "no change" and must carry live values on every
+command: byte 0 is the output level and byte 1 the spa size. The module takes
+byte 0 as the level unconditionally, so sending a command with a stale or
+invented level silently reprograms the output as a side effect of whatever the
+command was actually for.
+
+Commands act on the transition, so send the byte once and revert it to `0xFF` on
+the next frame — leaving it set re-issues the command on every poll.
 
 ## 2. The controller's summary — `1E/03`
 

@@ -12,18 +12,25 @@ from esphome.const import (
 from .. import CONF_IQ2020_ID, IQ2020Component, iq2020_ns
 
 IQ2020ResetButton = iq2020_ns.class_("IQ2020ResetButton", button.Button)
+SWGTestButton = iq2020_ns.class_("SWGTestButton", button.Button)
 
 
 CONF_RESET = "reset"
+CONF_SWG_TEST = "swg_test"
 
 
 CONFIG_SCHEMA = {
     cv.GenerateID(CONF_IQ2020_ID): cv.use_id(IQ2020Component),
-    cv.Required(CONF_RESET): button.button_schema(
+    cv.Optional(CONF_RESET): button.button_schema(
         IQ2020ResetButton,
         device_class=DEVICE_CLASS_RESTART,
         entity_category=ENTITY_CATEGORY_CONFIG,
         icon=ICON_RESTART_ALERT,
+    ),
+    cv.Optional(CONF_SWG_TEST): button.button_schema(
+        SWGTestButton,
+        entity_category=ENTITY_CATEGORY_CONFIG,
+        icon="mdi:test-tube",
     ),
 }
 
@@ -32,3 +39,7 @@ async def to_code(config):
     if reset := config.get(CONF_RESET):
         b = await button.new_button(reset)
         await cg.register_parented(b, config[CONF_IQ2020_ID])
+    if cfg := config.get(CONF_SWG_TEST):
+        b = await button.new_button(cfg)
+        await cg.register_parented(b, config[CONF_IQ2020_ID])
+        cg.add(iq2020_component.set_swg_test_button(b))

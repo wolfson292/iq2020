@@ -67,6 +67,9 @@ button:
     iq2020_id: comp_iq2020
     reset:
       name: "Reset IQ2020"
+    # Starts the salt module's water test, the same as the panel's test button.
+    swg_test:
+      name: "SWG Water Test"
 
 text:
   - platform: iq2020
@@ -283,6 +286,9 @@ switch:
       name: "Spa Lock"
     temp_lock:
       name: "Temp Lock"
+    # 24-hour boost cycle on the salt module.
+    swg_boost:
+      name: "SWG Boost Cycle"
   - platform: gpio
     pin: GPIO17
     name: "LDO2"

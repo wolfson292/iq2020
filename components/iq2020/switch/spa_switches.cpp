@@ -35,5 +35,10 @@ void TempLockSwitch::write_state(bool state) {
   this->parent_->sendCmdSetTempLock(state);
 }
 
+void SWGBoostSwitch::write_state(bool state) {
+  ESP_LOGI(TAG, "SWGBoost write_state %s", state ? "Start" : "Stop");
+  this->parent_->sendSWGBoostCmd(state);
+}
+
 }  // namespace iq2020
 }  // namespace esphome
