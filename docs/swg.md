@@ -55,8 +55,22 @@ wall-clock timer.
 
 **Flags bit 0 was set in all 190 captured frames.** It never once cleared, at
 output levels from 0 to 10. So treat "generating" as closer to *powered and
-present* than to *actively producing right now*; bit 2 (boost) and bit 3 (test)
-are the bits observed to actually move. Bit 1 was likewise always set.
+present* than to *actively producing right now*. Bit 1 was likewise always set.
+
+**Bit 3 is confirmed as the water test**, from a capture taken alongside a video
+of the panel: it set at the moment the panel showed "Salt System Testing" and
+cleared 18 seconds later when the test finished. Byte 4 moved through the whole
+window and settled afterwards.
+
+**Confirming the salt prompt clears the reading.** In the same capture, pressing
+"Test Water & Confirm Level" dropped `salt_test_reading` from 10 to 0 within
+seconds, and the output level - which had been stuck - could then be changed
+from 7 to 8. That is the level lock releasing, observed end to end.
+
+**Byte 12's high bits alternate.** Across the session it moved `0x81` -> `0x41`
+-> `0x81`, i.e. bits 7 and 6 swapping while the presence nibble stayed at 1.
+Alternating high bits on a salt cell are what polarity reversal looks like,
+though nothing on the bus says so.
 
 `condition_code` is a 2-bit class: **1** means the summer timer is suppressing
 output, **3** means low salt. It is forced to 3 whenever the salinity index reads

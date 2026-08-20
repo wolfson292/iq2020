@@ -1935,6 +1935,9 @@ std::string IQ2020Component::decodeLightColor_(uint8_t raw) {
     // The controller steps colour over 1..7, wrapping 7 -> 1 and 1 -> 7. 0 only
     // ever appears as an uninitialised value, so this table is 1-based.
     //
+    // 8 is reachable too, but only from the panel: its palette has eight
+    // swatches and the eighth is the colour cycle. Stepping never produces it.
+    //
     // "Rainbow" is NOT a colour: the colour cycle is a separate per-light flag
     // driven by wire commands 8/9 and reported in payload[5..8] of 17/05.
     if (raw == 0x00) {
@@ -1953,6 +1956,12 @@ std::string IQ2020Component::decodeLightColor_(uint8_t raw) {
         return "6-Yellow";
     } else if (raw == 0x07) {
         return "7-Red";
+    } else if (raw == 0x08) {
+        // Selecting the eighth palette swatch on the panel sets colour 8 and
+        // turns the cycle flag on at the same instant - captured live. The
+        // stepping commands never reach it (they wrap 7 -> 1), so 8 arrives
+        // only from a direct panel selection.
+        return "8-Color Cycle";
     } else if (raw == 255) {
         return "None";
     } else {

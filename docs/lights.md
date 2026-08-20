@@ -51,8 +51,15 @@ else                  else
     colour = 1;           colour = 7;
 ```
 
-So the reachable range is **1 to 7, wrapping at both ends**. Zero is never
-produced; it only appears as an uninitialised value.
+So the range reachable *by stepping* is **1 to 7, wrapping at both ends**. Zero
+is never produced; it only appears as an uninitialised value.
+
+**But 8 exists.** The panel's colour palette has eight swatches, and selecting
+the eighth sets colour 8 and turns the cycle flag on in the same status frame -
+observed live, with the cycle speed jumping from 0 to 2 at the same instant. The
+stepping commands never reach it, which is why it does not appear in the wrap
+logic above. So a value of 8 means "colour cycle", and a parser that assumes
+1-7 will not know what to do with it.
 
 This has a practical consequence. Any code that steps toward a target colour by
 taking the linear difference will **never converge on 0** — it will step down,

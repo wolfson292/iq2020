@@ -163,10 +163,12 @@ namespace iq2020 {
       this->light_state_->publish_state();
 
       // Effect N == colour N now that both are 1-based; colour 0 means the
-      // controller has not reported one yet, so leave the effect alone. While
+      // controller has not reported one yet, so leave the effect alone.
+      // Colour 8 is the panel's eighth swatch, the colour cycle, and lines up
+      // with the Color Cycle effect without any special casing. While
       // the zone is cycling, effect 8 (Color Cycle) is showing instead - don't
       // stomp it with the underlying colour.
-      if(state_on && light_num_ != 4 && !cycling_ && color >= 1 && color <= 7) {
+      if(state_on && light_num_ != 4 && !cycling_ && color >= 1 && color <= 8) {
         light::LightCall call2 = light_state_->make_call();
         call2.set_effect(color);
         call2.perform();
