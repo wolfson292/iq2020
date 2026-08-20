@@ -66,8 +66,10 @@ taking the linear difference will **never converge on 0** — it will step down,
 wrap to 7, and try again forever. This component clamps requested colours into
 1–7 for exactly that reason.
 
-The colour names below are observed on real hardware. Only the range is certain;
-nothing on the bus carries the names.
+The names below come from the panel's own colour palette, read off a photograph
+of it, and the wire values were matched against it in the same capture. Nothing
+on the bus carries names, but the palette is laid out in value order — four
+swatches on the top row, four on the bottom — so the mapping is direct.
 
 | Value | Colour |
 |---|---|
@@ -78,11 +80,10 @@ nothing on the bus carries the names.
 | 5 | White |
 | 6 | Yellow |
 | 7 | Red |
+| 8 | Rainbow — the colour cycle |
 
-> **If your panel disagrees, this is the thing to check first.** Seven names had
-> to be fitted onto seven slots after "Rainbow" was reclassified as the cycle
-> flag, so the whole table could be rotated by one. The range is certain; the
-> alignment of names to values is the inference.
+The one to double-check on your own panel is **7**: the swatch photographs as a
+distinct orange rather than red. Everything either side of it is unambiguous.
 
 ## Writing state — `17/02`
 

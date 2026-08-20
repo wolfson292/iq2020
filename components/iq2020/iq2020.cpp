@@ -1957,11 +1957,12 @@ std::string IQ2020Component::decodeLightColor_(uint8_t raw) {
     } else if (raw == 0x07) {
         return "7-Red";
     } else if (raw == 0x08) {
-        // Selecting the eighth palette swatch on the panel sets colour 8 and
-        // turns the cycle flag on at the same instant - captured live. The
-        // stepping commands never reach it (they wrap 7 -> 1), so 8 arrives
-        // only from a direct panel selection.
-        return "8-Color Cycle";
+        // The eighth palette swatch. Selecting it sets colour 8 and turns the
+        // cycle flag on at the same instant - captured live - so Rainbow and
+        // "cycling" are the same thing seen from two fields. The stepping
+        // commands never reach it (they wrap 7 -> 1), so 8 arrives only from a
+        // direct panel selection.
+        return "8-Rainbow";
     } else if (raw == 255) {
         return "None";
     } else {

@@ -9,9 +9,10 @@ namespace iq2020 {
     // produces 0. Effects are 1-based in the order they are added, so effect N
     // lines up with colour N and on_light() can pass the raw value straight in.
     //
-    // The old list started at 0 and carried an eighth "Rainbow" entry; the colour
-    // cycle turned out to be a separate per-light flag, not a colour, so it is
-    // gone from here and exposed through set_light_cycle() instead.
+    // The original list was right about the names and the count - eight, ending
+    // in Rainbow. It was only the base index that was off: the wire values run
+    // 1..8, not 0..7. Rainbow is the eighth swatch, and selecting it sets both
+    // colour 8 and the cycle flag, so it stays an effect that drives the cycle.
     auto *violet = new SpaLightColor("Violet", 0x01);
     auto *blue = new SpaLightColor("Blue", 0x02);
     auto *cyan = new SpaLightColor("Cyan", 0x03);
@@ -19,7 +20,7 @@ namespace iq2020 {
     auto *white = new SpaLightColor("White", 0x05);
     auto *yellow = new SpaLightColor("Yellow", 0x06);
     auto *red = new SpaLightColor("Red", 0x07);
-    auto *cycle = new SpaLightCycle("Color Cycle");
+    auto *cycle = new SpaLightCycle("Rainbow");
     light_state_->add_effects({violet, blue, cyan, green, white, yellow, red, cycle});
     violet->init_internal(this->light_state_);
     blue->init_internal(this->light_state_);
