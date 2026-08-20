@@ -743,6 +743,28 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 checksum += buffer[i]; 
             }
             checksum = checksum ^ 0xff;
+
+            // Capture mode: one lossless line per frame, emitted before the
+            // checksum verdict so malformed frames are recorded too - those are
+            // otherwise dropped without their payload, which is exactly the
+            // traffic worth looking at. Format is deliberately rigid so it can
+            // be parsed months later:
+            //
+            //   IQCAP <millis> <OK|BAD> <whole frame as hex, 0x1C..checksum>
+            //
+            // Everything else is derivable from the raw bytes, so nothing is
+            // pre-interpreted here.
+            if(this->capture_switch_ != nullptr && this->capture_switch_->state) {
+                std::string cap;
+                char cb[4];
+                for (int i = 0; i <= pos; i++) {
+                    sprintf(cb, "%02X", buffer[i]);
+                    cap += cb;
+                }
+                ESP_LOGI(TAG, "IQCAP %u %s %s", (unsigned) millis(),
+                         (buffer[pos] == checksum) ? "OK" : "BAD", cap.c_str());
+            }
+
             if(checksum != buffer[pos])
             {
                 ESP_LOGE(TAG, "readline_ Invalid Checksum %02X should be %02X", buffer[pos], checksum);

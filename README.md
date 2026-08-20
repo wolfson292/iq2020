@@ -108,6 +108,7 @@ colour cycle and its speed are separate from colour — see
 | [docs/swg.md](docs/swg.md) | Salt system — both frame types, all three layout variants |
 | [docs/lights.md](docs/lights.md) | Light state model and commands |
 | [docs/status-packet-0255.md](docs/status-packet-0255.md) | The `02/55` status block, byte by byte |
+| [docs/capturing.md](docs/capturing.md) | Capturing bus traffic and analysing it |
 | [docs/captures/](docs/captures/) | Raw bus captures |
 
 The frame is short enough to state here:

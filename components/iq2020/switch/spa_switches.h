@@ -61,5 +61,15 @@ class SWGBoostSwitch : public switch_::Switch, public Parented<IQ2020Component> 
   void write_state(bool state) override;
 };
 
+// Turns on raw frame capture. Every frame the component sees is emitted as a
+// single IQCAP line at INFO, including frames that fail their checksum. Off by
+// default - it is meant for a bounded capture run, not for normal operation.
+class CaptureSwitch : public switch_::Switch, public Parented<IQ2020Component> {
+ public:
+  CaptureSwitch() = default;
+ protected:
+  void write_state(bool state) override;
+};
+
 }  // namespace iq2020
 }  // namespace esphome

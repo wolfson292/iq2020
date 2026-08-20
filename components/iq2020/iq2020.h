@@ -118,6 +118,7 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   SUB_SWITCH(spa_lock)
   SUB_SWITCH(temp_lock)
   SUB_SWITCH(swg_boost)
+  SUB_SWITCH(capture)
   
   SUB_NUMBER(swg_level)
 

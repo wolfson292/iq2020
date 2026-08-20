@@ -40,5 +40,10 @@ void SWGBoostSwitch::write_state(bool state) {
   this->parent_->sendSWGBoostCmd(state);
 }
 
+void CaptureSwitch::write_state(bool state) {
+  ESP_LOGI(TAG, "Capture %s", state ? "ENABLED - logging every frame as IQCAP" : "disabled");
+  this->publish_state(state);
+}
+
 }  // namespace iq2020
 }  // namespace esphome

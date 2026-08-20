@@ -18,6 +18,7 @@ SummerTimerSwitch = iq2020_ns.class_("SummerTimerSwitch", switch.Switch)
 SpaLockSwitch = iq2020_ns.class_("SpaLockSwitch", switch.Switch)
 TempLockSwitch = iq2020_ns.class_("TempLockSwitch", switch.Switch)
 SWGBoostSwitch = iq2020_ns.class_("SWGBoostSwitch", switch.Switch)
+CaptureSwitch = iq2020_ns.class_("CaptureSwitch", switch.Switch)
 
 CONF_CLEAN_MODE = "clean_mode"
 CONF_JETS1 = "jets1"
@@ -28,6 +29,7 @@ CONF_SUMMER_TIMER = "summer_timer"
 CONF_SPA_LOCK = "spa_lock"
 CONF_TEMP_LOCK = "temp_lock"
 CONF_SWG_BOOST = "swg_boost"
+CONF_CAPTURE = "capture"
 
 CONFIG_SCHEMA = {
     cv.GenerateID(CONF_IQ2020_ID): cv.use_id(IQ2020Component),
@@ -94,6 +96,14 @@ CONFIG_SCHEMA = {
         icon="mdi:rocket-launch-outline",
         default_restore_mode="RESTORE_DEFAULT_OFF",
     ),
+    # Raw frame capture. Always restores OFF so a reboot mid-capture cannot
+    # leave the device logging every frame indefinitely.
+    cv.Optional(CONF_CAPTURE): switch.switch_schema(
+        CaptureSwitch,
+        entity_category=ENTITY_CATEGORY_CONFIG,
+        icon="mdi:record-rec",
+        default_restore_mode="ALWAYS_OFF",
+    ),
 }
 
 
@@ -104,7 +114,7 @@ async def to_code(config):
         await cg.register_parented(s, config[CONF_IQ2020_ID])
         cg.add(iq2020_component.set_clean_mode_switch(s))
     for key in (CONF_JETS1, CONF_JETS2, CONF_JETS3, CONF_BLOWER,
-                CONF_SUMMER_TIMER, CONF_SPA_LOCK, CONF_TEMP_LOCK, CONF_SWG_BOOST):
+                CONF_SUMMER_TIMER, CONF_SPA_LOCK, CONF_TEMP_LOCK, CONF_SWG_BOOST, CONF_CAPTURE):
         if cfg := config.get(key):
             s = await switch.new_switch(cfg)
             await cg.register_parented(s, config[CONF_IQ2020_ID])

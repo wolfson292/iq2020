@@ -294,6 +294,10 @@ switch:
     # 24-hour boost cycle on the salt module.
     swg_boost:
       name: "SWG Boost Cycle"
+    # Raw frame capture for protocol work - see docs/capturing.md.
+    # Off by default and always restores off.
+    capture:
+      name: "Bus Capture"
   - platform: gpio
     pin: GPIO17
     name: "LDO2"
