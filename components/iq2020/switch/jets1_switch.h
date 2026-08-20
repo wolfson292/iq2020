@@ -1,12 +1,13 @@
 #pragma once
 
 #include "esphome/components/switch/switch.h"
+#include "iq2020_switch.h"
 #include "../iq2020.h"
 
 namespace esphome {
 namespace iq2020 {
 
-class Jets1Switch : public switch_::Switch, public Parented<IQ2020Component> {
+class Jets1Switch : public IQ2020SwitchBase, public Parented<IQ2020Component> {
  public:
   Jets1Switch() = default;
 

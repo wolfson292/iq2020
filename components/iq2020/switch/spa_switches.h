@@ -1,6 +1,7 @@
 #pragma once
 
 #include "esphome/components/switch/switch.h"
+#include "iq2020_switch.h"
 #include "../iq2020.h"
 
 namespace esphome {
@@ -10,42 +11,42 @@ namespace iq2020 {
 // command they send. Each one publishes optimistically and is then corrected
 // by the controller's reply, which reports the state it actually settled on.
 
-class Jets2Switch : public switch_::Switch, public Parented<IQ2020Component> {
+class Jets2Switch : public IQ2020SwitchBase, public Parented<IQ2020Component> {
  public:
   Jets2Switch() = default;
  protected:
   void write_state(bool state) override;
 };
 
-class Jets3Switch : public switch_::Switch, public Parented<IQ2020Component> {
+class Jets3Switch : public IQ2020SwitchBase, public Parented<IQ2020Component> {
  public:
   Jets3Switch() = default;
  protected:
   void write_state(bool state) override;
 };
 
-class BlowerSwitch : public switch_::Switch, public Parented<IQ2020Component> {
+class BlowerSwitch : public IQ2020SwitchBase, public Parented<IQ2020Component> {
  public:
   BlowerSwitch() = default;
  protected:
   void write_state(bool state) override;
 };
 
-class SummerTimerSwitch : public switch_::Switch, public Parented<IQ2020Component> {
+class SummerTimerSwitch : public IQ2020SwitchBase, public Parented<IQ2020Component> {
  public:
   SummerTimerSwitch() = default;
  protected:
   void write_state(bool state) override;
 };
 
-class SpaLockSwitch : public switch_::Switch, public Parented<IQ2020Component> {
+class SpaLockSwitch : public IQ2020SwitchBase, public Parented<IQ2020Component> {
  public:
   SpaLockSwitch() = default;
  protected:
   void write_state(bool state) override;
 };
 
-class TempLockSwitch : public switch_::Switch, public Parented<IQ2020Component> {
+class TempLockSwitch : public IQ2020SwitchBase, public Parented<IQ2020Component> {
  public:
   TempLockSwitch() = default;
  protected:
@@ -54,7 +55,7 @@ class TempLockSwitch : public switch_::Switch, public Parented<IQ2020Component> 
 
 // Starts and stops the salt module's 24-hour boost cycle. State comes back in
 // the module's flags byte, so the switch is corrected by the next poll.
-class SWGBoostSwitch : public switch_::Switch, public Parented<IQ2020Component> {
+class SWGBoostSwitch : public IQ2020SwitchBase, public Parented<IQ2020Component> {
  public:
   SWGBoostSwitch() = default;
  protected:
@@ -68,7 +69,7 @@ class SWGBoostSwitch : public switch_::Switch, public Parented<IQ2020Component> 
 // is a temporary setting for protocol work: capture roughly doubles the log
 // volume, and heavy logging is itself a suspect in the truncated frames seen on
 // this bus, so an always-on capture is not a neutral observer.
-class CaptureSwitch : public switch_::Switch, public Parented<IQ2020Component> {
+class CaptureSwitch : public IQ2020SwitchBase, public Parented<IQ2020Component> {
  public:
   CaptureSwitch() = default;
  protected:
