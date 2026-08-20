@@ -17,8 +17,13 @@ good.
 
 ## 1. The module's own frames — `1E/01` (preferred)
 
-The controller polls the salt module roughly every 10 seconds and the module
+The controller polls the salt module roughly every 18 seconds and the module
 answers. Both directions carry a **13-byte payload**.
+
+That cadence is not fixed. While someone is working the salt screen at the panel
+the controller polls far harder - sub-second gaps appear in captures - and it
+also fires an extra poll immediately after any command. A sniffer should treat
+18 seconds as the idle rate, not as a guarantee.
 
 ```
 01 -> 29  op 0x40  1E 01 | 05 01 FF FF FF 00 FF 01 FF FF FF FF FF
@@ -37,7 +42,7 @@ parses.
 | 2 | **Packed** | Low 2 bits = `condition_code`, high 6 bits = `salinity_index`. |
 | 3 | `cartridge_days` | Age in days. 120 (4 months) triggers the replace prompt; acknowledging it snoozes for 7 days. |
 | 4 | `cell_state` | Relayed untouched by the controller, but **not static** — see below. |
-| 5 | `flags` | bit 0 generating, bit 1 active, bit 2 24-hour boost, bit 3 test lockout, bit 5 cartridge-service gate. |
+| 5 | `flags` | bit 0 generating, bit 1 active, bit 2 24-hour boost, bit 3 **self-check running**, bit 5 cartridge-service gate. Bit 4 is treated as a second self-check bit but was never observed set. |
 | 6 | `error_code` | Shown on the panel as "Error N". |
 | 7 | Status (variant B only) | Folded in as `byte7 * 10 + byte6`. |
 | 8–10 | `cell_runtime` | 24-bit **little-endian** counter, in hours — see below. |
@@ -57,15 +62,14 @@ wall-clock timer.
 output levels from 0 to 10. So treat "generating" as closer to *powered and
 present* than to *actively producing right now*. Bit 1 was likewise always set.
 
-**Bit 3 is confirmed as the water test**, from a capture taken alongside a video
-of the panel: it set at the moment the panel showed "Salt System Testing" and
-cleared 18 seconds later when the test finished. Byte 4 moved through the whole
-window and settled afterwards.
+**Bit 3 is the self-check** — see the section below, which is the best-observed
+part of this frame.
 
-**Confirming the salt prompt clears the reading.** In the same capture, pressing
-"Test Water & Confirm Level" dropped `salt_test_reading` from 10 to 0 within
-seconds, and the output level - which had been stuck - could then be changed
-from 7 to 8. That is the level lock releasing, observed end to end.
+**Confirming the salt prompt clears the reading.** In a capture taken alongside a
+video of the panel, pressing "Test Water & Confirm Level" dropped
+`salt_test_reading` from 10 to 0 within seconds, and the output level - which had
+been stuck - could then be changed from 7 to 8. That is the level lock releasing,
+observed end to end.
 
 **Byte 12's high bits alternate.** Across the session it moved `0x81` -> `0x41`
 -> `0x81`, i.e. bits 7 and 6 swapping while the presence nibble stayed at 1.
@@ -79,6 +83,59 @@ zero, before anything else looks at it.
 Cartridge presence is worth calling out because it is what the controller's own
 replace wizard waits on — the wizard advances when the byte reads 0 (after
 "Remove Cartridge Now") and again when it reads 1 (after "Insert New Cartridge").
+
+### The self-check
+
+Pressing the water-test button — on the panel, or through this component — sets
+byte 9 of the next request to 1. The module answers by moving exactly two bytes
+and nothing else:
+
+| Byte | What it does |
+|---|---|
+| `flags` bit 3 | Sets for the duration of the check, clears when it finishes |
+| `cell_state` (byte 4) | Cleared to 0 at the start, then climbs back to its resting value |
+
+Four self-checks were captured — one started at the panel, three from Home
+Assistant — and all four look the same:
+
+```
+          flags   cell_state
+before     0x07           11
++0.3s      0x0F            0     bit 3 sets, cell_state cleared
++12s       0x0F            8     climbing back
++30s       0x07           11     bit 3 clear, settled
+```
+
+The absolute values differ between runs because the other flag bits ride along
+independently — the panel-initiated check ran with boost off and went `0x03` ->
+`0x0B` -> `0x03`. The *delta* is the same in all four: bit 3, and nothing else in
+that byte.
+
+Timing is coarse: the module only speaks when polled, so every interval above is
+rounded to the poll cadence. What can be said is that the check runs for tens of
+seconds, not milliseconds, and that `cell_state` finishes recovering at about the
+same time bit 3 clears.
+
+Three things this settles.
+
+**Bit 3 is not a lockout.** It was previously labelled that way here, and that
+was wrong. Level adjustment is gated on `salt_test_reading` being above 9 —
+nothing else — and that field is untouched by the check. What bit 3 actually
+does is drive the display: while it is set the panel replaces the salt status
+message with "Testing", and the salt screen's own status line reads "Testing
+Water".
+
+**The check does not necessarily produce a reading.** `salt_test_reading` stayed
+at 0 through all three of the checks started from Home Assistant. Bit 3 set,
+`cell_state` was re-measured, bit 3 cleared, and the reading never moved. So the
+self-check is a measurement of the *cell*, and the salt reading the panel prompts
+about is a separate thing that a strip test supplies. Do not wait on
+`swg_salt_test` as a way of telling that a check has finished — watch bit 3.
+
+**Bit 3 is not exclusive to the test button.** Stopping the 24-hour boost cycle
+set it too, with the same `cell_state` reset, and starting the boost cycle reset
+`cell_state` without setting it. Treat bit 3 as "the cell is being re-measured",
+which the water test is the usual but not the only cause of.
 
 ### Bytes 4 and 11 are relayed without interpretation
 
@@ -285,6 +342,14 @@ modifier.
 
 Only error codes 1, 2, 4 and 5 escalate to "Service Required"; other non-zero
 codes do not.
+
+**"Testing" overrides most of the table.** While `flags` bit 3 is set the panel
+throws away the message it just computed and shows "Testing" instead — but not
+in every state. The two states that mean the system is not running at all,
+"Inactive - System Off" (1) and "Inactive - No Circulation" (8), survive; among
+the prompt and wizard states only "Service Required" (19) is displaced. Every
+other state in the table gives way to "Testing". This component reproduces that,
+and also publishes the bit on its own as `swg_testing`.
 
 **Two states are not reachable from the bus.** The decision also depends on the
 pump/flow state and on whether the user has acknowledged a prompt at the panel,

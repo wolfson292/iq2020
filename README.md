@@ -108,10 +108,10 @@ colour cycle and its speed are separate from colour — see
 
 | | |
 |---|---|
-| [docs/protocol.md](docs/protocol.md) | Framing, checksum, addressing, command table |
+| [docs/protocol.md](docs/protocol.md) | Framing, checksum, addressing, and the payload of every command. Start here to port this elsewhere. |
 | [docs/swg.md](docs/swg.md) | Salt system — both frame types, all three layout variants |
 | [docs/lights.md](docs/lights.md) | Light state model and commands |
-| [docs/status-packet-0255.md](docs/status-packet-0255.md) | The `02/55` status block, byte by byte |
+| [docs/status-packet-0255.md](docs/status-packet-0255.md) | The `02/55` / `02/56` status block, every byte and every bit |
 | [docs/capturing.md](docs/capturing.md) | Capturing bus traffic and analysing it |
 | [docs/decoding-session.md](docs/decoding-session.md) | What to do at the spa to decode unknown fields |
 | [docs/captures/](docs/captures/) | Raw bus captures |

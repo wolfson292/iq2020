@@ -161,7 +161,7 @@ The controller dispatches on `data[0]` (group) and `data[1]` (command).
 
 | Group/cmd | Meaning |
 |---|---|
-| `01/00` | Get versions |
+| `01/00` | Get versions — see below |
 | `01/09` | Set temperature |
 | `02/41` | Filter cycle times and econ — see below |
 | `02/4C` | Get/set clock |
@@ -185,6 +185,72 @@ The controller dispatches on `data[0]` (group) and `data[1]` (command).
 | `1D/07` | Get heat pump |
 | `1E/02` | Set salt level |
 | `1E/03` | Get salt status — see [swg.md](swg.md) |
+| `21/01` | CoolZone status — see below |
+
+## Versions — `01/00`
+
+The request carries no payload. The response is **21 bytes**, four fixed-width
+ASCII fields followed by one binary byte:
+
+| Offset | Size | Field |
+|---|---|---|
+| 0 | 6 | Controller firmware version |
+| 6 | 4 | Secondary version A |
+| 10 | 4 | Secondary version B |
+| 14 | 6 | Topside panel firmware version |
+| 20 | 1 | Panel type code |
+
+The strings are **not null-terminated** — they are fixed-width and padded, and
+any byte below `0x20` is replaced with a space before sending. Read exactly the
+widths above.
+
+Two real replies, from the same spa minutes apart:
+
+```
+57 52 34 2E 30 34  64 65 31 63  45 30 30 32  44 4B 34 2E 30 30  06
+"WR4.04"           "de1c"       "E002"       "DK4.00"           6
+
+57 52 34 2E 30 34  64 65 31 63  45 30 30 32  30 2E 30 30 2E 30  00
+"WR4.04"           "de1c"       "E002"       "0.00.0"           0
+```
+
+The second is the same controller before the topside panel has reported in: the
+panel version reads `0.00.0` and the type code is `0`. **Both move together**, so
+treat a type code of 0 as "panel not yet seen" rather than as a model. The same
+type code appears at offset 12 of the `02/55` status block.
+
+## Setpoint — `01/09`
+
+**This command is relative, not absolute.** There is no way to say "set 102 °F"
+in one frame; you say "step up four". So a client has to track the current
+setpoint from the `02/55` status block and compute the difference itself, and it
+has to re-read afterwards rather than assume the step landed.
+
+| `payload[0]` | Meaning |
+|---|---|
+| `0xFF` | `payload[1]` is a **signed** step count. Negative steps down, positive steps up. |
+| `0x01` | One step down |
+| `0x11` | One step up |
+
+The response is a single byte, `0x06`.
+
+One step is **1 °F** in Fahrenheit mode, or 0.9 °C in Celsius mode — after which
+the controller re-derives and re-rounds the value, so repeated stepping does not
+accumulate drift.
+
+The controller clamps the result:
+
+| | |
+|---|---|
+| Maximum | 104 °F |
+| Minimum | 80 °F normally, **50 °F once a CoolZone chiller has been seen on the bus** |
+
+Steps beyond a clamp are absorbed silently — the reply is still `0x06`. This is
+why a client must read the setpoint back rather than tracking it locally.
+
+Every `01/09` **commits the setpoint to the EEPROM**, on every call, whether or
+not the value changed. See
+[Settings persistence](#settings-persistence--dont-hammer-the-setpoint).
 
 ## The `0x0B` control group
 
@@ -229,6 +295,23 @@ nothing is written — it is a pure read.
 On the **response**, the flags byte reports bit 0 = econ, bit 1 = circulation.
 The two times also appear in the `02/55` status block at offsets 118 and 120,
 but econ and circulation appear nowhere else.
+
+## CoolZone — `21/01`
+
+The controller polls the chiller at `0x21` with a three-byte payload,
+`21 01 00`, roughly every ten seconds. On the reference spa — which has no
+CoolZone — 939 of these went out over 15 hours and not one was answered, so an
+unanswered poll is normal rather than a fault.
+
+The reply carries a status byte in `payload[0]`. The controller records it, and
+treats **any value of `0x10` or above as an error**: consecutive high readings
+increment a fault counter that saturates at 10, and any value below `0x10`
+resets it to zero.
+
+Receiving *any* frame from `0x21` also latches the "CoolZone present" bit at
+offset 8 bit 6 of the status block, and that latch is what widens the setpoint
+range down to 50 °F. A spa that has never seen a chiller cannot be set below
+80 °F.
 
 ## Heat pump — `1D/07`
 
@@ -341,10 +424,42 @@ screen coordinate. See [swg.md](swg.md).
   is characterised — it moves during a water test — but that is not the same as
   knowing what it measures.
 
-**Unverified** — some command names for group `0x02` are inherited from earlier
-work on this project and were not all independently confirmed. The `1D/07` heat
-pump command is only partly understood; the spa this component was developed
-against has no heat pump.
+**Unverified** — the `1D/07` heat pump command is only partly understood; the spa
+this component was developed against has no heat pump. Within the `02/55` status
+block, three things remain open and are called out individually at the end of
+[status-packet-0255.md](status-packet-0255.md): the single byte at offset 71, the
+names of the configuration items behind offsets 13–16, and which circuit the
+third electrical channel measures.
+
+## Porting this to another platform
+
+Everything a decoder needs is in three places, and they are meant to be read in
+this order:
+
+1. **This file** — framing, checksum, addressing, the collision and
+   resynchronisation rules, and the payload layout of every command except the
+   two large ones.
+2. **[status-packet-0255.md](status-packet-0255.md)** — the `02/55` and `02/56`
+   status block, byte by byte and bit by bit. This is where most of the spa's
+   state lives.
+3. **[swg.md](swg.md)** and **[lights.md](lights.md)** — the salt system and the
+   lights, both of which have enough structure to deserve their own page.
+
+Four things are easy to get wrong and worth checking your implementation
+against before you trust it:
+
+- **Temperatures in the status block are ASCII**, and the format changes with a
+  flag elsewhere in the same packet.
+- **The electrical readings are truncated floats**, so a current of 0 does not
+  mean a channel is idle.
+- **Three fields in the status block carry a duplicated high byte** and cannot be
+  read as normal 16-bit values.
+- **`01/09` is relative.** A client that sends an absolute temperature will set
+  the wrong one.
+
+If you are writing a sniffer rather than a client, also read the note in
+[swg.md](swg.md) about frames addressed to `0x99`: the controller ignores them
+and you should not.
 
 ## The other serial link — the topside remote
 
