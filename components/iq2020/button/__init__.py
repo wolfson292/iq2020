@@ -13,10 +13,12 @@ from .. import CONF_IQ2020_ID, IQ2020Component, iq2020_ns
 
 IQ2020ResetButton = iq2020_ns.class_("IQ2020ResetButton", button.Button)
 SWGTestButton = iq2020_ns.class_("SWGTestButton", button.Button)
+TransmitNudgeButton = iq2020_ns.class_("TransmitNudgeButton", button.Button)
 
 
 CONF_RESET = "reset"
 CONF_SWG_TEST = "swg_test"
+CONF_TRANSMIT_NUDGE = "transmit_nudge"
 
 
 CONFIG_SCHEMA = {
@@ -32,6 +34,11 @@ CONFIG_SCHEMA = {
         entity_category=ENTITY_CATEGORY_CONFIG,
         icon="mdi:test-tube",
     ),
+    cv.Optional(CONF_TRANSMIT_NUDGE): button.button_schema(
+        TransmitNudgeButton,
+        entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
+        icon="mdi:bullhorn-outline",
+    ),
 }
 
 async def to_code(config):
@@ -43,3 +50,6 @@ async def to_code(config):
         b = await button.new_button(cfg)
         await cg.register_parented(b, config[CONF_IQ2020_ID])
         cg.add(iq2020_component.set_swg_test_button(b))
+    if cfg := config.get(CONF_TRANSMIT_NUDGE):
+        b = await button.new_button(cfg)
+        await cg.register_parented(b, config[CONF_IQ2020_ID])

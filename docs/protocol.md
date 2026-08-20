@@ -227,6 +227,36 @@ say *"I am done talking, go ahead"*, and to clear a backoff if the controller ha
 been losing arbitration. A wall panel does not need this. A gateway that polls
 hard enough to crowd the bus does.
 
+### Using them
+
+Both are exposed by this component.
+
+```yaml
+iq2020:
+  uart_id: uart_spa
+  id: comp_iq2020
+  # Quiet period after which a transmit nudge is sent automatically.
+  # Omit or set to 0s to disable - the default.
+  nudge_timeout: 30s
+
+button:
+  - platform: iq2020
+    iq2020_id: comp_iq2020
+    reset:
+      name: "Reset IQ2020"
+    transmit_nudge:
+      name: "Transmit Nudge"
+```
+
+The automatic nudge is **off by default**. It is harmless in itself, but it puts
+traffic on the bus, and that should be a deliberate choice rather than something
+that starts happening on upgrade. When enabled, one nudge is sent per quiet
+period, so a genuinely dead controller is not hammered.
+
+The reset has no such safety valve and never fires on its own — it is only ever
+a button press, and it takes the controller down for as long as it needs to
+reboot.
+
 ## Settings persistence — don't hammer the setpoint
 
 The controller keeps its settings in non-volatile storage, and several commands

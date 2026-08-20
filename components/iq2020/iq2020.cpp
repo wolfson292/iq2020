@@ -55,6 +55,18 @@ void IQ2020Component::loop() {
         this->readline_(read(), buffer, max_line_length);
     }
 
+    // Opt-in recovery: if the controller has gone quiet, nudge it into
+    // transmitting rather than waiting indefinitely. Disabled unless a timeout
+    // is configured, because it puts traffic on the bus on everyone's spa and
+    // that should be a deliberate choice. Rate-limited to one nudge per timeout
+    // so a genuinely dead controller is not hammered.
+    if (this->nudge_timeout_ms_ > 0 && since_last_recv > this->nudge_timeout_ms_ &&
+        (millis() - this->last_nudge_timestamp_) > this->nudge_timeout_ms_) {
+        ESP_LOGW(TAG, "No frame received for %" PRIu32 " ms - sending transmit nudge",
+                 since_last_recv);
+        this->sendCmdTransmitNudge();
+    }
+
     if(since_last > 300)
     {
         if (!this->send_queue_.empty()) {
@@ -311,12 +323,32 @@ void IQ2020Component::sendCmdSetSWG(float value)
     }
 }
 
+// Remote reset. The three payload bytes are a magic constant the controller
+// checks before acting - on a match it enters an unconditional infinite loop and
+// the watchdog resets it a moment later. Nothing else guards it.
+//
+// The spa keeps running while the controller reboots, but everything it drives
+// stops responding until it comes back, so this is not a routine operation.
 void IQ2020Component::sendCmdReset()
 {
-    // causes iq2020 to entire an infinite loop, likely causing watchdog reset
-    ESP_LOGI(TAG, "sendCmdReset");
+    ESP_LOGW(TAG, "sendCmdReset - resetting the IQ2020 controller via watchdog");
     std::vector<uint8_t> data = {0x02, 0x73, 0x34, 0x87, 0xe5};
     this->sendCmd_(remote_addr_, 0x01, data);
+}
+
+// Transmit nudge. Tells the controller it may send whatever it has queued once
+// ~300 ms have passed, instead of waiting for its usual bus-idle condition, and
+// resets its retry counter at the same time.
+//
+// It changes no setting - it is purely bus arbitration, which is what makes it
+// usable as a recovery poke when the controller has stopped answering because it
+// keeps losing arbitration.
+void IQ2020Component::sendCmdTransmitNudge()
+{
+    ESP_LOGI(TAG, "sendCmdTransmitNudge");
+    std::vector<uint8_t> data = {0x02, 0x50, 0x06};
+    this->sendCmd_(remote_addr_, 0x01, data, false);
+    this->last_nudge_timestamp_ = millis();
 }
 
 void IQ2020Component::sendCmdSetTemp(float temp_c) {

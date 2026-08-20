@@ -164,6 +164,10 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   void set_light_cycle(uint8_t lightNum, bool cycling);
   void set_light_speed(uint8_t lightNum, uint8_t speed, bool skip_status_update = false);
   void sendCmdReset();
+  void sendCmdTransmitNudge();
+  // 0 disables the automatic nudge; otherwise the quiet period after which one
+  // is sent, and the minimum gap between them.
+  void set_nudge_timeout(uint32_t ms) { nudge_timeout_ms_ = ms; }
   void sendCmdSetDateTime(uint8_t seconds, uint8_t minutes, uint8_t hours, uint8_t days, uint8_t months, uint16_t years);
   void sendResponseEmulateAudio();
   void sendResponseEmulateAudioTitle();
@@ -268,6 +272,8 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   uint32_t last_recv_timestamp_;
   uint32_t last_send_timestamp_;
   uint32_t startup_timestamp_;
+  uint32_t last_nudge_timestamp_ = 0;
+  uint32_t nudge_timeout_ms_ = 0;
   bool startup_delay_passed_ = false;
   bool sent_get_lights_since_last_cycle_ = false;
 
