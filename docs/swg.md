@@ -86,13 +86,33 @@ The controller copies both straight from the module's frame into its `1E/03`
 summary (offsets 8 and 7) and never looks at them. So their meaning cannot be
 recovered from the controller side — only the salt module itself knows.
 
-They behave very differently on the wire, though, and that is worth acting on:
+They behave very differently on the wire, though, and that is worth acting on.
 
-- **Byte 11 is static.** It held `0x69` across all 190 frames in the capture set.
-- **Byte 4 moves.** It takes values 0, 2, 6 and 8, and steps during a water test
-  (`8 → 0 → 2 → 8` over seven seconds in one capture). This component publishes
-  it raw as `swg_cell_state` so it can be correlated against real behaviour;
-  the name says where it comes from, not what it means.
+**Byte 11 is static.** It held `0x69` across two capture sets taken months apart,
+either side of a cartridge replacement — 746 frames, never once different. That
+is the signature of a constant: a model or revision identifier rather than a
+measurement.
+
+**Byte 4 is a real measurement**, published here as `swg_cell_state`. What is
+known about it:
+
+| | |
+|---|---|
+| Not the output level | Held steady at 8 across every level from 0 to 10 |
+| Not the salinity | Unchanged while the salinity index moved 14 ↔ 15 |
+| Re-measured by a water test | Drops to 0 the moment the test starts, then climbs back through intermediate values over roughly 40 seconds |
+| Differs across a cartridge change | Rested at **8** with a 132-day cartridge; rests at **11** with a 35-day one |
+
+The most plausible reading is **cell condition** — a health or plate-quality
+figure that the water test re-measures and that declines as the cartridge wears.
+It is worth being clear that the age correlation rests on **two data points**,
+one either side of a cartridge replacement, and salinity also changed between
+those captures.
+
+**How to settle it:** watch `swg_cell_state` over weeks. If it steps down as the
+cartridge ages and jumps back up when a new one is fitted, cell condition is
+confirmed. If it stays put, the difference between those two captures was
+something else. The sensor is already published, so this costs nothing but time.
 
 ### Frames addressed to `0x99`
 
