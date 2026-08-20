@@ -989,6 +989,17 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
 
             }
 
+            // A well-formed 02/55 is 117 data bytes and a 02/56 is 134.
+            // Anything shorter passed the checksum but is not a status block,
+            // and the decode below indexes fixed offsets that would run off the
+            // end of it.
+            else if(src == 0x01 && dest == 0x1f && operation == 0x80 && data[0] == 0x02
+                    && (data[1] == 0x55 || data[1] == 0x56) && data.size() < 117)
+            {
+                ESP_LOGW(TAG, "Status block too short (%u bytes); ignoring",
+                         (unsigned) data.size());
+            }
+
             // Get Data
             else if(src == 0x01 && dest == 0x1f && operation == 0x80 && data[0] == 0x02 && (data[1] == 0x55 || data[1] == 0x56))
             {
@@ -1010,8 +1021,7 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                     }
                     ESP_LOGI(TAG, "DataExtended Length:%d Offset:%s", data.size(), buffer_to_string_(data_num).c_str());
                     ESP_LOGI(TAG, "DataExtended Length:%d Data:  %s", data.size(), buffer_to_string_(data).c_str());
-                
-                
+
                 if(this->jets1_timeout_sensor_ != nullptr) {
                     this->jets1_timeout_sensor_->publish_state(read_uint16(data, 17));
                 }
@@ -1029,11 +1039,6 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 }
 
 
-                uint16_t heaterPower = data[114] << 8 | data[113];
-                ESP_LOGI(TAG, "Heater Power: %d", heaterPower);
-                if (this->heater_power_sensor_ != nullptr) {
-                    this->heater_power_sensor_->publish_state(heaterPower);
-                }
 
                 float heaterSeconds = read_uint32(data, 35);
                 float jet1Seconds = read_uint32(data, 39);
@@ -1150,48 +1155,76 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
 
                 ESP_LOGI(TAG, "SpaLock:%s TempLock:%s", spa_lock ? "True" : "False", temp_lock ? "True" : "False");
 
-                uint16_t amps = data[99] << 8 | data[100];
-                ESP_LOGI(TAG, "Amps:%d", amps);
+                // Electrical channels. Each named channel is one voltage, one
+                // current and the power the controller derives from that exact
+                // pair - the packet does not list the three in the same order,
+                // so the offsets below are deliberately not sequential. See
+                // docs/status-packet-0255.md.
+                //
+                //   baseline    : the always-on load, latched whenever no jets
+                //                 and no blower are running - the circ pump
+                //   jets_blower : whatever is drawn above that baseline
+                //   aux         : a third circuit, not yet identified
+                //   heater      : the heater leg
+                //
+                // The heater channel's three fields are emitted defectively by
+                // the controller: it stores the high byte into both byte
+                // positions and drops the low byte. Only the first byte carries
+                // information, so recover the value at 256-unit resolution.
+                auto heater_field = [&](size_t off) -> uint32_t {
+                    return (uint32_t) data[off] * 256u;
+                };
 
-                if(this->l1_voltage_sensor_ != nullptr) {
-                    this->l1_voltage_sensor_->publish_state(read_uint16(data, 93));
+                if(this->baseline_voltage_sensor_ != nullptr) {
+                    this->baseline_voltage_sensor_->publish_state(read_uint16(data, 93));
+                }
+                if(this->jets_blower_voltage_sensor_ != nullptr) {
+                    this->jets_blower_voltage_sensor_->publish_state(read_uint16(data, 95));
+                }
+                if(this->aux_voltage_sensor_ != nullptr) {
+                    this->aux_voltage_sensor_->publish_state(read_uint16(data, 97));
                 }
                 if(this->heater_voltage_sensor_ != nullptr) {
-                    this->heater_voltage_sensor_->publish_state(read_uint16(data, 95));
-                }
-                if(this->l2_voltage_sensor_ != nullptr) {
-                    this->l2_voltage_sensor_->publish_state(read_uint16(data, 97));
-                }
-                if(this->jets3_voltage_sensor_ != nullptr) {
-                    this->jets3_voltage_sensor_->publish_state(read_uint16(data, 99));
+                    this->heater_voltage_sensor_->publish_state(heater_field(99));
                 }
 
-                if(this->l1_current_sensor_ != nullptr) {
-                    this->l1_current_sensor_->publish_state(read_uint16(data, 101));
+                // Currents are floats truncated to integers by the controller,
+                // so anything under 1 A reports as 0 even while its power
+                // reading is correct. Do not treat a 0 here as "off".
+                if(this->jets_blower_current_sensor_ != nullptr) {
+                    this->jets_blower_current_sensor_->publish_state(read_uint16(data, 101));
+                }
+                if(this->baseline_current_sensor_ != nullptr) {
+                    this->baseline_current_sensor_->publish_state(read_uint16(data, 103));
+                }
+                if(this->aux_current_sensor_ != nullptr) {
+                    this->aux_current_sensor_->publish_state(read_uint16(data, 105));
                 }
                 if(this->heater_current_sensor_ != nullptr) {
-                    this->heater_current_sensor_->publish_state(read_uint16(data, 103));
-                }
-                if(this->l2_current_sensor_ != nullptr) {
-                    this->l2_current_sensor_->publish_state(read_uint16(data, 105));
-                }
-                if(this->jets3_current_sensor_ != nullptr) {
-                    this->jets3_current_sensor_->publish_state(read_uint16(data, 107));
+                    this->heater_current_sensor_->publish_state(heater_field(107));
                 }
 
-                if(this->l1_power_sensor_ != nullptr) {
-                    this->l1_power_sensor_->publish_state(read_uint16(data, 109));
+                if(this->jets_blower_power_sensor_ != nullptr) {
+                    this->jets_blower_power_sensor_->publish_state(read_uint16(data, 109));
+                }
+                if(this->baseline_power_sensor_ != nullptr) {
+                    this->baseline_power_sensor_->publish_state(read_uint16(data, 111));
+                }
+                if(this->aux_power_sensor_ != nullptr) {
+                    this->aux_power_sensor_->publish_state(read_uint16(data, 113));
                 }
                 if(this->heater_power_sensor_ != nullptr) {
-                    this->heater_power_sensor_->publish_state(read_uint16(data, 111));
-                }
-                if(this->l2_power_sensor_ != nullptr) {
-                    this->l2_power_sensor_->publish_state(read_uint16(data, 113));
-                }
-                if(this->jets3_power_sensor_ != nullptr) {
-                    this->jets3_power_sensor_->publish_state(read_uint16(data, 115));
+                    this->heater_power_sensor_->publish_state(heater_field(115));
                 }
 
+                // Offsets 117 and up exist only in the 02/56 form: a 02/55
+                // reply is 117 bytes and stops at offset 116. Check the size
+                // rather than the command byte, so a truncated frame that
+                // happened to pass the checksum cannot walk off the end either.
+                if(data.size() < 134) {
+                    ESP_LOGD(TAG, "Status block is %u bytes; skipping the 02/56 tail",
+                             (unsigned) data.size());
+                } else {
                 if(this->daily_clean_cycle_sensor_ != nullptr) {
                     this->daily_clean_cycle_sensor_->publish_state(data[117]);
                 }
@@ -1253,6 +1286,7 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
 
                     ESP_LOGI(TAG, "Timer %04d-%02d-%02d %02d:%02d:%02d", year, months, days, hours, minutes, seconds);
                 }
+                }   // end of the 02/56-only tail
 
                 bool pump_on = GETBIT8(data[5], 2);
                 
@@ -1260,7 +1294,29 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                     this->pump_binary_sensor_->publish_state(pump_on);
                 }
 
-                auto clean_mode = GETBIT8(data[4], 2);
+                // The heater byte carries 5 when heating and 0 when not - it is
+                // not a 0/1 flag.
+                if (this->heater_binary_sensor_ != nullptr) {
+                    this->heater_binary_sensor_->publish_state(data[6] == 5);
+                }
+                // Flow switch. Debounced by the controller over 15 seconds, so
+                // it lags the pump by up to that long.
+                if (this->flow_switch_binary_sensor_ != nullptr) {
+                    this->flow_switch_binary_sensor_->publish_state(GETBIT8(data[3], 3));
+                }
+                // Set when the controller cannot trust its water temperature
+                // reading; the temperature strings are meaningless while it is.
+                if (this->water_temp_fault_binary_sensor_ != nullptr) {
+                    this->water_temp_fault_binary_sensor_->publish_state(GETBIT8(data[3], 6));
+                }
+                if (this->panel_type_sensor_ != nullptr) {
+                    this->panel_type_sensor_->publish_state(data[12]);
+                }
+
+                // Offset 4 bit 4 is the clean cycle. Bit 2 - which this used
+                // to read - is jets 1 at high speed, so the switch never
+                // followed the clean cycle at all.
+                auto clean_mode = GETBIT8(data[4], 4);
                 ESP_LOGI(TAG, "Clean Mode:%s", clean_mode ? "On" : "Off");
                 if (this->clean_mode_switch_ != nullptr) {
                     ESP_LOGI(TAG, "clean_mode_switch_ publish_state:%s", clean_mode ? "True" : "False");
@@ -1762,7 +1818,7 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 uint8_t salinity_i = p[2] >> 2;     // salinity index, 0-63
                 uint8_t status_cls = p[2] & 0x03;   // 1 = summer timer, 3 = low salt
                 uint8_t cell_days  = p[3];          // cartridge age in days
-                uint8_t flags      = p[5];          // b0 generating, b2 boost
+                uint8_t flags      = p[5];          // b0 generating, b1 active, b2 boost, b3 self-check
                 uint8_t error_code = p[6];
                 uint32_t runtime   = (uint32_t) p[8] | ((uint32_t) p[9] << 8) | ((uint32_t) p[10] << 16);
                 // Low nibble of payload[12] is cartridge presence. The controller's
@@ -1795,6 +1851,10 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
 
                 bool generating = (flags & 0x01) != 0;
                 bool boost      = (flags & 0x04) != 0;
+                // bit 3 is set for the duration of the module's self-check and
+                // clears when it finishes. It is not a lockout: level adjustment
+                // is gated on the salt test reading, not on this bit.
+                bool testing    = (flags & 0x08) != 0;
                 bool cartridge_due = cell_days >= 120;   // the 4-month replace prompt
                 // A salt test reading above 9 locks level adjustment. Worth
                 // surfacing on its own - otherwise the level simply stops
@@ -1879,6 +1939,9 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 if(this->swg_level_locked_binary_sensor_ != nullptr) {
                     this->swg_level_locked_binary_sensor_->publish_state(level_locked);
                 }
+                if(this->swg_testing_binary_sensor_ != nullptr) {
+                    this->swg_testing_binary_sensor_->publish_state(testing);
+                }
                 if(this->swg_cartridge_present_binary_sensor_ != nullptr) {
                     this->swg_cartridge_present_binary_sensor_->publish_state(cartridge == 1);
                 }
@@ -1893,7 +1956,18 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                     this->swg_cell_state_sensor_->publish_state(cell_state);
                 }
                 if(this->swg_status_text_sensor_ != nullptr) {
-                    this->swg_status_text_sensor_->publish_state(this->decodeSWGStatus_(status));
+                    // While the self-check runs the panel replaces the salt
+                    // status with "Testing", but not unconditionally: the two
+                    // states that mean the system is not running at all win over
+                    // it, and among the prompt/wizard states only "Service
+                    // Required" is displaced.
+                    bool steady = (status == 0 || status == 2 ||
+                                   status == 9 || status == 10 ||
+                                   status == 11 || status == 12);
+                    bool show_testing = testing && (steady || status == 19);
+                    this->swg_status_text_sensor_->publish_state(
+                        show_testing ? std::string("Testing")
+                                     : this->decodeSWGStatus_(status));
                 }
                 if(this->swg_type_text_sensor_ != nullptr) {
                     this->swg_type_text_sensor_->publish_state(is_freshwater ? "FreshWater (0x29)" : "ACE (0x24)");

@@ -64,21 +64,22 @@ CONF_JET1_LOW_SEC = "jet1_low_seconds"
 CONF_JET2_LOW_SEC = "jet2_low_seconds"
 CONF_TEMP_SET = "temp_set"
 CONF_WATER_TEMP = "water_temp"
-CONF_L1_VOLT = "l1_voltage"
+CONF_BASELINE_VOLT = "baseline_voltage"
 CONF_HEATER_VOLT = "heater_voltage"
-CONF_L2_VOLT = "l2_voltage"
-CONF_JETS3_VOLT = "jets3_voltage"
-CONF_L1_CURRENT = "l1_current"
+CONF_AUX_VOLT = "aux_voltage"
+CONF_JETS_BLOWER_VOLT = "jets_blower_voltage"
+CONF_BASELINE_CURRENT = "baseline_current"
 CONF_HEATER_CURRENT = "heater_current"
-CONF_L2_CURRENT = "l2_current"
-CONF_JETS3_CURRENT = "jets3_current"
-CONF_L1_POWER = "l1_power"
-CONF_L2_POWER = "l2_power"
-CONF_JETS3_POWER = "jets3_power"
+CONF_AUX_CURRENT = "aux_current"
+CONF_JETS_BLOWER_CURRENT = "jets_blower_current"
+CONF_BASELINE_POWER = "baseline_power"
+CONF_AUX_POWER = "aux_power"
+CONF_JETS_BLOWER_POWER = "jets_blower_power"
 CONF_HEATER_POWER = "heater_power"
 CONF_FILTER1_TIME = "filter1_time"
 CONF_FILTER2_TIME = "filter2_time"
 CONF_PCB_TEMP = "pcb_temp"
+CONF_PANEL_TYPE = "panel_type"
 CONF_PERIPH_CURRENT = "periph_current"
 CONF_RTC_SEC = "rtc_seconds"
 CONF_RTC_MINUTE = "rtc_minutes"
@@ -126,21 +127,22 @@ TYPES = (
     CONF_JET2_LOW_SEC,
     CONF_TEMP_SET,
     CONF_WATER_TEMP,
-    CONF_L1_VOLT,
+    CONF_BASELINE_VOLT,
     CONF_HEATER_VOLT,
-    CONF_L2_VOLT,
-    CONF_JETS3_VOLT,
-    CONF_L1_CURRENT,
+    CONF_AUX_VOLT,
+    CONF_JETS_BLOWER_VOLT,
+    CONF_BASELINE_CURRENT,
     CONF_HEATER_CURRENT,
-    CONF_L2_CURRENT,
-    CONF_JETS3_CURRENT,
-    CONF_L1_POWER,
-    CONF_L2_POWER,
-    CONF_JETS3_POWER,
+    CONF_AUX_CURRENT,
+    CONF_JETS_BLOWER_CURRENT,
+    CONF_BASELINE_POWER,
+    CONF_AUX_POWER,
+    CONF_JETS_BLOWER_POWER,
     CONF_HEATER_POWER,
     CONF_FILTER1_TIME,
     CONF_FILTER2_TIME,
     CONF_PCB_TEMP,
+    CONF_PANEL_TYPE,
     CONF_PERIPH_CURRENT,
     CONF_RTC_SEC,
     CONF_RTC_MINUTE,
@@ -189,20 +191,27 @@ CONFIG_SCHEMA = cv.Schema(
             icon=ICON_THERMOMETER,
             accuracy_decimals=0,
         ),
+        # Topside panel model code. Static for a given spa, and 0 until the
+        # panel has reported in - the same byte the 01/00 version reply ends
+        # with.
+        cv.Optional(CONF_PANEL_TYPE): sensor.sensor_schema(
+            entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
+            accuracy_decimals=0,
+        ),
 
-        cv.Optional(CONF_L1_POWER): sensor.sensor_schema(
+        cv.Optional(CONF_BASELINE_POWER): sensor.sensor_schema(
             device_class=DEVICE_CLASS_POWER,
             unit_of_measurement=UNIT_WATT,
             icon=ICON_POWER,
             accuracy_decimals=0,
         ),
-        cv.Optional(CONF_L2_POWER): sensor.sensor_schema(
+        cv.Optional(CONF_AUX_POWER): sensor.sensor_schema(
             device_class=DEVICE_CLASS_POWER,
             unit_of_measurement=UNIT_WATT,
             icon=ICON_POWER,
             accuracy_decimals=0,
         ),
-        cv.Optional(CONF_JETS3_POWER): sensor.sensor_schema(
+        cv.Optional(CONF_JETS_BLOWER_POWER): sensor.sensor_schema(
             device_class=DEVICE_CLASS_POWER,
             unit_of_measurement=UNIT_WATT,
             icon=ICON_POWER,
@@ -215,19 +224,19 @@ CONFIG_SCHEMA = cv.Schema(
             accuracy_decimals=0,
         ),
 
-        cv.Optional(CONF_L1_VOLT): sensor.sensor_schema(
+        cv.Optional(CONF_BASELINE_VOLT): sensor.sensor_schema(
             device_class=DEVICE_CLASS_VOLTAGE,
             unit_of_measurement=UNIT_VOLT,
             icon=ICON_POWER,
             accuracy_decimals=0,
         ),
-        cv.Optional(CONF_L2_VOLT): sensor.sensor_schema(
+        cv.Optional(CONF_AUX_VOLT): sensor.sensor_schema(
             device_class=DEVICE_CLASS_VOLTAGE,
             unit_of_measurement=UNIT_VOLT,
             icon=ICON_POWER,
             accuracy_decimals=0,
         ),
-        cv.Optional(CONF_JETS3_VOLT): sensor.sensor_schema(
+        cv.Optional(CONF_JETS_BLOWER_VOLT): sensor.sensor_schema(
             device_class=DEVICE_CLASS_VOLTAGE,
             unit_of_measurement=UNIT_VOLT,
             icon=ICON_POWER,
@@ -240,19 +249,19 @@ CONFIG_SCHEMA = cv.Schema(
             accuracy_decimals=0,
         ),
 
-        cv.Optional(CONF_L1_CURRENT): sensor.sensor_schema(
+        cv.Optional(CONF_BASELINE_CURRENT): sensor.sensor_schema(
             device_class=DEVICE_CLASS_CURRENT,
             unit_of_measurement=UNIT_AMPERE,
             icon=ICON_POWER,
             accuracy_decimals=0,
         ),
-        cv.Optional(CONF_L2_CURRENT): sensor.sensor_schema(
+        cv.Optional(CONF_AUX_CURRENT): sensor.sensor_schema(
             device_class=DEVICE_CLASS_CURRENT,
             unit_of_measurement=UNIT_AMPERE,
             icon=ICON_POWER,
             accuracy_decimals=0,
         ),
-        cv.Optional(CONF_JETS3_CURRENT): sensor.sensor_schema(
+        cv.Optional(CONF_JETS_BLOWER_CURRENT): sensor.sensor_schema(
             device_class=DEVICE_CLASS_CURRENT,
             unit_of_measurement=UNIT_AMPERE,
             icon=ICON_POWER,

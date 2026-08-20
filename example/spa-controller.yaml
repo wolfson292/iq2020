@@ -114,6 +114,8 @@ sensor:
       name: "SWG Salt Test"
     swg_cell_state:
       name: "SWG Cell State"
+    panel_type:
+      name: "Panel Type"
     swg_salinity:
       name: "SWG Salinity"
     swg_salinity_index:
@@ -123,12 +125,24 @@ sensor:
     swg_spa_size:
       name: "SWG Spa Size"
     
-    l1_power:
-      name: "L1 Power"
-    l2_power:
-      name: "L2 Power"
-    jets3_power:
-      name: "Jets3 Power"
+    # Electrical channels. Each name below is one voltage / current / power
+    # triple that the controller derives together - the packet does not store
+    # the three in the same order, so see docs/status-packet-0255.md before
+    # changing any of them.
+    #
+    #   baseline    the always-on load, sampled whenever no jets and no blower
+    #               are running. On this spa that is the circulation pump.
+    #   jets_blower whatever is drawn above that baseline
+    #   aux         a third circuit, not yet identified
+    #   heater      the heater leg. Readable only to 256 W / V / A resolution:
+    #               the controller emits this channel's high byte twice and
+    #               drops the low one.
+    baseline_power:
+      name: "Baseline Power"
+    jets_blower_power:
+      name: "Jets & Blower Power"
+    aux_power:
+      name: "Aux Power"
     heater_power:
       name: "Heater Power"
     
@@ -150,9 +164,14 @@ sensor:
       name: "Jets 1 Low Runtime"
     jet2_low_seconds:
       name: "Jets 2 Low Runtime"
+    # Total time the controller has been powered. Distinct from pump_seconds,
+    # which is the circulation pump alone - on a 24/7 circ pump the two track
+    # closely, which is how they came to be confused.
     lifetime_seconds:
       name: "Lifetime Runtime"
     
+    # Mains interruptions the spa has ridden through, counted by the
+    # controller since it was built.
     lost_lines:
       name: "Lost Line Counter"
     # Diagnostics for the bus itself. Both are cumulative counts, so what
@@ -172,25 +191,28 @@ sensor:
     blower_speed:
       name: "Blower Speed"
 
+    # Currents are whole amps: the controller truncates a float, so anything
+    # under 1 A reads as 0 even while its power channel reports correctly.
+    # periph_current is the exception - it is scaled to milliamps first.
+    baseline_current:
+      name: "Baseline Current"
+    jets_blower_current:
+      name: "Jets & Blower Current"
+    aux_current:
+      name: "Aux Current"
     heater_current:
       name: "Heater Current"
-    l1_current:
-      name: "L1 Current"
-    l2_current:
-      name: "L2 Current"
-    jets3_current:
-      name: "Jets 3 Current"
     periph_current:
       name: "Periph Current"
 
+    baseline_voltage:
+      name: "Baseline Voltage"
+    jets_blower_voltage:
+      name: "Jets & Blower Voltage"
+    aux_voltage:
+      name: "Aux Voltage"
     heater_voltage:
       name: "Heater Voltage"
-    l1_voltage:
-      name: "L1 Voltage"
-    l2_voltage:
-      name: "L2 Voltage"
-    jets3_voltage:
-      name: "Jets 3 Voltage"
 
     rtc_seconds:
       name: "RTC Seconds"
@@ -240,6 +262,14 @@ binary_sensor:
       name: "SWG Cartridge Present"
     swg_level_locked:
       name: "SWG Level Locked"
+    swg_testing:
+      name: "SWG Self Check"
+    heater:
+      name: "Heater"
+    flow_switch:
+      name: "Water Flow"
+    water_temp_fault:
+      name: "Water Temp Sensor Fault"
     econ_mode:
       name: "Econ Mode"
     circulation:
