@@ -172,6 +172,28 @@ Present in the controller but not implemented here; the spa this component was
 developed against has no heat pump. The request's first payload byte is a mode,
 accepted only if `< 5`; the response is two bytes, `[mode, value]`.
 
+## Settings persistence — don't hammer the setpoint
+
+The controller keeps its settings in non-volatile storage, and several commands
+commit a write **every time they are called**, not just when the value changes:
+
+- `01/09` set temperature
+- `0B/1C` summer timer, `0B/1D` spa lock, `0B/1E` temperature lock, `0B/20`
+- `02/41` — but only when its flags byte actually requests a write
+
+Two things are usefully free:
+
+- **Light commands (`17/02`) do not persist.** Stepping colour, brightness or
+  cycle speed costs nothing, which matters because reaching a target colour
+  takes up to six commands.
+- **`02/41` with a zero flags byte** is a pure read and commits nothing, so it
+  is safe to poll.
+
+The practical consequence is `01/09`. An automation that tracks the setpoint to
+an outdoor temperature, or a dashboard slider that fires on every drag step,
+turns into a stream of writes to a part with a finite endurance rating. Debounce
+setpoint changes and only send when the value has actually moved.
+
 ## Confidence
 
 Not everything here is equally solid, and it is worth being explicit about which
