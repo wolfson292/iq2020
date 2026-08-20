@@ -31,7 +31,8 @@ from esphome.const import (
     ICON_HEATING_COIL,
     DEVICE_CLASS_SPEED,
     ICON_BLUR,
-    ICON_MAGNET
+    ICON_MAGNET,
+    ICON_BUG
 )
 from . import CONF_IQ2020_ID, IQ2020Component
 
@@ -52,6 +53,8 @@ CONF_HEATER_SEC = "heater_seconds"
 CONF_JET1_SEC = "jet1_seconds"
 CONF_LIFETIME_SEC = "lifetime_seconds"
 CONF_LOST_LINE = "lost_lines"
+CONF_BUS_RESYNCS = "bus_resyncs"
+CONF_SENDS_DEFERRED = "sends_deferred"
 CONF_JET2_SEC = "jet2_seconds"
 CONF_JET3_SEC = "jet3_seconds"
 CONF_BLOWER_SEC = "blower_seconds"
@@ -112,6 +115,8 @@ TYPES = (
     CONF_JET1_SEC,
     CONF_LIFETIME_SEC,
     CONF_LOST_LINE,
+    CONF_BUS_RESYNCS,
+    CONF_SENDS_DEFERRED,
     CONF_JET2_SEC,
     CONF_JET3_SEC,
     CONF_BLOWER_SEC,
@@ -472,6 +477,19 @@ CONFIG_SCHEMA = cv.Schema(
         ),
         # Salt test reading. 15 raises the "Test Water" prompt, 20 the
         # "Level Set To 3" prompt, and anything above 9 locks level adjustment.
+        # Frames abandoned and resynced: a mid-frame gap, an implausible
+        # length byte, or a failed checksum. A rate rather than an event - what
+        # matters is whether it climbs over hours.
+        cv.Optional(CONF_BUS_RESYNCS): sensor.sensor_schema(
+            icon=ICON_BUG,
+            entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
+        ),
+        # Sends held back because the bus was busy. If this stays at zero the
+        # idle gate is never engaging and is not doing anything.
+        cv.Optional(CONF_SENDS_DEFERRED): sensor.sensor_schema(
+            icon=ICON_BUG,
+            entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
+        ),
         cv.Optional(CONF_SWG_SALT_TEST): sensor.sensor_schema(
             icon=ICON_WATER,
             entity_category=ENTITY_CATEGORY_DIAGNOSTIC,

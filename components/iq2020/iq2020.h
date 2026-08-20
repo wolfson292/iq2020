@@ -71,6 +71,8 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   SUB_SENSOR(jet1_seconds)
   SUB_SENSOR(lifetime_seconds)
   SUB_SENSOR(lost_lines)
+  SUB_SENSOR(bus_resyncs)
+  SUB_SENSOR(sends_deferred)
   SUB_SENSOR(jet2_seconds)
   SUB_SENSOR(jet3_seconds)
   SUB_SENSOR(blower_seconds)
@@ -284,6 +286,12 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   uint32_t bus_idle_ms_ = 20;
   uint32_t last_rx_byte_ms_ = 0;
   int rx_pos_ = 0;
+  // Counters rather than log lines. A deferral or a resync is far too frequent
+  // to log at a level anyone runs day to day, and the question they answer -
+  // is the bus-idle gate doing anything, are frames still arriving broken - is
+  // only meaningful as a rate over hours.
+  uint32_t bus_resyncs_ = 0;
+  uint32_t sends_deferred_ = 0;
   bool startup_delay_passed_ = false;
   bool sent_get_lights_since_last_cycle_ = false;
 

@@ -155,6 +155,13 @@ sensor:
     
     lost_lines:
       name: "Lost Line Counter"
+    # Diagnostics for the bus itself. Both are cumulative counts, so what
+    # matters is whether they climb over hours, not their absolute value.
+    # sends_deferred staying at zero means the bus-idle gate never engages.
+    bus_resyncs:
+      name: "Bus Resyncs"
+    sends_deferred:
+      name: "Sends Deferred"
 
     jets1_speed:
       name: "Jets 1 Speed"

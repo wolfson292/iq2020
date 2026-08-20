@@ -82,6 +82,7 @@ void IQ2020Component::loop() {
     bool bus_idle = (this->rx_pos_ == 0) && (since_last_byte >= this->bus_idle_ms_);
 
     if(since_last > 300 && !bus_idle) {
+        this->sends_deferred_++;
         ESP_LOGV(TAG, "deferring send, bus busy (pos %d, %" PRIu32 " ms since last byte)",
                  this->rx_pos_, since_last_byte);
     }
@@ -190,6 +191,12 @@ void IQ2020Component::update() {
         this->sendCMDGetLightStatus();
         this->sendCMDGetSWG();
         this->sendCMDGetFilterConfig();
+        if (this->bus_resyncs_sensor_ != nullptr) {
+            this->bus_resyncs_sensor_->publish_state(this->bus_resyncs_);
+        }
+        if (this->sends_deferred_sensor_ != nullptr) {
+            this->sends_deferred_sensor_->publish_state(this->sends_deferred_);
+        }
         this->sendCmdGetAudio();
         sent_get_lights_since_last_cycle_ = false;
     } else {
@@ -747,6 +754,7 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
     if (pos != 0 && (now - this->last_rx_byte_ms_) > IQ2020_INTERFRAME_GAP_MS) {
         ESP_LOGW(TAG, "readline_ %" PRIu32 " ms gap mid-frame at pos %d - resyncing",
                  now - this->last_rx_byte_ms_, pos);
+        this->bus_resyncs_++;
         pos = 0;
     }
     this->last_rx_byte_ms_ = now;
@@ -777,6 +785,7 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
         // bad byte costs one frame instead of the next few hundred bytes.
         if (readch < 2 || readch > len - 7) {
             ESP_LOGW(TAG, "readline_ implausible length %02X - resyncing", readch);
+            this->bus_resyncs_++;
             pos = 0;
             return true;
         }
@@ -845,6 +854,7 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 // corrupted byte into several lost frames; the next 0x1C starts
                 // a new frame on its own.
                 ESP_LOGE(TAG, "readline_ Invalid Checksum %02X should be %02X - resyncing", buffer[pos], checksum);
+                this->bus_resyncs_++;
                 pos = 0;
                 return true;
             }
