@@ -4,9 +4,13 @@ An [ESPHome](https://esphome.io) component for **IQ2020** spa controllers — th
 control system used in Caldera and Hot Spring spas — plus documentation of the
 RS-485 protocol it speaks.
 
-The component emulates a topside panel on the spa's RS-485 bus, so the spa is
-controlled the same way the real panel controls it. No cloud service and no
+The component takes the place of the manufacturer's **Spa Connection Kit** on the
+spa's RS-485 bus, so the spa is controlled through the same interface the
+manufacturer built for its own internet gateway. No cloud service and no
 modification to the spa.
+
+If you have the official Connection Kit installed, note that it uses the same bus
+address — the two will collide.
 
 ## What you get
 

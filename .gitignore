@@ -50,3 +50,7 @@ analysis/
 trace-*.txt
 *.capture.log
 capture.log
+
+# Output from tools/parse-capture.py and similar. Regenerate it; do not commit it.
+stats*.txt
+*.analysis.txt
