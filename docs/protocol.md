@@ -45,6 +45,41 @@ it sent. A mismatch is treated as a bus collision and aborts the transmission.
 If you see the controller retrying for no visible reason, something else drove
 the line mid-frame.
 
+**That something else is easily you.** The controller waits for bus silence
+before transmitting; anything else on the bus has to do the same. Measured on a
+live spa:
+
+| | |
+|---|---|
+| Minimum observed gap between frames | 8 ms |
+| Controller request to accessory reply | 8-12 ms |
+
+Those request/reply pairs are tight, and transmitting into one corrupts it. A
+half-hour capture with a device that polled on its own schedule showed every
+corrupted frame belonging to the controller/salt-module conversation, at
+roughly the rate a 12 ms window and a 300 ms send interval predict — while the
+2300 frames of that device's own exchange with the controller were untouched.
+
+So wait for silence that clears a whole exchange before sending. This component
+uses 20 ms by default (`bus_idle_time`) and additionally refuses to transmit
+while a frame is part-received.
+
+### Resynchronising after a corrupt byte
+
+The framing has no end delimiter, so a corrupted length byte is expensive: the
+receiver keeps consuming what it thinks is payload and eats whatever follows. A
+capture caught exactly this — a mangled frame claiming 253 bytes swallowed the
+next four good frames whole.
+
+Two cheap defences, both of which the controller itself applies:
+
+- **Treat a gap as a frame boundary.** More than ~100 ms of silence mid-frame
+  means the frame is dead; abandon it and wait for the next `0x1C`.
+- **Sanity-check the length byte** on arrival rather than trusting it.
+
+And on a checksum failure, resync rather than draining the receive buffer —
+whatever arrived behind the bad frame is usually fine.
+
 ### Don't send oversized frames
 
 The controller accepts a payload length up to 253, but its transmit buffer holds

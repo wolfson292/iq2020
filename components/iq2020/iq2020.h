@@ -23,6 +23,10 @@ namespace iq2020 {
 
 #define GETBIT8(a, b) ((a) & ((uint8_t) 1 << (b)))
 
+// Silence that means "whatever was part-received is abandoned". The controller
+// applies the same rule to its own receive path.
+static const uint32_t IQ2020_INTERFRAME_GAP_MS = 100;
+
 class IQ2020Device;
 
 class IQ2020Component : public PollingComponent, public uart::UARTDevice {
@@ -168,6 +172,9 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   // 0 disables the automatic nudge; otherwise the quiet period after which one
   // is sent, and the minimum gap between them.
   void set_nudge_timeout(uint32_t ms) { nudge_timeout_ms_ = ms; }
+  // Bus silence required before transmitting. Must clear the controller's
+  // request/reply pairs, which run 8-12 ms apart.
+  void set_bus_idle_time(uint32_t ms) { bus_idle_ms_ = ms; }
   void sendCmdSetDateTime(uint8_t seconds, uint8_t minutes, uint8_t hours, uint8_t days, uint8_t months, uint16_t years);
   void sendResponseEmulateAudio();
   void sendResponseEmulateAudioTitle();
@@ -274,6 +281,9 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   uint32_t startup_timestamp_;
   uint32_t last_nudge_timestamp_ = 0;
   uint32_t nudge_timeout_ms_ = 0;
+  uint32_t bus_idle_ms_ = 20;
+  uint32_t last_rx_byte_ms_ = 0;
+  int rx_pos_ = 0;
   bool startup_delay_passed_ = false;
   bool sent_get_lights_since_last_cycle_ = false;
 

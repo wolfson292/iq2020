@@ -35,6 +35,7 @@ IQ2020Component = iq2020_ns.class_("IQ2020Component", cg.PollingComponent, uart.
 CONF_IQ2020_ID = "iq2020_id"
 CONF_SIMULATE_MUSIC = "simulate_music"
 CONF_NUDGE_TIMEOUT = "nudge_timeout"
+CONF_BUS_IDLE_TIME = "bus_idle_time"
 CONF_ON_MUSIC_VOLUME_UP = "on_music_volume_up"
 
 # Triggers
@@ -51,6 +52,10 @@ CONFIG_SCHEMA = cv.Schema(
         # is sent to un-stick it. Defaults to off: the nudge is harmless, but
         # putting extra traffic on the bus should be an explicit choice.
         cv.Optional(CONF_NUDGE_TIMEOUT, default = '0s'): cv.positive_time_period_milliseconds,
+        # Bus silence required before transmitting. The controller's
+        # request/reply pairs run 8-12 ms apart, so this needs to clear them or
+        # we transmit into the middle of one and corrupt it.
+        cv.Optional(CONF_BUS_IDLE_TIME, default = '20ms'): cv.positive_time_period_milliseconds,
         cv.Optional(CONF_ON_MUSIC_VOLUME_UP): automation.validate_automation(
             {
                 cv.GenerateID(CONF_TRIGGER_ID): cv.declare_id(VolumeUpTrigger),
@@ -78,6 +83,7 @@ async def to_code(config):
     await uart.register_uart_device(var, config)
     cg.add(var.set_simulate_music(config[CONF_SIMULATE_MUSIC]))
     cg.add(var.set_nudge_timeout(config[CONF_NUDGE_TIMEOUT]))
+    cg.add(var.set_bus_idle_time(config[CONF_BUS_IDLE_TIME]))
     
     for conf in config.get(CONF_ON_MUSIC_VOLUME_UP, []):
         trigger = cg.new_Pvariable(conf[CONF_TRIGGER_ID], var)

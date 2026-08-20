@@ -67,7 +67,26 @@ void IQ2020Component::loop() {
         this->sendCmdTransmitNudge();
     }
 
-    if(since_last > 300)
+    // Wait for the bus to be quiet before transmitting.
+    //
+    // Previously the only gate was 300 ms since our own last send, which takes
+    // no account of anyone else. The controller polls the salt module in a tight
+    // request/reply pair - measured at 8-12 ms apart - and transmitting into
+    // that window corrupts it. A capture bore this out: every corrupted frame
+    // over half an hour involved the salt conversation, at roughly the rate a
+    // 12 ms window and a 300 ms send interval predict, while our own 2300-frame
+    // exchange with the controller was untouched.
+    //
+    // The controller waits for silence before it transmits; so should we.
+    uint32_t since_last_byte = millis() - this->last_rx_byte_ms_;
+    bool bus_idle = (this->rx_pos_ == 0) && (since_last_byte >= this->bus_idle_ms_);
+
+    if(since_last > 300 && !bus_idle) {
+        ESP_LOGV(TAG, "deferring send, bus busy (pos %d, %" PRIu32 " ms since last byte)",
+                 this->rx_pos_, since_last_byte);
+    }
+
+    if(since_last > 300 && bus_idle)
     {
         if (!this->send_queue_.empty()) {
             std::tuple<uint8_t, uint8_t, uint8_t, uint8_t, std::vector<uint8_t>, uint32_t, bool> &packet = this->send_queue_.front();
@@ -716,7 +735,21 @@ void IQ2020Component::sendCmd_(uint8_t source, uint8_t dest, uint8_t retries, st
 }
 
 bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
-    static int pos = 0;
+    // Kept as a member rather than a local static so the transmit path can tell
+    // whether a frame is currently in flight.
+    int &pos = this->rx_pos_;
+
+    // Inter-frame gap resync. The controller uses the same rule: a long enough
+    // silence means whatever was part-received is abandoned. Without this, one
+    // corrupted length byte swallows everything that follows it - a capture
+    // caught a mangled frame claiming 253 bytes eat four good frames behind it.
+    uint32_t now = millis();
+    if (pos != 0 && (now - this->last_rx_byte_ms_) > IQ2020_INTERFRAME_GAP_MS) {
+        ESP_LOGW(TAG, "readline_ %" PRIu32 " ms gap mid-frame at pos %d - resyncing",
+                 now - this->last_rx_byte_ms_, pos);
+        pos = 0;
+    }
+    this->last_rx_byte_ms_ = now;
 
     ESP_LOGV(TAG, "readline_ POS: %02X", pos);
 
@@ -739,6 +772,14 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
         ESP_LOGV(TAG, "readline_ Source: %02X", readch);
 
     } else if (pos == 3) {
+        // The controller rejects len < 2, and anything that will not fit is a
+        // corrupted byte rather than a real frame. Catching it here means one
+        // bad byte costs one frame instead of the next few hundred bytes.
+        if (readch < 2 || readch > len - 7) {
+            ESP_LOGW(TAG, "readline_ implausible length %02X - resyncing", readch);
+            pos = 0;
+            return true;
+        }
         buffer[pos] = readch;
         pos++;
         ESP_LOGV(TAG, "readline_ Length: %02X", readch);
@@ -799,12 +840,11 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
 
             if(checksum != buffer[pos])
             {
-                ESP_LOGE(TAG, "readline_ Invalid Checksum %02X should be %02X", buffer[pos], checksum);
-                ESP_LOGW(TAG, "Clearing RX buffer on error...");
-                while (available()) {
-                    read();
-                }
-                ESP_LOGW(TAG, "Cleared RX buffer on error");
+                // Resync only. Draining the UART here used to discard whatever
+                // had already arrived behind the bad frame, turning one
+                // corrupted byte into several lost frames; the next 0x1C starts
+                // a new frame on its own.
+                ESP_LOGE(TAG, "readline_ Invalid Checksum %02X should be %02X - resyncing", buffer[pos], checksum);
                 pos = 0;
                 return true;
             }
