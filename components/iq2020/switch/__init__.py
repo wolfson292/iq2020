@@ -96,13 +96,15 @@ CONFIG_SCHEMA = {
         icon="mdi:rocket-launch-outline",
         default_restore_mode="RESTORE_DEFAULT_OFF",
     ),
-    # Raw frame capture. Always restores OFF so a reboot mid-capture cannot
-    # leave the device logging every frame indefinitely.
+    # Raw frame capture. ALWAYS_ON while the protocol work is ongoing: a reflash
+    # would otherwise silently drop capture, which is exactly when a comparison
+    # of before and after is wanted. Revert to ALWAYS_OFF once that settles, so
+    # a reboot cannot leave a device logging every frame indefinitely.
     cv.Optional(CONF_CAPTURE): switch.switch_schema(
         CaptureSwitch,
         entity_category=ENTITY_CATEGORY_CONFIG,
         icon="mdi:record-rec",
-        default_restore_mode="ALWAYS_OFF",
+        default_restore_mode="ALWAYS_ON",
     ),
 }
 

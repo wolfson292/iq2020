@@ -308,7 +308,7 @@ switch:
     swg_boost:
       name: "SWG Boost Cycle"
     # Raw frame capture for protocol work - see docs/capturing.md.
-    # Off by default and always restores off.
+    # Currently defaults ON; set back to ALWAYS_OFF once that work settles.
     capture:
       name: "Bus Capture"
   - platform: gpio

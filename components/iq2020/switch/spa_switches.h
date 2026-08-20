@@ -62,8 +62,12 @@ class SWGBoostSwitch : public switch_::Switch, public Parented<IQ2020Component> 
 };
 
 // Turns on raw frame capture. Every frame the component sees is emitted as a
-// single IQCAP line at INFO, including frames that fail their checksum. Off by
-// default - it is meant for a bounded capture run, not for normal operation.
+// single IQCAP line at INFO, including frames that fail their checksum.
+//
+// Currently defaults ON so a reflash does not silently drop the capture. That
+// is a temporary setting for protocol work: capture roughly doubles the log
+// volume, and heavy logging is itself a suspect in the truncated frames seen on
+// this bus, so an always-on capture is not a neutral observer.
 class CaptureSwitch : public switch_::Switch, public Parented<IQ2020Component> {
  public:
   CaptureSwitch() = default;

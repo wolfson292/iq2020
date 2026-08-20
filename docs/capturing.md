@@ -13,8 +13,15 @@ switch:
       name: "Bus Capture"
 ```
 
-The switch is **off by default and always restores off**, so a reboot part-way
-through a capture cannot leave the device logging every frame forever.
+The switch currently **defaults on**, so a reflash does not silently drop a
+capture in progress — which is exactly when a before/after comparison is wanted.
+
+That is deliberate but temporary. Capture roughly doubles the log volume, and on
+a busy bus heavy logging is itself a plausible cause of dropped bytes: if the
+main loop stalls for longer than the UART FIFO holds (about 33 ms at 38400 baud)
+then bytes are simply lost. **An always-on capture is not a neutral observer.**
+Once the protocol work settles, set it back to `ALWAYS_OFF` so a reboot cannot
+leave a device logging every frame indefinitely.
 
 ## Run a capture
 
@@ -22,9 +29,10 @@ through a capture cannot leave the device logging every frame forever.
 esphome logs spa-controller.yaml | tee capture.log
 ```
 
-Turn the switch on, leave it running, turn it off when done. A few hours is
+Capture is on from boot, so this starts recording immediately. A few hours is
 usually enough to catch the periodic behaviour; longer if you are waiting for
-something occasional like a filter cycle or a cartridge prompt.
+something occasional like a filter cycle or a cartridge prompt. Turn the switch
+off when you are done.
 
 While it runs, **use the spa**. Static traffic tells you very little — the value
 is in bytes that change, so press buttons on the panel, change the setpoint,
