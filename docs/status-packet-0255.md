@@ -86,16 +86,16 @@ wrong.
 | 89 | 59 | 4 | `water_temp` | ASCII |
 | 93 | 5D | 2 | `baseline_voltage` | Volts. The leg the baseline load is measured against. 120 on the reference spa. |
 | 95 | 5F | 2 | `jets_blower_voltage` | Volts. The leg the switched load is measured against. |
-| 97 | 61 | 2 | `aux_voltage` | Volts |
-| 99 | 63 | 2 | `heater_voltage` | Volts — **defective, see below** |
+| 97 | 61 | 2 | `heater_voltage` | Volts. The heating element's leg. |
+| 99 | 63 | 2 | `aux_voltage` | Volts — **defective, see below**. Unpopulated on the reference spa. |
 | 101 | 65 | 2 | `jets_blower_current` | Amps, truncated. Load **above** the baseline: jets and blower. |
 | 103 | 67 | 2 | `baseline_current` | Amps, truncated. The idle draw, sampled while no jets and no blower are running. |
-| 105 | 69 | 2 | `aux_current` | Amps, truncated. Zeroed below 0.2 A. |
-| 107 | 6B | 2 | `heater_current` | Amps — **defective, see below**. Zeroed when `heater_voltage` is at or below 90 V. |
+| 105 | 69 | 2 | `heater_current` | Amps, truncated. Zeroed below 0.2 A. Reads 0 or 23 on the reference spa — nothing in between. |
+| 107 | 6B | 2 | `aux_current` | Amps — **defective, see below**. Zeroed when `aux_voltage` is at or below 90 V. |
 | 109 | 6D | 2 | `jets_blower_power` | Watts — `jets_blower_voltage × jets_blower_current × pf` |
 | 111 | 6F | 2 | `baseline_power` | Watts — `baseline_voltage × baseline_current × pf`. **71 W on the reference spa: the circulation pump.** |
-| 113 | 71 | 2 | `aux_power` | Watts — `aux_voltage × aux_current` (no power-factor term) |
-| 115 | 73 | 2 | `heater_power` | Watts — **defective, see below** |
+| 113 | 71 | 2 | `heater_power` | Watts — `heater_voltage × heater_current`, **no power-factor term**. 5,910 W on the reference spa. |
+| 115 | 73 | 2 | `aux_power` | Watts — **defective, see below** |
 | — | — | — | **`02/55` ends here** | The frame is 117 data bytes; everything below is `02/56` only. |
 | 117 | 75 | 1 | `clean_cycle_state` | 0 idle, 1 running, 2 running (second phase) |
 | 118 | 76 | 2 | `filter_time_1` | Minutes. Same value as `02/41` offset 0. |
@@ -253,8 +253,8 @@ order, which is the trap here:
 |---|---|---|---|
 | `jets_blower_power` (109) | `jets_blower_voltage` (95) | `jets_blower_current` (101) | yes |
 | `baseline_power` (111) | `baseline_voltage` (93) | `baseline_current` (103) | yes |
-| `aux_power` (113) | `aux_voltage` (97) | `aux_current` (105) | no |
-| `heater_power` (115) | `heater_voltage` (99) | `heater_current` (107) | yes |
+| `heater_power` (113) | `heater_voltage` (97) | `heater_current` (105) | **no** |
+| `aux_power` (115) | `aux_voltage` (99) | `aux_current` (107) | yes |
 
 Each power figure is an exponential moving average — `x += reading; x -= x/25`,
 reported as `x/25` — so it settles over roughly 25 sample periods rather than
@@ -268,17 +268,36 @@ which the live reading exceeds that baseline. So `baseline_power` is your
 always-on load — the circulation pump, 71 W on the reference spa — and
 `jets_blower_power` is what the jets and blower add on top.
 
-The heater channel is identifiable independently of the labels: its current is
-forced to zero whenever its own voltage is at or below 90 V, and across 3,732
-captured frames in which the heater never ran, all three of its fields were
-zero.
+**Which channel is the heater was settled by watching one run.** Over a week of
+capture the heater ran twice, for a total of 164 frames, and the load appeared on
+the channel at offsets 97 / 105 / 113:
+
+```
+05:06:42  heater off   voltage 255   current  0   power     0
+05:06:47  heater ON    voltage 251   current 23   power  2736
+05:06:57  heater ON    voltage 252   current 23   power  5510
+05:07:22  heater ON    voltage 252   current 23   power  5910   <- average settled
+```
+
+252 V × 23 A ≈ 5.9 kW, which is a spa heating element. The match is exact rather
+than suggestive: `heater_current` is only ever 0 or 23, and the frames where it
+reads 23 are precisely the frames where offset 6 reads 5 — 164 out of 164, with
+no reading of 23 while the heater was off and no heater-on frame without one.
+
+Two things corroborate it. This is the only channel with **no power-factor
+term**, which is what a purely resistive element calls for. And the *other*
+candidate — offsets 99 / 107 / 115 — read zero in all 72,571 captured frames,
+heating or not, so that channel is simply not populated on this spa.
+
+Note what does **not** identify the heater: its current being gated on its own
+leg exceeding 90 V. Both channels do that.
 
 ### The duplicated-high-byte defect
 
-Three of the sixteen-bit fields — `heater_voltage` (99), `heater_current` (107)
-and `heater_power` (115) — are **written incorrectly by the controller**. Where
-every other field stores the low byte, shifts, and stores the high byte, these
-three extract the high byte and store *it* into both positions:
+Three of the sixteen-bit fields — `aux_voltage` (99), `aux_current` (107) and
+`aux_power` (115) — are **written incorrectly by the controller**. Where every
+other field stores the low byte, shifts, and stores the high byte, these three
+extract the high byte and store *it* into both positions:
 
 ```
 correct:    sb lo ; sra 8 ; sb hi        -> [lo, hi]
@@ -292,12 +311,20 @@ a meaningless number such as `0x1111`. The value you can recover is:
 approx = data[offset] * 256      # true value is in [approx, approx + 255]
 ```
 
-So the heater channel is readable, at 256-unit resolution, and only via the
-first byte. All three read as zero whenever the heater is off, which is why this
-went unnoticed: it only shows up while the heater is drawing power.
+So that channel is readable only at 256-unit resolution, and only via its first
+byte.
 
-This is a defect in the controller, not in any decoder. Nothing can be done
-about it from the bus side.
+**This reconstruction is still untested.** The aux channel has read zero in every
+frame ever captured — 72,571 of them, across a week that included the heater
+running — so there has never been a non-zero value to check the arithmetic
+against. Treat it as the shape of the fix rather than a verified one; if you have
+a spa that populates this channel, that is the open question worth reporting back
+on.
+
+This is a defect in the controller, not in any decoder, and nothing can be done
+about it from the bus side. It is also less consequential than it first looks:
+the channel it damages is the one carrying nothing, while the heater — the load
+you would actually want to meter — is at offset 113 and is encoded correctly.
 
 ## Worked example
 
@@ -319,6 +346,7 @@ offset 89: "102F"    water
 offset 93: 120       line voltage
 offset 103: 0        baseline current (0.58 A, truncated)
 offset 111: 71       baseline power - the circulation pump
+offset 113: 0        heater power - not heating in this frame
 offset 118: 60 / 30  filter cycles, minutes
 offset 123: 113      board 113 °F
 offset 124: 1174     peripheral current 1174 mA
@@ -335,7 +363,8 @@ Only three things in the whole packet:
   *structure* is known exactly — which bit comes from which item — but what each
   item is called in the manufacturer's configuration menu is not, because that
   menu lives on the topside panel's separate serial link.
-- Which physical circuit `aux_voltage` / `aux_current` / `aux_power` measures. It has
-  no power-factor term, which the other channels do.
+- Which physical circuit `aux_voltage` / `aux_current` / `aux_power` measures. It
+  has read zero in every captured frame, so there is nothing to go on beyond the
+  fact that the controller reserves a fourth channel for it.
 
 Everything else in the 134 bytes is accounted for.

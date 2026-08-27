@@ -1164,14 +1164,22 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 //   baseline    : the always-on load, latched whenever no jets
                 //                 and no blower are running - the circ pump
                 //   jets_blower : whatever is drawn above that baseline
-                //   aux         : a third circuit, not yet identified
-                //   heater      : the heater leg
+                //   heater      : the heating element. Identified from a week of
+                //                 capture: its current is 0 or 23 A and the 23 A
+                //                 frames are exactly the frames where offset 6
+                //                 reads 5, with no exceptions either way. It is
+                //                 also the one channel with no power-factor
+                //                 term, which is what a resistive element wants.
+                //   aux         : a fourth channel, unpopulated here - zero
+                //                 across every frame, heating or not
                 //
-                // The heater channel's three fields are emitted defectively by
-                // the controller: it stores the high byte into both byte
-                // positions and drops the low byte. Only the first byte carries
+                // The aux channel's three fields are emitted defectively by the
+                // controller: it stores the high byte into both byte positions
+                // and drops the low byte. Only the first byte carries
                 // information, so recover the value at 256-unit resolution.
-                auto heater_field = [&](size_t off) -> uint32_t {
+                // Nothing has ever been seen in it, so that reconstruction is
+                // still untested against a real reading.
+                auto aux_field = [&](size_t off) -> uint32_t {
                     return (uint32_t) data[off] * 256u;
                 };
 
@@ -1181,11 +1189,11 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 if(this->jets_blower_voltage_sensor_ != nullptr) {
                     this->jets_blower_voltage_sensor_->publish_state(read_uint16(data, 95));
                 }
-                if(this->aux_voltage_sensor_ != nullptr) {
-                    this->aux_voltage_sensor_->publish_state(read_uint16(data, 97));
-                }
                 if(this->heater_voltage_sensor_ != nullptr) {
-                    this->heater_voltage_sensor_->publish_state(heater_field(99));
+                    this->heater_voltage_sensor_->publish_state(read_uint16(data, 97));
+                }
+                if(this->aux_voltage_sensor_ != nullptr) {
+                    this->aux_voltage_sensor_->publish_state(aux_field(99));
                 }
 
                 // Currents are floats truncated to integers by the controller,
@@ -1197,11 +1205,11 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 if(this->baseline_current_sensor_ != nullptr) {
                     this->baseline_current_sensor_->publish_state(read_uint16(data, 103));
                 }
-                if(this->aux_current_sensor_ != nullptr) {
-                    this->aux_current_sensor_->publish_state(read_uint16(data, 105));
-                }
                 if(this->heater_current_sensor_ != nullptr) {
-                    this->heater_current_sensor_->publish_state(heater_field(107));
+                    this->heater_current_sensor_->publish_state(read_uint16(data, 105));
+                }
+                if(this->aux_current_sensor_ != nullptr) {
+                    this->aux_current_sensor_->publish_state(aux_field(107));
                 }
 
                 if(this->jets_blower_power_sensor_ != nullptr) {
@@ -1210,11 +1218,11 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 if(this->baseline_power_sensor_ != nullptr) {
                     this->baseline_power_sensor_->publish_state(read_uint16(data, 111));
                 }
-                if(this->aux_power_sensor_ != nullptr) {
-                    this->aux_power_sensor_->publish_state(read_uint16(data, 113));
-                }
                 if(this->heater_power_sensor_ != nullptr) {
-                    this->heater_power_sensor_->publish_state(heater_field(115));
+                    this->heater_power_sensor_->publish_state(read_uint16(data, 113));
+                }
+                if(this->aux_power_sensor_ != nullptr) {
+                    this->aux_power_sensor_->publish_state(aux_field(115));
                 }
 
                 // Offsets 117 and up exist only in the 02/56 form: a 02/55

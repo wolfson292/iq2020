@@ -133,10 +133,12 @@ sensor:
     #   baseline    the always-on load, sampled whenever no jets and no blower
     #               are running. On this spa that is the circulation pump.
     #   jets_blower whatever is drawn above that baseline
-    #   aux         a third circuit, not yet identified
-    #   heater      the heater leg. Readable only to 256 W / V / A resolution:
-    #               the controller emits this channel's high byte twice and
-    #               drops the low one.
+    #   heater      the heating element - 5.9 kW at 252 V on the reference
+    #               spa, and the one channel with no power-factor term
+    #   aux         a fourth channel, unpopulated here: zero in every frame
+    #               ever captured. It is also the one the controller encodes
+    #               defectively, emitting its high byte twice and dropping the
+    #               low one, so it reads only to 256-unit resolution.
     baseline_power:
       name: "Baseline Power"
     jets_blower_power:
