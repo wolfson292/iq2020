@@ -58,6 +58,8 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   SUB_BINARY_SENSOR(heater)
   SUB_BINARY_SENSOR(flow_switch)
   SUB_BINARY_SENSOR(water_temp_fault)
+  SUB_BINARY_SENSOR(swg_present)
+  SUB_BINARY_SENSOR(coolzone_present)
   SUB_BINARY_SENSOR(econ_mode)
   SUB_BINARY_SENSOR(circulation)
   

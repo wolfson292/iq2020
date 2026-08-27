@@ -55,6 +55,8 @@ CONF_SWG_TESTING = "swg_testing"
 CONF_HEATER = "heater"
 CONF_FLOW_SWITCH = "flow_switch"
 CONF_WATER_TEMP_FAULT = "water_temp_fault"
+CONF_SWG_PRESENT = "swg_present"
+CONF_COOLZONE_PRESENT = "coolzone_present"
 
 TYPES = (
     CONF_SUMMER_TIMER,
@@ -73,6 +75,8 @@ TYPES = (
     CONF_HEATER,
     CONF_FLOW_SWITCH,
     CONF_WATER_TEMP_FAULT,
+    CONF_SWG_PRESENT,
+    CONF_COOLZONE_PRESENT,
 )
 
 CONFIG_SCHEMA = cv.Schema(
@@ -141,6 +145,14 @@ CONFIG_SCHEMA = cv.Schema(
         ),
         # 02/55 offset 3 bit 6 - the water temperature reading is unusable.
         cv.Optional(CONF_WATER_TEMP_FAULT): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
+        ),
+        # 02/55 offset 8. Presence latches - set once the device has ever
+        # answered on the bus, and not cleared afterwards.
+        cv.Optional(CONF_SWG_PRESENT): binary_sensor.binary_sensor_schema(
+            entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
+        ),
+        cv.Optional(CONF_COOLZONE_PRESENT): binary_sensor.binary_sensor_schema(
             entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
         ),
         

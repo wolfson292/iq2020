@@ -272,6 +272,12 @@ binary_sensor:
       name: "Water Flow"
     water_temp_fault:
       name: "Water Temp Sensor Fault"
+    # Presence latches: set once the device has ever answered on the bus.
+    # coolzone_present is also what widens the setpoint floor to 50F.
+    swg_present:
+      name: "SWG Present"
+    coolzone_present:
+      name: "CoolZone Present"
     econ_mode:
       name: "Econ Mode"
     circulation:

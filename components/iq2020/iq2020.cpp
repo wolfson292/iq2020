@@ -1,6 +1,7 @@
 #include "iq2020.h"
 #include "esphome/core/log.h"
 #include <cinttypes>
+#include <cstdlib>
 #include <format>
 
 namespace esphome {
@@ -1052,11 +1053,15 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 float blowerSeconds = read_uint32(data, 63);
                 float lightsSeconds = read_uint32(data, 67);
 
+                // These two used to read offsets 71 and 72, which carry a
+                // constant 2 and a zero pad - they reported "2" and "0" forever.
+                // Offset 11 is the circulation-pump scheduler's state code, and
+                // the light intensity lives in bits 4-6 of offset 5.
                 if(this->spa_state_text_sensor_ != nullptr) {
-                    this->spa_state_text_sensor_->publish_state(std::to_string(data[71]));
+                    this->spa_state_text_sensor_->publish_state(std::to_string(data[11]));
                 }
                 if(this->light_state_text_sensor_ != nullptr) {
-                    this->light_state_text_sensor_->publish_state(std::to_string(data[72]));
+                    this->light_state_text_sensor_->publish_state(std::to_string((data[5] >> 4) & 0x07));
                 }
 
 
@@ -1320,6 +1325,16 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 if (this->panel_type_sensor_ != nullptr) {
                     this->panel_type_sensor_->publish_state(data[12]);
                 }
+                // Offset 8 carries two presence latches. They record what has
+                // ever answered on the bus, not what answered most recently, so
+                // they stay set once a device has been seen. The CoolZone one
+                // also widens the setpoint floor from 80F to 50F.
+                if (this->swg_present_binary_sensor_ != nullptr) {
+                    this->swg_present_binary_sensor_->publish_state(GETBIT8(data[8], 1));
+                }
+                if (this->coolzone_present_binary_sensor_ != nullptr) {
+                    this->coolzone_present_binary_sensor_->publish_state(GETBIT8(data[8], 6));
+                }
 
                 // Offset 4 bit 4 is the clean cycle. Bit 2 - which this used
                 // to read - is jets 1 at high speed, so the switch never
@@ -1369,6 +1384,43 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                         device->on_set_temp(fahrenheit_to_celsius(iTempSetF));
                     }
                     
+                }
+                else
+                {
+                    // Celsius. The controller formats these with "%4.1f" rather
+                    // than "%3iF", so they arrive as "38.5" and parse as a
+                    // float. Without this branch nothing here updated at all in
+                    // Celsius mode - not the sensors, and not the climate
+                    // entity, which never received a temperature.
+                    auto parse_c = [&](size_t off) -> float {
+                        std::string t(data.begin() + off, data.begin() + off + 4);
+                        return std::strtof(t.c_str(), nullptr);
+                    };
+                    float highLimitC = parse_c(31);
+                    float tempSetC   = parse_c(85);
+                    float waterTempC = parse_c(89);
+                    ESP_LOGI(TAG, "Celsius HighLimit:%.1f Set:%.1f Water:%.1f",
+                             highLimitC, tempSetC, waterTempC);
+
+                    if (this->high_limit_temp_sensor_ != nullptr) {
+                        this->high_limit_temp_sensor_->publish_state(highLimitC);
+                    }
+                    if (this->temp_set_sensor_ != nullptr) {
+                        this->temp_set_sensor_->publish_state(tempSetC);
+                    }
+                    if (this->water_temp_sensor_ != nullptr) {
+                        this->water_temp_sensor_->publish_state(waterTempC);
+                    }
+
+                    this->last_set_temp_c_ = tempSetC;
+                    this->last_water_temp_c_ = waterTempC;
+                    this->last_set_temp_f_ = celsius_to_fahrenheit(tempSetC);
+                    this->last_water_temp_f_ = celsius_to_fahrenheit(waterTempC);
+
+                    for (auto *device : this->devices_) {
+                        device->on_water_temp(waterTempC);
+                        device->on_set_temp(tempSetC);
+                    }
                 }
 
                 auto isHeating = data[6] != 0;
