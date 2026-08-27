@@ -71,10 +71,26 @@ video of the panel, pressing "Test Water & Confirm Level" dropped
 been stuck - could then be changed from 7 to 8. That is the level lock releasing,
 observed end to end.
 
-**Byte 12's high bits alternate.** Across the session it moved `0x81` -> `0x41`
--> `0x81`, i.e. bits 7 and 6 swapping while the presence nibble stayed at 1.
-Alternating high bits on a salt cell are what polarity reversal looks like,
-though nothing on the bus says so.
+**Byte 12's high bits cycle, and `0x40` is the state in between.** A week of
+capture caught 50 changes, and they are not a simple alternation — the three
+states form a chain with `0x40` always in the middle:
+
+```
+0x00  <->  0x40  <->  0x80
+```
+
+Every transition but one passed through `0x40`, which was entered 24 times
+against 14 for `0x00` and 11 for `0x80`. The presence nibble stayed at 1
+throughout.
+
+**Every one of those changes coincided with `cell_state` dropping to 0** — 49 of
+the 50, the exception being a single direct `0x00` -> `0x80`. So whatever the
+high bits track, the cell stops being measured while it happens.
+
+That is a much better fit for **polarity reversal** than the original
+observation was: two end states with a neutral one between them, and the cell
+de-energised across the switch. It is still an inference — nothing on the bus
+names it — but it is now built on 50 events rather than two.
 
 `condition_code` is a 2-bit class: **1** means the summer timer is suppressing
 output, **3** means low salt. It is forced to 3 whenever the salinity index reads
@@ -86,17 +102,19 @@ replace wizard waits on — the wizard advances when the byte reads 0 (after
 
 ### The self-check
 
-Pressing the water-test button — on the panel, or through this component — sets
-byte 9 of the next request to 1. The module answers by moving exactly two bytes
-and nothing else:
+A self-check starts one of two ways: someone presses the water-test button — on
+the panel, or through this component, which sets byte 9 of the next request to 1
+— or the module starts one itself, which it does more often than not (see
+[below](#most-self-checks-are-the-modules-own)). Either way it answers by moving
+exactly two bytes and nothing else:
 
 | Byte | What it does |
 |---|---|
 | `flags` bit 3 | Sets for the duration of the check, clears when it finishes |
 | `cell_state` (byte 4) | Cleared to 0 at the start, then climbs back to its resting value |
 
-Four self-checks were captured — one started at the panel, three from Home
-Assistant — and all four look the same:
+Fourteen self-checks were captured over a week, commanded and uncommanded alike,
+and they all look the same on the wire:
 
 ```
           flags   cell_state
@@ -108,7 +126,7 @@ before     0x07           11
 
 The absolute values differ between runs because the other flag bits ride along
 independently — the panel-initiated check ran with boost off and went `0x03` ->
-`0x0B` -> `0x03`. The *delta* is the same in all four: bit 3, and nothing else in
+`0x0B` -> `0x03`. The *delta* is the same every time: bit 3, and nothing else in
 that byte.
 
 Timing is coarse: the module only speaks when polled, so every interval above is
@@ -137,6 +155,34 @@ set it too, with the same `cell_state` reset, and starting the boost cycle reset
 `cell_state` without setting it. Treat bit 3 as "the cell is being re-measured",
 which the water test is the usual but not the only cause of.
 
+### Most self-checks are the module's own
+
+A week of capture caught **14 self-check episodes, and only 5 had a human behind
+them** — one started at the panel, four sent from Home Assistant. The other nine
+had no command on the bus at all: every poll in those windows was a plain
+all-`0xFF` request.
+
+The two kinds are cleanly distinguishable, and it is byte 12 that separates them:
+
+| | Commanded (5) | Uncommanded (9) |
+|---|---|---|
+| `flags` bit 3 | sets | sets |
+| `cell_state` cleared and re-climbs | yes | yes |
+| Byte 12's high bits | **unchanged** | **always change** |
+
+Every one of the nine uncommanded checks coincided with a polarity change; not
+one of the five commanded ones did. So the module re-measures the cell as part of
+reversing polarity, and reports that with the same bit it uses for a water test.
+
+The reverse does not hold. Polarity changed 50 times that week, and only a
+minority set bit 3 — so a polarity change does not imply a self-check, only the
+other way round.
+
+Timing is irregular: gaps between uncommanded checks ran from 2 to 34 hours, with
+no schedule visible. **`swg_testing` will therefore go true on its own, at any
+hour, with nobody having pressed anything.** Anything built on it — an automation,
+an alert — has to expect that.
+
 ### Bytes 4 and 11 are relayed without interpretation
 
 The controller copies both straight from the module's frame into its `1E/03`
@@ -159,17 +205,35 @@ known about it:
 | Not the salinity | Unchanged while the salinity index moved 14 ↔ 15 |
 | Re-measured by a water test | Drops to 0 the moment the test starts, then climbs back through intermediate values over roughly 40 seconds |
 | Differs across a cartridge change | Rested at **8** with a 132-day cartridge; rests at **11** with a 35-day one |
+| Does **not** track cartridge age | See below — a week of capture settles this |
 
-The most plausible reading is **cell condition** — a health or plate-quality
-figure that the water test re-measures and that declines as the cartridge wears.
-It is worth being clear that the age correlation rests on **two data points**,
-one either side of a cartridge replacement, and salinity also changed between
-those captures.
+### It is not a wear figure
 
-**How to settle it:** watch `swg_cell_state` over weeks. If it steps down as the
-cartridge ages and jumps back up when a new one is fitted, cell condition is
-confirmed. If it stays put, the difference between those two captures was
-something else. The sensor is already published, so this costs nothing but time.
+This page used to read `cell_state` as **cell condition** — a health figure that
+declines as the cartridge wears — resting on two data points either side of a
+cartridge change. A week of continuous capture does not support it.
+
+Over that week the cartridge aged from 35 to 41 days. Taking the resting value
+only, with the measurement windows excluded:
+
+| `cartridge_days` | 35 | 36 | 37 | 38 | 39 | 40 | 41 |
+|---|---|---|---|---|---|---|---|
+| median `cell_state` | 11 | 11 | 11 | 11 | 11 | 11 | 11 |
+| highest seen | 11 | 11 | 11 | 11 | 11 | **13** | 11 |
+
+Flat across every age, and on day 40 it went *up* — to 12 and 13, above anything
+recorded before. A wear metric does not climb. The value oscillates between 10
+and 11 continuously, so a lone step from 11 to 10 means nothing on its own.
+
+That leaves the two-point age correlation looking like coincidence: salinity also
+differed between those captures, and the two cartridges were different physical
+cells. What `cell_state` measures is still open — what is settled is that it is
+not a simple function of cartridge age, and it should not be presented to anyone
+as cell health.
+
+**What it does do reliably** is drop to 0 whenever the cell is being re-measured
+or its polarity is changing, then climb back over tens of seconds. That makes it
+a good progress indicator for those events and a poor gauge of anything else.
 
 ### Frames addressed to `0x99`
 
