@@ -38,7 +38,7 @@ parses.
 | Byte | Field | Notes |
 |---|---|---|
 | 0 | `output_level` | 0–10. Anything above 10 is treated as 3. |
-| 1 | `salt_test_reading` | Drives three thresholds: **above 9 locks the output level against adjustment**, 15 raises "Test Water & Confirm Level", 20 raises "Level Set To 3". Cleared when the level changes or the prompt is acknowledged. The 10–14 band is a state of its own for which the panel shows no message — the only visible effect is that the level stops responding, which is why this component publishes `swg_level_locked` separately. |
+| 1 | `days_since_water_test` | **A day counter, not a measurement** — see below. Drives three thresholds: **above 9 locks the output level against adjustment**, 15 raises "Test Water & Confirm Level", 20 raises "Level Set To 3". Cleared when the prompt is acknowledged and by the cartridge replace wizard. The 10–14 band is a state of its own for which the panel shows no message — the only visible effect is that the level stops responding, which is why this component publishes `swg_level_locked` separately. |
 | 2 | **Packed** | Low 2 bits = `condition_code`, high 6 bits = `salinity_index`. |
 | 3 | `cartridge_days` | Age in days. 120 (4 months) triggers the replace prompt; acknowledging it snoozes for 7 days. |
 | 4 | `cell_state` | Relayed untouched by the controller, but **not static** — see below. |
@@ -65,11 +65,33 @@ present* than to *actively producing right now*. Bit 1 was likewise always set.
 **Bit 3 is the self-check** — see the section below, which is the best-observed
 part of this frame.
 
-**Confirming the salt prompt clears the reading.** In a capture taken alongside a
-video of the panel, pressing "Test Water & Confirm Level" dropped
-`salt_test_reading` from 10 to 0 within seconds, and the output level - which had
-been stuck - could then be changed from 7 to 8. That is the level lock releasing,
-observed end to end.
+**Byte 1 counts days since the water was last tested.** Earlier versions of this
+page called it a salt-test *reading*. It is not one: it goes up by exactly one
+every 24 hours and resets to 0 when the salt prompt is confirmed. Two independent
+runs show the same thing:
+
+- Through late August, it counted 0 → 7 across eight days, one step a day, after
+  a confirm at 10:32.
+- Through late September, it counted 0 → 9 across nine days, one step a day at
+  about 19:06, after a confirm at 19:08.
+
+The step lands at roughly the same time each day, a few minutes off 24 hours from
+the reset, which is what a day timer looks like and not what a measurement looks
+like. The thresholds then read as an escalating reminder rather than a salt
+level: **after 10 days the output level locks, after 15 the panel asks for a
+water test, and after 20 it drops the level to 3.** Nothing in the module's
+measurement feeds this byte.
+
+**Confirming the salt prompt resets it.** In a capture taken alongside a video of
+the panel, pressing "Test Water & Confirm Level" dropped it from 10 to 0 within
+seconds, and the output level - which had been stuck - could then be changed
+from 7 to 8. That is the level lock releasing, observed end to end.
+
+**So does the cartridge replace wizard** — even when the same cartridge goes back
+in. Running it reset this counter from 9 to 0 *and* the cartridge age from 77 days
+to 0 in the same frame. Using the wizard to clear a fault therefore postpones both
+the water-test reminder and the 4-month replace prompt; see
+[Low salt](#low-salt) below.
 
 **Byte 12's high bits cycle, and `0x40` is the state in between.** A week of
 capture caught 50 changes, and they are not a simple alternation — the three
@@ -137,18 +159,18 @@ same time bit 3 clears.
 Three things this settles.
 
 **Bit 3 is not a lockout.** It was previously labelled that way here, and that
-was wrong. Level adjustment is gated on `salt_test_reading` being above 9 —
+was wrong. Level adjustment is gated on `days_since_water_test` being above 9 —
 nothing else — and that field is untouched by the check. What bit 3 actually
 does is drive the display: while it is set the panel replaces the salt status
 message with "Testing", and the salt screen's own status line reads "Testing
 Water".
 
-**The check does not necessarily produce a reading.** `salt_test_reading` stayed
-at 0 through all three of the checks started from Home Assistant. Bit 3 set,
-`cell_state` was re-measured, bit 3 cleared, and the reading never moved. So the
-self-check is a measurement of the *cell*, and the salt reading the panel prompts
-about is a separate thing that a strip test supplies. Do not wait on
-`swg_salt_test` as a way of telling that a check has finished — watch bit 3.
+**The check does not touch byte 1.** `days_since_water_test` stayed at 0 through
+all three of the checks started from Home Assistant — as it should, since it is a
+calendar counter rather than a result. The measurement a check produces lands in
+the **salinity index** (byte 2), which only ever changes at the end of a check.
+Do not wait on `swg_salt_test` as a way of telling that a check has finished —
+watch bit 3.
 
 **Bit 3 is not exclusive to the test button.** Stopping the 24-hour boost cycle
 set it too, with the same `cell_state` reset, and starting the boost cycle reset
@@ -256,6 +278,37 @@ salinity_idx = payload[2] >> 2        # 0..63
 
 A salinity index of zero forces the status class to 3 (low), before anything
 else examines it.
+
+### Low salt
+
+The module sets status class 3 itself; neither the controller nor this component
+compares the index against a threshold. But the module's cutoff can be read off a
+ten-day low-salt episode, and it is sharp: **index 5 gave class 3 ("Inactive - Low
+Salt") and index 6 did not**, every time the index crossed between them — four
+crossings over ten days, in both directions.
+
+That episode also showed how the module behaves while low:
+
+- **It re-tests far more often.** Self-checks ran usually an hour apart and
+  never more than about six, against the 2 to 34 hours seen in normal running.
+  Over ten days that was about 125 checks, every one but the first reading 5.
+- **The cell is off.** "Inactive" means no output, and `cell_state` agrees: it
+  sat at 0 between checks, rising only during them.
+- **`flags` bit 0 stays set throughout.** "Generating" is not a usable signal for
+  low salt; the status class is.
+
+Index 6 maps to 21.6% on this component's `swg_salinity` scale and index 5 to
+18.0%, so anything under about 20% is the module's own low-salt zone. Normal
+readings on the spa these notes come from sat at index 10 to 13 (36–43%). A
+reading of 6 to 8 passes, but only just.
+
+**Re-seating the cartridge is not a fix.** On the episode above, running the
+replace wizard with the same cartridge cleared the fault: the first check
+afterwards read 6 and the status went to "Okay". That is a one-step move, from
+just under the cutoff to just over it, on a reading that was still half its usual
+value. And the wizard resets the cartridge age and the water-test counter as a
+side effect. A test strip is the only way to tell a genuinely low salt level from
+a cell that is reading low.
 
 ### Salinity — there is no ppm figure anywhere
 
@@ -385,7 +438,7 @@ data allows:
 | 0 | Okay |
 | 1 | Inactive - System Off |
 | 2 | 24-Hour Boost Cycle On |
-| 3 | *(no panel message — level locked, salt test 10–14)* |
+| 3 | *(no panel message — level locked, 10–14 days since water test)* |
 | 4 | Test Water & Confirm Level |
 | 5 | Level Set To 3 - Test & Adjust |
 | 6 | Level Set To 1 - Test & Adjust |
@@ -400,7 +453,7 @@ data allows:
 | 21 | Timeout Error - Check Salt Cartridge |
 
 The precedence is: system off, then service required, then cartridge due, then
-the salt-test prompts, then not-generating, then the status class (summer timer,
+the water-test reminders, then not-generating, then the status class (summer timer,
 low salt), and finally salinity against the high threshold with boost as a
 modifier.
 

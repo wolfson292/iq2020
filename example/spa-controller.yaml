@@ -111,7 +111,7 @@ sensor:
     swg_output_level:
       name: "SWG Output Level"
     swg_salt_test:
-      name: "SWG Salt Test"
+      name: "SWG Days Since Water Test"
     swg_cell_state:
       name: "SWG Cell State"
     panel_type:

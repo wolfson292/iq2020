@@ -1874,7 +1874,10 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 bool is_freshwater = (src == 0x29);
 
                 uint8_t level      = p[0];          // SWG output level, 0-10
-                uint8_t test_val   = p[1];          // salt-test reading
+                // Days since the water was last tested - a counter, not a measurement.
+                // +1 every 24 h; reset by confirming the salt prompt or by the
+                // cartridge replace wizard.
+                uint8_t test_days  = p[1];
                 uint8_t salinity_i = p[2] >> 2;     // salinity index, 0-63
                 uint8_t status_cls = p[2] & 0x03;   // 1 = summer timer, 3 = low salt
                 uint8_t cell_days  = p[3];          // cartridge age in days
@@ -1900,7 +1903,7 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
 
                 this->swg_addr_ = src;
                 this->swg_level_reported_ = level;
-                this->swg_test_value_ = test_val;
+                this->swg_test_days_ = test_days;
                 this->swg_status_class_ = status_cls;
                 this->swg_salinity_idx_ = salinity_i;
                 this->swg_cell_days_ = cell_days;
@@ -1913,13 +1916,13 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 bool boost      = (flags & 0x04) != 0;
                 // bit 3 is set for the duration of the module's self-check and
                 // clears when it finishes. It is not a lockout: level adjustment
-                // is gated on the salt test reading, not on this bit.
+                // is gated on the days-since-water-test counter, not on this bit.
                 bool testing    = (flags & 0x08) != 0;
                 bool cartridge_due = cell_days >= 120;   // the 4-month replace prompt
-                // A salt test reading above 9 locks level adjustment. Worth
-                // surfacing on its own - otherwise the level simply stops
+                // Ten or more days without a water test locks level adjustment.
+                // Worth surfacing on its own - otherwise the level simply stops
                 // responding with nothing to explain why.
-                bool level_locked = test_val > 9;
+                bool level_locked = test_days > 9;
 
                 ESP_LOGI(TAG, "SWG %s Level:%d Salinity:%.0f%%(idx %d) Class:%d CellDays:%d Flags:0x%02X Error:%d Runtime:%u",
                     is_freshwater ? "FreshWater" : "ACE",
@@ -1940,14 +1943,14 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                     status = 19;
                 } else if(cartridge_due) {
                     status = 18;
-                } else if(test_val >= 20) {
+                } else if(test_days >= 20) {
                     status = 5;
-                } else if(test_val >= 15) {
+                } else if(test_days >= 15) {
                     status = 4;
-                } else if(test_val >= 10) {
+                } else if(test_days >= 10) {
                     // The controller treats 10..14 as its own state and shows no
                     // panel message for it. What matters practically is the side
-                    // effect: a reading above 9 locks the output level against
+                    // effect: past 9 days the output level is locked against
                     // adjustment, so the panel's +/- stops responding.
                     status = 3;
                 } else if(!generating) {
@@ -2005,12 +2008,11 @@ bool IQ2020Component::readline_(int readch, uint8_t *buffer, int len) {
                 if(this->swg_cartridge_present_binary_sensor_ != nullptr) {
                     this->swg_cartridge_present_binary_sensor_->publish_state(cartridge == 1);
                 }
-                // Salt test reading. Drives the panel's "Test Water & Confirm
-                // Level" prompt at 15 and "Level Set To 3" at 20, and locks level
-                // adjustment above 9. Cleared when the level changes or the
-                // prompt is acknowledged.
+                // Days since water test. An escalating reminder: locks level
+                // adjustment above 9, raises "Test Water & Confirm Level" at 15
+                // and "Level Set To 3" at 20.
                 if(this->swg_salt_test_sensor_ != nullptr) {
-                    this->swg_salt_test_sensor_->publish_state(test_val);
+                    this->swg_salt_test_sensor_->publish_state(test_days);
                 }
                 if(this->swg_cell_state_sensor_ != nullptr) {
                     this->swg_cell_state_sensor_->publish_state(cell_state);
@@ -2174,8 +2176,8 @@ std::string IQ2020Component::decodeSWGStatus_(uint8_t raw) {
         case 0:  return "Okay";
         case 1:  return "Inactive - System Off";
         case 2:  return "24-Hour Boost Cycle On";
-        // The controller shows no message here; the meaningful part is that the
-        // salt test reading has locked level adjustment.
+        // The controller shows no message here; the meaningful part is that
+        // 10+ days without a water test has locked level adjustment.
         case 3:  return "Level Locked - Confirm Salt Level";
         case 4:  return "Test Water & Confirm Level";
         case 5:  return "Level Set To 3 - Test & Adjust";

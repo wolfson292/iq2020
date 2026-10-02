@@ -484,8 +484,6 @@ CONFIG_SCHEMA = cv.Schema(
         cv.Optional(CONF_SWG_OUTPUT_LEVEL): sensor.sensor_schema(
             icon=ICON_MAGNET,
         ),
-        # Salt test reading. 15 raises the "Test Water" prompt, 20 the
-        # "Level Set To 3" prompt, and anything above 9 locks level adjustment.
         # Frames abandoned and resynced: a mid-frame gap, an implausible
         # length byte, or a failed checksum. A rate rather than an event - what
         # matters is whether it climbs over hours.
@@ -499,6 +497,9 @@ CONFIG_SCHEMA = cv.Schema(
             icon=ICON_BUG,
             entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
         ),
+        # Days since the water was last tested - a day counter, not a salt
+        # reading. Above 9 locks level adjustment, 15 raises the "Test Water"
+        # prompt, 20 the "Level Set To 3" prompt.
         cv.Optional(CONF_SWG_SALT_TEST): sensor.sensor_schema(
             icon=ICON_WATER,
             entity_category=ENTITY_CATEGORY_DIAGNOSTIC,

@@ -327,7 +327,7 @@ class IQ2020Component : public PollingComponent, public uart::UARTDevice {
   // the controller decodes, so we key off it the same way.
   uint8_t swg_addr_ = 0;
   uint8_t swg_level_reported_ = 0xFF;
-  uint8_t swg_test_value_ = 0xFF;   // payload[1] of the module's reply
+  uint8_t swg_test_days_ = 0xFF;    // payload[1]: days since water test
   uint8_t swg_spa_size_ = 0xFF;     // from the controller's 1E/03 summary
   uint8_t swg_status_class_ = 0xFF; // payload[2] & 3
   uint8_t swg_salinity_idx_ = 0xFF; // payload[2] >> 2

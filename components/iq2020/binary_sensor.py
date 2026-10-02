@@ -124,8 +124,8 @@ CONFIG_SCHEMA = cv.Schema(
         cv.Optional(CONF_SWG_CARTRIDGE_PRESENT): binary_sensor.binary_sensor_schema(
             entity_category=ENTITY_CATEGORY_NONE,
         ),
-        # Salt test reading above 9 - the controller locks output level
-        # adjustment while this is set.
+        # 10+ days since the water was last tested - the controller locks
+        # output level adjustment while this is set.
         cv.Optional(CONF_SWG_LEVEL_LOCKED): binary_sensor.binary_sensor_schema(
             entity_category=ENTITY_CATEGORY_NONE,
         ),

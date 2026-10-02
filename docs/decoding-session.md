@@ -57,12 +57,12 @@ is what proves the range.
 
 ### 3. Clear the salt level lock
 
-If the panel is showing a salt prompt, acknowledging it should drop the salt test
-reading below 10 and let the output level move again. Note the time you
-acknowledge, then try changing the level and note whether it responds.
+If the panel is showing a salt prompt, acknowledging it should reset the
+days-since-water-test counter to 0 and let the output level move again. Note the
+time you acknowledge, then try changing the level and note whether it responds.
 
 This is the one case where the panel shows *no message* for a real state, so
-watching the reading fall is the only way to see the transition.
+watching the counter fall is the only way to see the transition.
 
 ### 4. Colour cycle and its speed
 
